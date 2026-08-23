@@ -11,8 +11,56 @@ export async function GET() {
   }
 }
 
+import { writeFile, mkdir } from "fs/promises";
+import path from "path";
+
 export async function POST(req: NextRequest) {
   try {
+    const contentType = req.headers.get("content-type") || "";
+
+    // Multipart Form Upload (Direct File from PC)
+    if (contentType.includes("multipart/form-data")) {
+      const formData = await req.formData();
+      const file = formData.get("file") as File | null;
+      const customName = (formData.get("name") as string) || "";
+      const altText = (formData.get("altText") as string) || "";
+
+      if (!file) {
+        return NextResponse.json({ success: false, error: "No file provided" }, { status: 400 });
+      }
+
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+      // Ensure directory exists
+      const uploadDir = path.join(process.cwd(), "public", "images", "uploads");
+      await mkdir(uploadDir, { recursive: true });
+
+      // Clean filename
+      const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
+      const filename = `${Date.now()}-${sanitizedName}`;
+      const filePath = path.join(uploadDir, filename);
+      await writeFile(filePath, buffer);
+
+      const publicUrl = `/images/uploads/${filename}`;
+
+      const mediaItem: MediaItem = {
+        id: `media-${Date.now()}`,
+        name: customName || file.name,
+        url: publicUrl,
+        size: file.size,
+        type: file.type || "image/jpeg",
+        dimensions: { width: 1920, height: 1080 },
+        altText: altText || customName || file.name,
+        caption: "",
+        createdAt: new Date().toISOString(),
+      };
+
+      const saved = await saveMediaItem(mediaItem);
+      return NextResponse.json({ success: true, media: saved });
+    }
+
+    // JSON Payload with URL
     const body = await req.json();
     const mediaItem: MediaItem = {
       id: body.id || `media-${Date.now()}`,
@@ -33,6 +81,7 @@ export async function POST(req: NextRequest) {
     const saved = await saveMediaItem(mediaItem);
     return NextResponse.json({ success: true, media: saved });
   } catch (error) {
+    console.error("Media upload error:", error);
     return NextResponse.json({ success: false, error: "Failed to save media" }, { status: 500 });
   }
 }

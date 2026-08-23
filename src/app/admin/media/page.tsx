@@ -22,8 +22,10 @@ export default function AdminMediaPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  // New Media URL Modal / Form State
+  // New Media Modal / Form State
   const [showAddModal, setShowAddModal] = useState(false);
+  const [uploadMode, setUploadMode] = useState<"file" | "url">("file");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [newName, setNewName] = useState("");
   const [newUrl, setNewUrl] = useState("");
   const [newAltText, setNewAltText] = useState("");
@@ -70,32 +72,65 @@ export default function AdminMediaPage() {
 
   const handleAddMedia = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newUrl.trim()) return;
-
     setAdding(true);
-    try {
-      const res = await fetch("/api/media", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: newName || "New Media Asset",
-          url: newUrl,
-          altText: newAltText || newName || "Media graphic asset",
-          size: 450000,
-          type: "image/jpeg",
-          dimensions: { width: 1920, height: 1080 },
-        }),
-      });
 
-      const data = await res.json();
-      if (data.success) {
-        setMediaItems((prev) => [data.media, ...prev]);
-        setShowAddModal(false);
-        setNewName("");
-        setNewUrl("");
-        setNewAltText("");
+    try {
+      if (uploadMode === "file") {
+        if (!selectedFile) {
+          alert("Please select a file to upload");
+          setAdding(false);
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        if (newName) formData.append("name", newName);
+        if (newAltText) formData.append("altText", newAltText);
+
+        const res = await fetch("/api/media", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          setMediaItems((prev) => [data.media, ...prev]);
+          setShowAddModal(false);
+          setSelectedFile(null);
+          setNewName("");
+          setNewAltText("");
+        } else {
+          alert(data.error || "Failed to upload file");
+        }
+      } else {
+        if (!newUrl.trim()) return;
+
+        const res = await fetch("/api/media", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: newName || "New Media Asset",
+            url: newUrl,
+            altText: newAltText || newName || "Media graphic asset",
+            size: 450000,
+            type: "image/jpeg",
+            dimensions: { width: 1920, height: 1080 },
+          }),
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          setMediaItems((prev) => [data.media, ...prev]);
+          setShowAddModal(false);
+          setNewName("");
+          setNewUrl("");
+          setNewAltText("");
+        } else {
+          alert(data.error || "Failed to add media URL");
+        }
       }
-    } catch {
+    } catch (err) {
+      console.error(err);
       alert("Failed to add media");
     } finally {
       setAdding(false);
@@ -117,7 +152,7 @@ export default function AdminMediaPage() {
             Media Library
           </h1>
           <p className="text-xs sm:text-sm text-platinum-400 font-mono">
-            Manage high-resolution imagery, thumbnails, and visual assets with Wasmer Database & CDN integration.
+            Manage high-resolution imagery, thumbnails, and visual assets with Wasmer Database & local storage integration.
           </p>
         </div>
 
@@ -126,7 +161,7 @@ export default function AdminMediaPage() {
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#dfb15b] text-black font-bold text-xs font-mono uppercase tracking-wider hover:shadow-gold transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>Add Media Asset</span>
+          <span>Upload / Add Media</span>
         </button>
       </div>
 
@@ -155,7 +190,7 @@ export default function AdminMediaPage() {
         </div>
       ) : filteredMedia.length === 0 ? (
         <div className="glass-panel p-12 rounded-3xl text-center text-xs font-mono text-platinum-400">
-          No media assets found.
+          No media assets found. Click &ldquo;Upload / Add Media&rdquo; to add your first asset.
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -171,6 +206,7 @@ export default function AdminMediaPage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  unoptimized
                 />
               </div>
 
@@ -232,31 +268,77 @@ export default function AdminMediaPage() {
               </button>
             </div>
 
+            {/* Mode Switcher */}
+            <div className="flex items-center gap-2 p-1 rounded-xl bg-white/[0.04] border border-white/[0.08]">
+              <button
+                type="button"
+                onClick={() => setUploadMode("file")}
+                className={`flex-1 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                  uploadMode === "file"
+                    ? "bg-[#dfb15b] text-black font-bold"
+                    : "text-platinum-400 hover:text-white"
+                }`}
+              >
+                Upload File from PC
+              </button>
+              <button
+                type="button"
+                onClick={() => setUploadMode("url")}
+                className={`flex-1 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                  uploadMode === "url"
+                    ? "bg-[#dfb15b] text-black font-bold"
+                    : "text-platinum-400 hover:text-white"
+                }`}
+              >
+                Add via URL / CDN
+              </button>
+            </div>
+
             <form onSubmit={handleAddMedia} className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-mono uppercase text-platinum-400">
-                  Asset Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Alqadir Hero Banner"
-                  value={newName}
-                  onChange={(e) => setNewName(e.target.value)}
-                  className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white focus:outline-none focus:border-[#dfb15b]"
-                />
-              </div>
+              {uploadMode === "file" ? (
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-mono uppercase text-platinum-400">
+                    Select Image File <span className="text-[#dfb15b]">*</span>
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    required
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] || null;
+                      setSelectedFile(file);
+                      if (file && !newName) {
+                        setNewName(file.name.replace(/\.[^/.]+$/, ""));
+                      }
+                    }}
+                    className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-mono file:bg-[#dfb15b] file:text-black hover:file:bg-[#dfb15b]/90 cursor-pointer"
+                  />
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-mono uppercase text-platinum-400">
+                    Image URL / CDN Link <span className="text-[#dfb15b]">*</span>
+                  </label>
+                  <input
+                    type="url"
+                    required
+                    placeholder="https://images.unsplash.com/..."
+                    value={newUrl}
+                    onChange={(e) => setNewUrl(e.target.value)}
+                    className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white focus:outline-none focus:border-[#dfb15b]"
+                  />
+                </div>
+              )}
 
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-mono uppercase text-platinum-400">
-                  Image URL / CDN Link <span className="text-[#dfb15b]">*</span>
+                  Asset Title / Name
                 </label>
                 <input
-                  type="url"
-                  required
-                  placeholder="https://images.unsplash.com/..."
-                  value={newUrl}
-                  onChange={(e) => setNewUrl(e.target.value)}
+                  type="text"
+                  placeholder="e.g. Alqadir Hero Banner"
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
                   className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white focus:outline-none focus:border-[#dfb15b]"
                 />
               </div>
@@ -285,9 +367,9 @@ export default function AdminMediaPage() {
                 <button
                   type="submit"
                   disabled={adding}
-                  className="px-6 py-2 rounded-full bg-[#dfb15b] text-black font-bold text-xs font-mono uppercase tracking-wider"
+                  className="px-6 py-2 rounded-full bg-[#dfb15b] text-black font-bold text-xs font-mono uppercase tracking-wider hover:shadow-gold transition-all"
                 >
-                  {adding ? "Saving..." : "Save Asset"}
+                  {adding ? "Saving..." : uploadMode === "file" ? "Upload File" : "Save Asset"}
                 </button>
               </div>
             </form>
