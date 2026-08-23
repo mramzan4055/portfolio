@@ -13,7 +13,7 @@ interface AboutTeaserProps {
 export function AboutTeaser({ settings }: AboutTeaserProps) {
   const highlights = [
     "Over 6+ years designing and implementing mission-critical web applications.",
-    "Specialized in Next.js 15+ App Router, full-stack TypeScript, and relational Postgres.",
+    "Specialized in Next.js 15+ App Router, full-stack TypeScript, and relational MySQL.",
     "Pioneer in Generative Engine Optimization (GEO) and structured schema engineering.",
     "Zero-dependency architectural approach ensuring longevity and zero vendor lock-in.",
   ];

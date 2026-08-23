@@ -48,7 +48,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
     description: initialData?.description || "",
     role: initialData?.role || "Lead Full-Stack Architect",
     client: initialData?.client || "",
-    technologies: initialData?.technologies || ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+    technologies: initialData?.technologies || ["Next.js", "TypeScript", "Tailwind CSS", "MySQL"],
     services: initialData?.services || ["Full-Stack Engineering", "CMS Architecture"],
     heroImage: initialData?.heroImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: initialData?.thumbnailImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
@@ -1012,7 +1012,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             <div className="flex items-center gap-2 pt-2">
               <input
                 type="text"
-                placeholder="Add factual attribute (e.g. Stack: Next.js & Postgres)..."
+                placeholder="Add factual attribute (e.g. Stack: Next.js & MySQL)..."
                 value={newKeyFact}
                 onChange={(e) => setNewKeyFact(e.target.value)}
                 className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-white flex-1 focus:outline-none focus:border-[#dfb15b]"

@@ -32,7 +32,8 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
         "Full-Stack Web Development",
         "Next.js Architecture",
         "TypeScript",
-        "PostgreSQL",
+        "MySQL",
+        "Relational Database Architecture",
         "Generative Engine Optimization (GEO)",
         "Headless CMS Architecture",
         "UI/UX Creative Direction"

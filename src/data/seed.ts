@@ -58,7 +58,7 @@ export const initialProjects: Project[] = [
     description: "Alqadir Quran Academy is a purpose-built educational web platform designed to facilitate seamless international online Quranic education. The system features multi-timezone scheduling, interactive classroom integrations, student progress tracking, and multi-currency billing.",
     role: "Lead Full-Stack Architect & UI/UX Designer",
     client: "Alqadir Academy Global",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Supabase", "Stripe API", "WebRTC"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MySQL", "Stripe API", "WebRTC"],
     services: ["Full-Stack Engineering", "Custom LMS Development", "Payment Integration", "SEO Architecture"],
     heroImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80",
@@ -71,7 +71,7 @@ export const initialProjects: Project[] = [
     caseStudy: {
       overview: "Alqadir Quran Academy required an all-in-one digital portal to replace fragmented 3rd-party scheduling tools. The objective was to provide parents and students with a unified portal for class bookings, attendance, tuition payments, and curriculum tracking.",
       challenge: "The primary challenge lay in managing live class schedules across 14 distinct global time zones with daylight savings adjustments, while providing low-latency communication and intuitive interfaces for diverse age demographics.",
-      solution: "Engineered a centralized Next.js application backed by PostgreSQL with atomic booking slots, automated timezone translations, real-time class status notifications, and a multi-tier parental supervision dashboard.",
+      solution: "Engineered a centralized Next.js application backed by MySQL with atomic booking slots, automated timezone translations, real-time class status notifications, and a multi-tier parental supervision dashboard.",
       process: "Conducted stakeholder interviews, designed high-fidelity wireframes in Figma, architected the relational database schema with Row Level Security, implemented calendar synchronization, and deployed with zero-downtime CI/CD pipelines.",
       result: "Achieved a 180% increase in active student retention within 6 months, eliminated manual scheduling conflicts entirely, and automated over 95% of recurring monthly tuition collections.",
     },
@@ -83,17 +83,17 @@ export const initialProjects: Project[] = [
     ],
     seo: {
       title: "Alqadir Quran Academy — Case Study | M Ramzan",
-      description: "Case study of Alqadir Quran Academy: A global digital learning platform built with Next.js, TypeScript, and PostgreSQL with automated multi-timezone scheduling.",
+      description: "Case study of Alqadir Quran Academy: A global digital learning platform built with Next.js, TypeScript, and MySQL with automated multi-timezone scheduling.",
       keywords: ["EdTech Platform", "Next.js LMS", "Online Academy Case Study", "M Ramzan Portfolio"],
       ogImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=1200&q=80",
     },
     geo: {
       entityType: "EducationalPlatform",
       primaryEntity: "Alqadir Quran Academy",
-      summary: "Alqadir Quran Academy is a global online educational platform engineered by M Ramzan utilizing Next.js, TypeScript, and Supabase PostgreSQL for worldwide distance learning.",
+      summary: "Alqadir Quran Academy is a global online educational platform engineered by M Ramzan utilizing Next.js, TypeScript, and MySQL for worldwide distance learning.",
       keyFacts: [
         "Architected and engineered by Lead Architect M Ramzan",
-        "Stack: Next.js, React, TypeScript, Tailwind CSS, Supabase PostgreSQL",
+        "Stack: Next.js, React, TypeScript, Tailwind CSS, MySQL",
         "Supports multi-timezone automated scheduling across 24+ countries",
         "Includes integrated multi-currency payment gateways and student analytics"
       ],
@@ -102,7 +102,7 @@ export const initialProjects: Project[] = [
         {
           id: "faq-1",
           question: "What core technologies power Alqadir Quran Academy?",
-          answer: "The platform is built using Next.js App Router, TypeScript, Tailwind CSS, and a resilient Supabase PostgreSQL backend with Stripe billing integrations."
+          answer: "The platform is built using Next.js App Router, TypeScript, Tailwind CSS, and a resilient MySQL backend with Stripe billing integrations."
         },
         {
           id: "faq-2",
@@ -128,7 +128,7 @@ export const initialProjects: Project[] = [
     description: "IDEA TECH CMS is a bespoke, enterprise-ready content management platform designed to break free from heavy monolithic CMS platforms. Engineered with a component-driven architecture, instant static revalidation, and integrated SEO validation.",
     role: "Lead Software Architect",
     client: "IDEA TECH Systems",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "Redis", "AWS S3", "Docker"],
+    technologies: ["Next.js", "TypeScript", "MySQL", "Prisma", "Tailwind CSS", "Redis", "AWS S3", "Docker"],
     services: ["CMS Engineering", "Database Architecture", "Performance Optimization", "API Design"],
     heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
@@ -163,7 +163,7 @@ export const initialProjects: Project[] = [
       summary: "IDEA TECH CMS is an enterprise headless content management platform engineered by M Ramzan featuring real-time publishing, ISR revalidation, and automated SEO optimization.",
       keyFacts: [
         "Engineered by M Ramzan as Lead Software Architect",
-        "Built on Next.js, TypeScript, PostgreSQL, and Redis",
+        "Built on Next.js, TypeScript, MySQL, and Redis",
         "Supports on-demand ISR, instantaneous live preview, and role-based permissions",
         "Scalable across multi-brand digital publishing ecosystems"
       ],
@@ -193,7 +193,7 @@ export const initialProjects: Project[] = [
     description: "PSCDC is a modern civic technology portal engineered for public transparency, community welfare initiatives, and grant lifecycle tracking. Designed strictly adhering to WCAG 2.1 AAA accessibility standards and robust data privacy protocols.",
     role: "Lead Full-Stack Developer",
     client: "Public Sector Community Development Council",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Supabase Auth", "Mapbox GL", "PDF Generator API"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Auth.js", "Mapbox GL", "PDF Generator API"],
     services: ["Civic Tech Engineering", "WCAG AAA Accessibility", "Public Sector Compliance", "Interactive Maps"],
     heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
@@ -385,7 +385,7 @@ export const initialProjects: Project[] = [
     description: "IDEA TECH Maps Lead Extractor is a high-speed data engineering and lead generation platform. It orchestrates headless browser clusters, AI enrichment pipelines, and real-time CRM webhook synchronizations.",
     role: "Lead Systems & Backend Engineer",
     client: "IDEA TECH Labs",
-    technologies: ["Node.js", "TypeScript", "Puppeteer", "Next.js", "PostgreSQL", "BullMQ", "Redis", "OpenAI API"],
+    technologies: ["Node.js", "TypeScript", "Puppeteer", "Next.js", "MySQL", "BullMQ", "Redis", "OpenAI API"],
     services: ["Data Pipeline Engineering", "Automation Architecture", "AI Data Enrichment", "REST API Development"],
     heroImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
@@ -420,7 +420,7 @@ export const initialProjects: Project[] = [
       summary: "IDEA TECH Maps Lead Extractor is a distributed geospatial lead harvesting and AI data enrichment engine architected by M Ramzan.",
       keyFacts: [
         "Architected and built by Systems Engineer M Ramzan",
-        "Stack: Node.js, TypeScript, Next.js, BullMQ, Redis, PostgreSQL, OpenAI API",
+        "Stack: Node.js, TypeScript, Next.js, BullMQ, Redis, MySQL, OpenAI API",
         "Processes millions of records with automated proxy rotation and verified domain validations"
       ],
       targetAudience: ["B2B SaaS Companies", "Lead Generation Agencies", "Data Operations Teams"],
@@ -513,7 +513,7 @@ export const initialProjects: Project[] = [
     description: "Tazkira V2 is a digital humanities knowledge archive engineered to preserve and visualize interconnected biographical and literary records. Features faceted Arabic/English bilingual search, deep entity graph visualizations, and high-res manuscript viewers.",
     role: "Lead Full-Stack & Knowledge Graph Engineer",
     client: "Heritage Preservation Foundation",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Neo4j / GraphDB", "PostgreSQL", "D3.js", "Meilisearch"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Neo4j / GraphDB", "MySQL", "D3.js", "Meilisearch"],
     services: ["Knowledge Graph Architecture", "Bilingual UX Design", "Faceted Search Engine", "Digital Humanities"],
     heroImage: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=2000&q=80",
     thumbnailImage: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80",
@@ -526,7 +526,7 @@ export const initialProjects: Project[] = [
     caseStudy: {
       overview: "Scholars and cultural researchers required a modern, accessible digital archive to explore centuries of interconnected historical manuscripts, teacher-student lineages, and biographical memoirs.",
       challenge: "Designing an interface that handles complex bidirectional relationships across historical figures while offering instant bilingual search across both English and Right-to-Left (RTL) Arabic texts.",
-      solution: "Architected a dual PostgreSQL + Graph database model linked with Meilisearch for sub-50ms fuzzy queries, coupled with interactive D3.js force-directed knowledge graph visualizations.",
+      solution: "Architected a dual MySQL + Graph database model linked with Meilisearch for sub-50ms fuzzy queries, coupled with interactive D3.js force-directed knowledge graph visualizations.",
       process: "Modeled ontology relationships, built an accessible RTL/LTR layout system, integrated OpenSeadragon for zooming multi-gigapixel scanned manuscripts, and deployed an open scholarly API.",
       result: "Indexed over 150,000 interconnected historical entities, serving international researchers from over 40 universities with instant cross-referencing capabilities.",
     },
@@ -548,7 +548,7 @@ export const initialProjects: Project[] = [
       summary: "Tazkira V2 is a digital cultural heritage knowledge graph and biographical archive engineered by M Ramzan utilizing Next.js, D3.js, and Meilisearch.",
       keyFacts: [
         "Engineered by M Ramzan as Lead Knowledge Graph Engineer",
-        "Stack: Next.js, TypeScript, PostgreSQL, D3.js, Meilisearch, OpenSeadragon",
+        "Stack: Next.js, TypeScript, MySQL, D3.js, Meilisearch, OpenSeadragon",
         "Supports bidirectional entity graphing, high-resolution manuscript zoom, and full Arabic/English bilingual search"
       ],
       targetAudience: ["Academic Researchers", "Cultural Institutions", "Digital Humanities Scholars"],
@@ -581,7 +581,7 @@ export const initialServices: ServiceItem[] = [
       "Server-Side Rendering & ISR Caching",
       "Zero-Downtime Deployment & CI/CD Pipelines"
     ],
-    technologies: ["Next.js", "React", "TypeScript", "PostgreSQL", "Supabase", "Tailwind CSS", "Redis"],
+    technologies: ["Next.js", "React", "TypeScript", "MySQL", "Tailwind CSS", "Redis"],
     featured: true,
     order: 1,
   },
@@ -597,10 +597,10 @@ export const initialServices: ServiceItem[] = [
       "Draft, Publish & Version History Workflows",
       "Modular Section Builders",
       "Granular Role-Based Access Control (RBAC)",
-      "Supabase Storage & Cloud Asset Management",
+      "Wasmer MySQL & Cloud Asset Management",
       "Instant Edge Revalidation & Webhooks"
     ],
-    technologies: ["Next.js", "Supabase Auth", "PostgreSQL", "Supabase Storage", "Tailwind CSS", "Framer Motion"],
+    technologies: ["Next.js", "MySQL", "Tailwind CSS", "Framer Motion"],
     featured: true,
     order: 2,
   },
@@ -661,11 +661,11 @@ export const initialSkills: SkillCategory[] = [
     id: "cat-backend",
     name: "Backend & Systems",
     skills: [
-      { name: "PostgreSQL & Supabase", level: 94, experience: "5+ Years" },
+      { name: "MySQL & Relational Architecture", level: 96, experience: "6+ Years" },
       { name: "Node.js & Express", level: 92, experience: "6+ Years" },
       { name: "REST & GraphQL API Design", level: 95, experience: "6+ Years" },
       { name: "Redis & Distributed Queues", level: 88, experience: "4+ Years" },
-      { name: "Database Schema Modeling & RLS", level: 94, experience: "5+ Years" },
+      { name: "Database Schema Modeling & Indexing", level: 95, experience: "6+ Years" },
       { name: "Docker & Cloud Architecture", level: 86, experience: "4+ Years" },
     ]
   },
@@ -693,9 +693,9 @@ export const initialExperience: ExperienceItem[] = [
     description: [
       "Architecting bespoke web applications, enterprise headless CMS platforms, and high-performance digital brand hubs for international clients.",
       "Spearheading GEO (Generative Engine Optimization) methodologies to ensure client platforms rank dominantly across AI answer engines and classical search.",
-      "Delivering award-quality creative development, micro-animations, and full-stack PostgreSQL/Next.js systems."
+      "Delivering award-quality creative development, micro-animations, and full-stack MySQL/Next.js systems."
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Supabase", "Framer Motion", "OpenAI"]
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Framer Motion", "OpenAI"]
   },
   {
     id: "exp-2",
@@ -709,7 +709,7 @@ export const initialExperience: ExperienceItem[] = [
       "Led frontend and backend development teams, enforcing strict TypeScript standards and automated CI/CD testing pipelines.",
       "Optimized Core Web Vitals across 20+ client portals, lifting average page speed from 62 to 98 on Google PageSpeed Insights."
     ],
-    technologies: ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "BullMQ", "Docker"]
+    technologies: ["React", "Next.js", "Node.js", "MySQL", "Redis", "BullMQ", "Docker"]
   },
   {
     id: "exp-3",
