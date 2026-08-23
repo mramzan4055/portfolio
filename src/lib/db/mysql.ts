@@ -19,6 +19,9 @@ export function getDbConfig(): PoolOptions {
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 10000,
+    connectTimeout: 15000,
     ssl: useSsl ? { rejectUnauthorized: false } : undefined,
   };
 }
