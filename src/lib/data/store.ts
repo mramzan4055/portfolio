@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { Project, Page, MediaItem, SiteSettings, ServiceItem, SkillCategory, ExperienceItem, ProjectStatus } from "@/types";
 import { initialProjects, initialServices, initialSkills, initialExperience, initialPages, initialSiteSettings } from "@/data/seed";
-import { getSupabaseAdminClient, isSupabaseServerConfigured } from "@/lib/supabase/server";
+import { getSupabaseAdminClient } from "@/lib/supabase/server";
+import { query as mysqlQuery, execute as mysqlExecute } from "@/lib/db/mysql";
 
 interface DBData {
   projects: Project[];
@@ -16,7 +17,48 @@ interface DBData {
 
 const DB_FILE_PATH = path.join(process.cwd(), "src", "data", "db.json");
 
-// Ensure local db.json exists with initial seed
+function parseJson(val: any, fallback: any = null) {
+  if (!val) return fallback;
+  if (typeof val === "object") return val;
+  try {
+    return JSON.parse(val);
+  } catch {
+    return fallback;
+  }
+}
+
+function mapRowToProject(row: any): Project {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    subtitle: row.subtitle || "",
+    category: row.category,
+    year: row.year || "2024",
+    status: row.status || "published",
+    featured: Boolean(row.featured),
+    order: row.display_order ?? 0,
+    shortDescription: row.short_description || "",
+    description: row.description || "",
+    role: row.role || "",
+    client: row.client || "",
+    technologies: parseJson(row.technologies, []),
+    services: parseJson(row.services, []),
+    heroImage: row.hero_image || "",
+    thumbnailImage: row.thumbnail_image || "",
+    gallery: parseJson(row.gallery, []),
+    liveUrl: row.live_url || "",
+    githubUrl: row.github_url || "",
+    caseStudy: parseJson(row.case_study, {}),
+    metrics: parseJson(row.metrics, []),
+    seo: parseJson(row.seo, {}),
+    geo: parseJson(row.geo, {}),
+    createdAt: row.created_at || new Date().toISOString(),
+    updatedAt: row.updated_at || new Date().toISOString(),
+  };
+}
+
+// Local fallback DB operations
 function getLocalData(): DBData {
   try {
     if (fs.existsSync(DB_FILE_PATH)) {
@@ -71,16 +113,6 @@ function getLocalData(): DBData {
     ]
   };
 
-  try {
-    const dir = path.dirname(DB_FILE_PATH);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    fs.writeFileSync(DB_FILE_PATH, JSON.stringify(initialData, null, 2), "utf-8");
-  } catch (error) {
-    console.error("Could not write initial db.json:", error);
-  }
-
   return initialData;
 }
 
@@ -105,22 +137,35 @@ export async function getProjects(options?: {
   featured?: boolean;
   limit?: number;
 }): Promise<Project[]> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      let query = supabase.from("projects").select("*").order("display_order", { ascending: true });
-      if (options?.status) query = query.eq("status", options.status);
-      if (options?.category && options.category !== "All") query = query.eq("category", options.category);
-      if (options?.featured !== undefined) query = query.eq("featured", options.featured);
-      if (options?.limit) query = query.limit(options.limit);
-      
-      const { data, error } = await query;
-      if (!error && data) {
-        return data as unknown as Project[];
-      }
-    } catch (e) {
-      console.warn("Supabase query failed, using local database fallback:", e);
+  try {
+    let sql = "SELECT * FROM projects WHERE 1=1";
+    const params: any[] = [];
+
+    if (options?.status) {
+      sql += " AND status = ?";
+      params.push(options.status);
     }
+    if (options?.category && options.category !== "All") {
+      sql += " AND category LIKE ?";
+      params.push(`%${options.category}%`);
+    }
+    if (options?.featured !== undefined) {
+      sql += " AND featured = ?";
+      params.push(options.featured ? 1 : 0);
+    }
+
+    sql += " ORDER BY display_order ASC";
+
+    if (options?.limit) {
+      sql += ` LIMIT ${Number(options.limit)}`;
+    }
+
+    const rows = await mysqlQuery(sql, params);
+    if (rows && rows.length > 0) {
+      return rows.map(mapRowToProject);
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL query failed, using fallback:", err);
   }
 
   const db = getLocalData();
@@ -146,18 +191,13 @@ export async function getProjects(options?: {
 }
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("slug", slug)
-        .single();
-      if (!error && data) return data as unknown as Project;
-    } catch (e) {
-      console.warn("Supabase getProjectBySlug failed, falling back:", e);
+  try {
+    const rows = await mysqlQuery("SELECT * FROM projects WHERE slug = ? LIMIT 1", [slug]);
+    if (rows && rows.length > 0) {
+      return mapRowToProject(rows[0]);
     }
+  } catch (err) {
+    console.warn("Wasmer MySQL getProjectBySlug failed, using fallback:", err);
   }
 
   const db = getLocalData();
@@ -165,18 +205,13 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 }
 
 export async function getProjectById(id: string): Promise<Project | null> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("id", id)
-        .single();
-      if (!error && data) return data as unknown as Project;
-    } catch (e) {
-      console.warn("Supabase getProjectById failed, falling back:", e);
+  try {
+    const rows = await mysqlQuery("SELECT * FROM projects WHERE id = ? LIMIT 1", [id]);
+    if (rows && rows.length > 0) {
+      return mapRowToProject(rows[0]);
     }
+  } catch (err) {
+    console.warn("Wasmer MySQL getProjectById failed, using fallback:", err);
   }
 
   const db = getLocalData();
@@ -190,13 +225,70 @@ export async function saveProject(project: Project): Promise<Project> {
     createdAt: project.createdAt || new Date().toISOString(),
   };
 
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      await supabase.from("projects").upsert(projectToSave);
-    } catch (e) {
-      console.warn("Supabase saveProject failed, saving locally:", e);
-    }
+  try {
+    await mysqlQuery(
+      `INSERT INTO projects (
+        id, slug, title, subtitle, category, year, status, featured, display_order,
+        short_description, description, role, client, technologies, services,
+        hero_image, thumbnail_image, gallery, live_url, github_url, case_study,
+        metrics, seo, geo, created_at, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        slug = VALUES(slug),
+        title = VALUES(title),
+        subtitle = VALUES(subtitle),
+        category = VALUES(category),
+        year = VALUES(year),
+        status = VALUES(status),
+        featured = VALUES(featured),
+        display_order = VALUES(display_order),
+        short_description = VALUES(short_description),
+        description = VALUES(description),
+        role = VALUES(role),
+        client = VALUES(client),
+        technologies = VALUES(technologies),
+        services = VALUES(services),
+        hero_image = VALUES(hero_image),
+        thumbnail_image = VALUES(thumbnail_image),
+        gallery = VALUES(gallery),
+        live_url = VALUES(live_url),
+        github_url = VALUES(github_url),
+        case_study = VALUES(case_study),
+        metrics = VALUES(metrics),
+        seo = VALUES(seo),
+        geo = VALUES(geo),
+        updated_at = VALUES(updated_at)`,
+      [
+        projectToSave.id,
+        projectToSave.slug,
+        projectToSave.title,
+        projectToSave.subtitle || "",
+        projectToSave.category,
+        projectToSave.year || "2024",
+        projectToSave.status || "published",
+        projectToSave.featured ? 1 : 0,
+        projectToSave.order || 0,
+        projectToSave.shortDescription || "",
+        projectToSave.description || "",
+        projectToSave.role || "",
+        projectToSave.client || "",
+        JSON.stringify(projectToSave.technologies || []),
+        JSON.stringify(projectToSave.services || []),
+        projectToSave.heroImage || "",
+        projectToSave.thumbnailImage || "",
+        JSON.stringify(projectToSave.gallery || []),
+        projectToSave.liveUrl || "",
+        projectToSave.githubUrl || "",
+        JSON.stringify(projectToSave.caseStudy || {}),
+        JSON.stringify(projectToSave.metrics || []),
+        JSON.stringify(projectToSave.seo || {}),
+        JSON.stringify(projectToSave.geo || {}),
+        projectToSave.createdAt,
+        projectToSave.updatedAt,
+      ]
+    );
+  } catch (err) {
+    console.warn("Wasmer MySQL saveProject failed:", err);
   }
 
   const db = getLocalData();
@@ -212,13 +304,10 @@ export async function saveProject(project: Project): Promise<Project> {
 }
 
 export async function deleteProject(id: string): Promise<boolean> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      await supabase.from("projects").delete().eq("id", id);
-    } catch (e) {
-      console.warn("Supabase deleteProject failed, deleting locally:", e);
-    }
+  try {
+    await mysqlExecute("DELETE FROM projects WHERE id = ?", [id]);
+  } catch (err) {
+    console.warn("Wasmer MySQL deleteProject failed:", err);
   }
 
   const db = getLocalData();
@@ -228,6 +317,14 @@ export async function deleteProject(id: string): Promise<boolean> {
 }
 
 export async function reorderProjects(orderedIds: string[]): Promise<boolean> {
+  try {
+    for (let index = 0; index < orderedIds.length; index++) {
+      await mysqlExecute("UPDATE projects SET display_order = ? WHERE id = ?", [index + 1, orderedIds[index]]);
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL reorderProjects failed:", err);
+  }
+
   const db = getLocalData();
   orderedIds.forEach((id, index) => {
     const project = db.projects.find((p) => p.id === id);
@@ -241,17 +338,25 @@ export async function reorderProjects(orderedIds: string[]): Promise<boolean> {
 }
 
 // ------------------------------------------------------------------
-// PAGE & SECTIONS OPERATIONS
+// PAGE OPERATIONS
 // ------------------------------------------------------------------
 export async function getPages(): Promise<Page[]> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      const { data, error } = await supabase.from("pages").select("*");
-      if (!error && data) return data as unknown as Page[];
-    } catch (e) {
-      console.warn("Supabase getPages failed:", e);
+  try {
+    const rows = await mysqlQuery("SELECT * FROM pages");
+    if (rows && rows.length > 0) {
+      return rows.map((r: any) => ({
+        id: r.id,
+        slug: r.slug,
+        title: r.title,
+        description: r.description || "",
+        status: (r.status as "draft" | "published") || "published",
+        sections: parseJson(r.sections, []),
+        seo: parseJson(r.seo, {}),
+        updatedAt: r.updated_at || new Date().toISOString(),
+      }));
     }
+  } catch (err) {
+    console.warn("Wasmer MySQL getPages failed:", err);
   }
 
   const db = getLocalData();
@@ -259,6 +364,25 @@ export async function getPages(): Promise<Page[]> {
 }
 
 export async function getPageBySlug(slug: string): Promise<Page | null> {
+  try {
+    const rows = await mysqlQuery("SELECT * FROM pages WHERE slug = ? LIMIT 1", [slug]);
+    if (rows && rows.length > 0) {
+      const r = rows[0];
+      return {
+        id: r.id,
+        slug: r.slug,
+        title: r.title,
+        description: r.description || "",
+        status: (r.status as "draft" | "published") || "published",
+        sections: parseJson(r.sections, []),
+        seo: parseJson(r.seo, {}),
+        updatedAt: r.updated_at || new Date().toISOString(),
+      };
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL getPageBySlug failed:", err);
+  }
+
   const db = getLocalData();
   return db.pages.find((p) => p.slug === slug) || null;
 }
@@ -269,13 +393,28 @@ export async function savePage(page: Page): Promise<Page> {
     updatedAt: new Date().toISOString(),
   };
 
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      await supabase.from("pages").upsert(pageToSave);
-    } catch (e) {
-      console.warn("Supabase savePage failed:", e);
-    }
+  try {
+    await mysqlQuery(
+      `INSERT INTO pages (id, slug, title, description, sections, seo, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?)
+       ON DUPLICATE KEY UPDATE
+         title = VALUES(title),
+         description = VALUES(description),
+         sections = VALUES(sections),
+         seo = VALUES(seo),
+         updated_at = VALUES(updated_at)`,
+      [
+        pageToSave.id,
+        pageToSave.slug,
+        pageToSave.title,
+        pageToSave.description || "",
+        JSON.stringify(pageToSave.sections || []),
+        JSON.stringify(pageToSave.seo || {}),
+        pageToSave.updatedAt,
+      ]
+    );
+  } catch (err) {
+    console.warn("Wasmer MySQL savePage failed:", err);
   }
 
   const db = getLocalData();
@@ -293,16 +432,67 @@ export async function savePage(page: Page): Promise<Page> {
 // SERVICES & SKILLS & EXPERIENCE
 // ------------------------------------------------------------------
 export async function getServices(): Promise<ServiceItem[]> {
+  try {
+    const rows = await mysqlQuery("SELECT * FROM services ORDER BY display_order ASC");
+    if (rows && rows.length > 0) {
+      return rows.map((s: any) => ({
+        id: s.id,
+        title: s.title,
+        slug: s.slug || s.id,
+        shortDescription: s.short_description || "",
+        description: s.description || "",
+        icon: s.icon || "",
+        deliverables: parseJson(s.deliverables, []),
+        technologies: parseJson(s.technologies, []),
+        featured: Boolean(s.featured),
+        order: s.display_order ?? 0,
+      }));
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL getServices failed:", err);
+  }
+
   const db = getLocalData();
   return db.services.sort((a, b) => a.order - b.order);
 }
 
 export async function getSkills(): Promise<SkillCategory[]> {
+  try {
+    const rows = await mysqlQuery("SELECT * FROM skills");
+    if (rows && rows.length > 0) {
+      return rows.map((sk: any) => ({
+        id: sk.id,
+        name: sk.name,
+        skills: parseJson(sk.skills, []),
+      }));
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL getSkills failed:", err);
+  }
+
   const db = getLocalData();
   return db.skills;
 }
 
 export async function getExperience(): Promise<ExperienceItem[]> {
+  try {
+    const rows = await mysqlQuery("SELECT * FROM experience");
+    if (rows && rows.length > 0) {
+      return rows.map((exp: any) => ({
+        id: exp.id,
+        role: exp.role,
+        company: exp.company,
+        location: exp.location || "",
+        period: exp.period || "",
+        current: Boolean(exp.current),
+        description: parseJson(exp.description, []),
+        technologies: parseJson(exp.technologies, []),
+      }));
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL getExperience failed:", err);
+  }
+
   const db = getLocalData();
   return db.experience;
 }
@@ -311,11 +501,58 @@ export async function getExperience(): Promise<ExperienceItem[]> {
 // MEDIA LIBRARY OPERATIONS
 // ------------------------------------------------------------------
 export async function getMediaItems(): Promise<MediaItem[]> {
+  try {
+    const rows = await mysqlQuery("SELECT * FROM media ORDER BY created_at DESC");
+    if (rows && rows.length > 0) {
+      return rows.map((m: any) => ({
+        id: m.id,
+        name: m.name,
+        url: m.url,
+        size: m.size || 0,
+        type: m.type || "image/jpeg",
+        dimensions: parseJson(m.dimensions, { width: 1200, height: 800 }),
+        altText: m.alt_text || "",
+        caption: m.caption || "",
+        createdAt: m.created_at || new Date().toISOString(),
+      }));
+    }
+  } catch (err) {
+    console.warn("Wasmer MySQL getMediaItems failed:", err);
+  }
+
   const db = getLocalData();
   return db.media.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function saveMediaItem(item: MediaItem): Promise<MediaItem> {
+  try {
+    await mysqlQuery(
+      `INSERT INTO media (id, name, url, size, type, dimensions, alt_text, caption, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON DUPLICATE KEY UPDATE
+         name = VALUES(name),
+         url = VALUES(url),
+         size = VALUES(size),
+         type = VALUES(type),
+         dimensions = VALUES(dimensions),
+         alt_text = VALUES(alt_text),
+         caption = VALUES(caption)`,
+      [
+        item.id,
+        item.name,
+        item.url,
+        item.size || 0,
+        item.type || "image/jpeg",
+        JSON.stringify(item.dimensions || {}),
+        item.altText || "",
+        item.caption || "",
+        item.createdAt || new Date().toISOString(),
+      ]
+    );
+  } catch (err) {
+    console.warn("Wasmer MySQL saveMediaItem failed:", err);
+  }
+
   const db = getLocalData();
   const index = db.media.findIndex((m) => m.id === item.id);
   if (index >= 0) {
@@ -328,6 +565,12 @@ export async function saveMediaItem(item: MediaItem): Promise<MediaItem> {
 }
 
 export async function deleteMediaItem(id: string): Promise<boolean> {
+  try {
+    await mysqlExecute("DELETE FROM media WHERE id = ?", [id]);
+  } catch (err) {
+    console.warn("Wasmer MySQL deleteMediaItem failed:", err);
+  }
+
   const db = getLocalData();
   db.media = db.media.filter((m) => m.id !== id);
   saveLocalData(db);
@@ -338,14 +581,13 @@ export async function deleteMediaItem(id: string): Promise<boolean> {
 // SITE SETTINGS
 // ------------------------------------------------------------------
 export async function getSiteSettings(): Promise<SiteSettings> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      const { data, error } = await supabase.from("site_settings").select("*").eq("id", "global_settings").single();
-      if (!error && data) return data as unknown as SiteSettings;
-    } catch (e) {
-      console.warn("Supabase getSiteSettings failed:", e);
+  try {
+    const rows = await mysqlQuery("SELECT settings FROM site_settings WHERE id = 'global_settings' LIMIT 1");
+    if (rows && rows.length > 0) {
+      return parseJson(rows[0].settings, initialSiteSettings);
     }
+  } catch (err) {
+    console.warn("Wasmer MySQL getSiteSettings failed:", err);
   }
 
   const db = getLocalData();
@@ -353,13 +595,17 @@ export async function getSiteSettings(): Promise<SiteSettings> {
 }
 
 export async function saveSiteSettings(settings: SiteSettings): Promise<SiteSettings> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      await supabase.from("site_settings").upsert({ id: "global_settings", ...settings });
-    } catch (e) {
-      console.warn("Supabase saveSiteSettings failed:", e);
-    }
+  try {
+    await mysqlQuery(
+      `INSERT INTO site_settings (id, settings, updated_at)
+       VALUES ('global_settings', ?, ?)
+       ON DUPLICATE KEY UPDATE
+         settings = VALUES(settings),
+         updated_at = VALUES(updated_at)`,
+      [JSON.stringify(settings), new Date().toISOString()]
+    );
+  } catch (err) {
+    console.warn("Wasmer MySQL saveSiteSettings failed:", err);
   }
 
   const db = getLocalData();
@@ -372,23 +618,25 @@ export async function saveSiteSettings(settings: SiteSettings): Promise<SiteSett
 // DASHBOARD STATS
 // ------------------------------------------------------------------
 export async function getDashboardMetrics() {
-  const db = getLocalData();
-  const totalProjects = db.projects.length;
-  const publishedProjects = db.projects.filter((p) => p.status === "published").length;
-  const draftProjects = db.projects.filter((p) => p.status === "draft").length;
-  const featuredProjects = db.projects.filter((p) => p.featured).length;
-  const totalPages = db.pages.length;
-  const totalMedia = db.media.length;
-  
-  // Calculate SEO/GEO Readiness score
+  const projects = await getProjects();
+  const pages = await getPages();
+  const media = await getMediaItems();
+
+  const totalProjects = projects.length;
+  const publishedProjects = projects.filter((p) => p.status === "published").length;
+  const draftProjects = projects.filter((p) => p.status === "draft").length;
+  const featuredProjects = projects.filter((p) => p.featured).length;
+  const totalPages = pages.length;
+  const totalMedia = media.length;
+
   let seoPassingItems = 0;
   let totalSeoCheckItems = 0;
-  
-  db.projects.forEach((proj) => {
+
+  projects.forEach((proj) => {
     totalSeoCheckItems += 6;
-    if (proj.seo.title) seoPassingItems++;
-    if (proj.seo.description) seoPassingItems++;
-    if (proj.seo.ogImage) seoPassingItems++;
+    if (proj.seo?.title) seoPassingItems++;
+    if (proj.seo?.description) seoPassingItems++;
+    if (proj.seo?.ogImage) seoPassingItems++;
     if (proj.geo?.summary) seoPassingItems++;
     if (proj.geo?.keyFacts?.length) seoPassingItems++;
     if (proj.geo?.faq?.length) seoPassingItems++;
@@ -404,6 +652,6 @@ export async function getDashboardMetrics() {
     totalPages,
     totalMedia,
     seoScore,
-    recentProjects: db.projects.slice(0, 5),
+    recentProjects: projects.slice(0, 5),
   };
 }
