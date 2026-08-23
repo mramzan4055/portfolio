@@ -5,6 +5,8 @@ import { StatementSection } from "@/components/home/StatementSection";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 import { TechStackMatrix } from "@/components/home/TechStackMatrix";
+import { StatsSection } from "@/components/home/StatsSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { ContactCTA } from "@/components/home/ContactCTA";
 
@@ -27,11 +29,17 @@ export default async function HomePage() {
       {/* Curated Featured Projects */}
       <FeaturedProjects projects={projects} />
 
+      {/* Animated Impact & Engineering Metrics */}
+      <StatsSection />
+
       {/* Core Engineering Offerings */}
       <ServicesShowcase services={services} />
 
       {/* Architecture & Tech Matrix */}
       <TechStackMatrix categories={skills} />
+
+      {/* Client Testimonials & Social Proof */}
+      <TestimonialsSection />
 
       {/* Personal Identity & Background */}
       <AboutTeaser settings={settings} />
@@ -41,3 +49,4 @@ export default async function HomePage() {
     </div>
   );
 }
+
