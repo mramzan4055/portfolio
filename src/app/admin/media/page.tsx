@@ -117,7 +117,7 @@ export default function AdminMediaPage() {
             Media Library
           </h1>
           <p className="text-xs sm:text-sm text-platinum-400 font-mono">
-            Manage high-resolution imagery, thumbnails, and visual assets with Supabase Storage integration.
+            Manage high-resolution imagery, thumbnails, and visual assets with Wasmer Database & CDN integration.
           </p>
         </div>
 

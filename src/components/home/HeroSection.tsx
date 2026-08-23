@@ -95,7 +95,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
           >
             {[
               { label: "Core Stack", val: "Next.js 15+ & TS", icon: Code },
-              { label: "Data Architecture", val: "Supabase & Postgres", icon: Layers },
+              { label: "Data Architecture", val: "Wasmer MySQL & Relational DB", icon: Layers },
               { label: "AI & Search", val: "GEO & Schema.org", icon: Sparkles },
               { label: "Performance Target", val: "99+ Core Web Vitals", icon: ShieldCheck },
             ].map((pillar, i) => {

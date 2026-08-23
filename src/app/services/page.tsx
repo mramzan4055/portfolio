@@ -28,7 +28,7 @@ export default async function ServicesPage() {
   const serviceFaqs = [
     {
       question: "How do you approach bespoke CMS engineering without vendor lock-in?",
-      answer: "I architect custom headless CMS systems using Next.js App Router, Supabase PostgreSQL, and clean repository layers. Non-technical teams get visual drag-and-drop section builders and instant live previews, while your codebase remains 100% portable to any hosting or database infrastructure without proprietary license dependencies."
+      answer: "I architect custom headless CMS systems using Next.js App Router, MySQL / Relational Databases, and clean repository layers. Non-technical teams get visual drag-and-drop section builders and instant live previews, while your codebase remains 100% portable to any hosting or database infrastructure without proprietary license dependencies."
     },
     {
       question: "What is Generative Engine Optimization (GEO) and why does it matter?",

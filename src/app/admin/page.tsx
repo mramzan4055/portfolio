@@ -219,7 +219,7 @@ export default async function AdminDashboardPage() {
               </div>
               <div className="flex items-center gap-2 text-emerald-400">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Dual Repository (Supabase / Local Store)</span>
+                <span>Dual Repository (Wasmer MySQL / Local Store)</span>
               </div>
             </div>
 

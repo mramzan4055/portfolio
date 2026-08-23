@@ -1,12 +1,12 @@
 # Luxury Portfolio Platform
 
-An ultra-luxury personal portfolio, showcase, and CMS built with Next.js (App Router), Tailwind CSS, Framer Motion, and Supabase integration. Designed for maximum visual impact, fluid kinetic interactions, dynamic content management, and edge performance.
+An ultra-luxury personal portfolio, showcase, and CMS built with Next.js (App Router), Tailwind CSS, Framer Motion, and Wasmer MySQL Database integration. Designed for maximum visual impact, fluid kinetic interactions, dynamic content management, and edge performance.
 
 ---
 
 ## 🚀 Wasmer.io Deployment Guide
 
-This project is pre-configured for deployment on **[Wasmer Edge](https://wasmer.io)**.
+This project is pre-configured for deployment on **[Wasmer Edge](https://wasmer.io)** with **Wasmer MySQL Database**.
 
 ### Option 1: Direct CLI Deployment
 
@@ -78,6 +78,7 @@ npm run start
 
 - **`src/app/`**: Next.js App Router (Landing, Work, About, Services, Contact, and Admin Dashboard).
 - **`src/components/`**: Modular, high-aesthetic UI components with Framer Motion animations.
-- **`src/lib/`**: Supabase client/server utilities, SEO metadata generators, and AI assistant mock/integration.
+- **`src/lib/db/`**: Wasmer MySQL connection pool and migration scripts.
+- **`src/lib/data/`**: Data store layer with live Wasmer MySQL integration.
 - **`wasmer.toml` & `app.yaml`**: Wasmer Edge package and application deployment manifests.
 - **`.github/workflows/wasmer-deploy.yml`**: Automated CI/CD pipeline for Wasmer.

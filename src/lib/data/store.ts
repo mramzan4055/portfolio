@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import { Project, Page, MediaItem, SiteSettings, ServiceItem, SkillCategory, ExperienceItem, ProjectStatus } from "@/types";
 import { initialProjects, initialServices, initialSkills, initialExperience, initialPages, initialSiteSettings } from "@/data/seed";
-import { getSupabaseAdminClient } from "@/lib/supabase/server";
 import { query as mysqlQuery, execute as mysqlExecute } from "@/lib/db/mysql";
 
 interface DBData {
