@@ -94,7 +94,7 @@ export default function AdminLoginPage() {
 
         <div className="pt-4 border-t border-white/[0.06] text-center">
           <p className="text-[11px] text-platinum-500 font-mono">
-            Default sandbox credentials: <code className="text-[#dfb15b]">admin</code> or configured in <code className="text-white">.env.local</code>
+            Access is controlled by the <code className="text-white">ADMIN_SECRET_KEY</code> environment variable.
           </p>
         </div>
       </div>

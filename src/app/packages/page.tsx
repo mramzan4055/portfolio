@@ -1,18 +1,28 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
+import { MessageCircle, CheckCircle } from "lucide-react";
 import { getSiteSettings } from "@/lib/data/store";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { PackagesSection } from "@/components/home/PackagesSection";
-import { MessageCircle, CheckCircle } from "lucide-react";
-import Link from "next/link";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "Website Packages & Pricing — Starting PKR 30,000 | M Ramzan",
+      title: "Website Packages & Pricing Pakistan — Starting PKR 30,000 | M Ramzan",
       description:
-        "Affordable website packages for small businesses in Pakistan. Starter Business Website from PKR 30,000. Business Growth Website from PKR 60,000. Custom projects with a free quote.",
+        "Transparent website development packages for Pakistani small businesses and SMEs. Starter Business Website from PKR 30,000. Business Growth from PKR 60,000. Free WhatsApp consultation.",
+      keywords: [
+        "Website Development Cost Pakistan",
+        "Website Packages Pakistan",
+        "Small Business Website Pricing",
+        "Affordable Web Developer Pakistan",
+        "Business Website PKR 30000",
+        "Ecommerce Website Cost Pakistan",
+        "M Ramzan Pricing"
+      ],
       canonical: "/packages",
     },
     settings
@@ -22,15 +32,45 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function PackagesPage() {
   const settings = await getSiteSettings();
 
+  const packageFaqs = [
+    {
+      question: "Are there any hidden monthly charges after the website is launched?",
+      answer: "No. You only pay for your standard domain and hosting renewals directly to your chosen hosting provider. There are no mandatory monthly retainers or hidden lock-in fees."
+    },
+    {
+      question: "What is required to start a website project?",
+      answer: "A brief conversation about your business goals, your company logo (or business name), desired text/photos, and a 50% advance payment to book your development slot."
+    },
+    {
+      question: "How do I make the payment in Pakistan?",
+      answer: "Payments are accepted via online Pakistani bank transfer (IBFT), Raast, JazzCash, EasyPaisa, or international wire for global clients."
+    },
+    {
+      question: "What happens if I need changes after the website is completed?",
+      answer: "Each package includes dedicated revision rounds during development and launch support. For future updates, you can edit content easily yourself or hire me for hourly updates."
+    }
+  ];
+
   const waUrl =
     settings.whatsappEnabled && settings.whatsappNumber
       ? `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-          "Hi, I'd like to get a quote for a website package."
+          "Hi M Ramzan, I am reviewing your website packages and would like to discuss a project."
         )}`
       : "/contact";
 
   return (
     <div className="pt-28 min-h-screen">
+      {/* Structured Data: FAQPage & BreadcrumbList */}
+      <JsonLd type="faq" data={packageFaqs} settings={settings} />
+      <JsonLd
+        type="breadcrumbs"
+        data={[
+          { name: "Home", url: "/" },
+          { name: "Website Packages & Pricing", url: "/packages" },
+        ]}
+        settings={settings}
+      />
+
       {/* Page Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-4">
         <div className="flex flex-col gap-3 max-w-3xl">

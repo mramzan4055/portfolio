@@ -4,14 +4,22 @@ import { Mail, MapPin, Clock, MessageCircle, Sparkles } from "lucide-react";
 import { getSiteSettings } from "@/lib/data/store";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { ContactFormClient } from "@/components/contact/ContactFormClient";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "Get in Touch — Website Development for Small Businesses | M Ramzan",
+      title: "Contact & Hire M Ramzan — Web Developer Pakistan | Fast WhatsApp Reply",
       description:
-        "Contact M Ramzan to discuss your website project. Professional web developer for small businesses in Pakistan. Starting from PKR 30,000. Fast reply on WhatsApp.",
+        "Contact M Ramzan to discuss your website or mobile app project. Professional web developer for Pakistani SMEs and small businesses. Starting from PKR 30,000.",
+      keywords: [
+        "Contact Web Developer Pakistan",
+        "Hire Web Developer Pakistan",
+        "WhatsApp Web Developer",
+        "Website Quote Pakistan",
+        "M Ramzan Contact"
+      ],
       canonical: "/contact",
     },
     settings
@@ -30,6 +38,17 @@ export default async function ContactPage() {
 
   return (
     <div className="pt-36 pb-28 min-h-screen">
+      {/* Structured Data: ProfessionalService & BreadcrumbList */}
+      <JsonLd type="professionalService" settings={settings} />
+      <JsonLd
+        type="breadcrumbs"
+        data={[
+          { name: "Home", url: "/" },
+          { name: "Contact & Hire M Ramzan", url: "/contact" },
+        ]}
+        settings={settings}
+      />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-14">
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-3xl">

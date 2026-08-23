@@ -74,11 +74,13 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
                   </div>
 
                   <h3 className="text-2xl font-display font-bold text-white group-hover:text-[#dfb15b] transition-colors">
-                    {srv.title}
+                    <Link href={`/services/${srv.slug}`}>
+                      {srv.title}
+                    </Link>
                   </h3>
 
                   <p className="text-sm text-platinum-300 font-light leading-relaxed">
-                    {srv.description}
+                    {srv.shortDescription || srv.description}
                   </p>
 
                   {/* Deliverables List */}
@@ -102,16 +104,17 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
                   </div>
 
                   <Link
-                    href="/contact"
+                    href={`/services/${srv.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-mono tracking-wider uppercase text-platinum-300 group-hover:text-[#dfb15b] transition-colors"
                   >
-                    <span>Inquire</span>
+                    <span>Explore Service</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </motion.div>
             );
           })}
+
         </div>
       </div>
     </section>

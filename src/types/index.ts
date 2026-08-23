@@ -142,6 +142,12 @@ export interface MediaItem {
   createdAt: string;
 }
 
+export interface ServiceProcessStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -153,6 +159,17 @@ export interface ServiceItem {
   technologies: string[];
   featured: boolean;
   order: number;
+  // Enhanced SEO & GEO properties
+  heroTagline?: string;
+  pricingStart?: string;
+  turnaround?: string;
+  targetAudience?: string[];
+  whyChooseUs?: string[];
+  processSteps?: ServiceProcessStep[];
+  geoSummary?: string;
+  faq?: FAQItem[];
+  relatedProjects?: string[]; // Project slugs
+  seo?: ProjectSEO;
 }
 
 export interface SkillCategory {
@@ -220,6 +237,7 @@ export interface SiteSettings {
   analytics: {
     googleAnalyticsId?: string;
     googleSearchConsoleId?: string;
+    bingVerificationId?: string;
   };
 }
 
@@ -234,3 +252,4 @@ export interface AIAnalysisResult {
   }[];
   suggestions: string[];
 }
+

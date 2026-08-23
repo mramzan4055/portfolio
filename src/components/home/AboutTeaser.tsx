@@ -82,7 +82,7 @@ export function AboutTeaser({ settings }: AboutTeaserProps) {
 
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs text-platinum-300 font-mono flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#dfb15b] flex-shrink-0" />
-                <span>Operating globally across North America, Europe & APAC.</span>
+                <span>Serving Pakistani SMEs, local businesses & remote clients.</span>
               </div>
             </div>
 
@@ -99,16 +99,17 @@ export function AboutTeaser({ settings }: AboutTeaserProps) {
             className="lg:col-span-7 flex flex-col gap-6"
           >
             <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-              Personal Brand & Background
+              Personal Background & Dedication
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight leading-tight">
-              Crafting scalable digital brand experiences that combine technical mastery with editorial sophistication.
+              Building reliable websites that give Pakistani businesses <span className="text-gradient-gold">credibility & online reach</span>.
             </h2>
 
             <p className="text-platinum-300 text-sm sm:text-base leading-relaxed font-light">
               {settings.authorBio}
             </p>
+
 
             <div className="flex flex-col gap-3 pt-2">
               {highlights.map((h, i) => (

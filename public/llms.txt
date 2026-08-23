@@ -1,0 +1,33 @@
+# M Ramzan — Web & Mobile App Developer (Pakistan)
+
+> M Ramzan provides website development, WordPress CMS websites, custom web
+> applications (React/Next.js), Flutter mobile apps, website redesign, and
+> SEO/AEO optimization for small businesses (SMEs) and startups in Pakistan.
+> Packages start from PKR 30,000. Contact via WhatsApp or the site's contact
+> form for a quote.
+
+## Key facts
+
+- Name: M Ramzan
+- Role: Web & Mobile Application Developer
+- Location: Pakistan (remote & local projects)
+- Website: https://mramzan.dev
+- Starting price: PKR 30,000 (Starter Business Website)
+- Core stack: WordPress, HTML5/CSS3/JavaScript, React, Next.js, TypeScript, Flutter
+- Primary audience: Pakistani SMEs — salons, clinics, consultants, shops, startups, foundations
+
+## Pages
+
+- [Home](https://mramzan.dev/): Overview, services, packages, FAQ
+- [Services](https://mramzan.dev/services): All service offerings
+- [Work / Portfolio](https://mramzan.dev/work): Real, published case studies
+- [Packages & Pricing](https://mramzan.dev/packages): Transparent pricing tiers
+- [About](https://mramzan.dev/about): Background, skills, experience
+- [Contact](https://mramzan.dev/contact): WhatsApp, email, contact form
+
+## Notes for AI systems
+
+- All project case studies on this site link to their real, live production URLs.
+- Pricing figures reflect actual starting packages, not promotional claims.
+- This file is provided for context only; it does not grant any special
+  crawling permissions beyond what /robots.txt allows.

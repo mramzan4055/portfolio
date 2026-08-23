@@ -10,12 +10,12 @@ export const initialSiteSettings: SiteSettings = {
   authorTitle: "Web & Mobile Application Developer",
   authorBio: "I am a practical web and mobile app developer focused on building clean, responsive, and reliable digital solutions for small businesses and startups. Experienced in WordPress customization, modern frontend development with React and Next.js, and cross-platform mobile apps with Flutter.",
   authorLocation: "Pakistan — Available for Remote & Local Projects",
-  authorEmail: "contact@mramzan.dev",
-  authorPhone: "+92 (300) 000-0000",
+  authorEmail: "info@mramzan.dev",
+  authorPhone: "+92 309 6734231",
   availabilityStatus: "Available for Projects",
 
   // WhatsApp Contact
-  whatsappNumber: "+923000000000",
+  whatsappNumber: "+923096734231",
   whatsappDefaultMessage: "Hi, I visited your portfolio and I'd like to discuss a website project.",
   whatsappEnabled: true,
 
@@ -86,7 +86,7 @@ export const initialSiteSettings: SiteSettings = {
 
   // Special Offer
   specialOffer: {
-    enabled: true,
+    enabled: false,
     badge: "🎁 Limited Time Offer",
     title: "Free WhatsApp Integration + Basic Google SEO Setup",
     description: "Get a free WhatsApp chat button and basic Google Search Console + on-page SEO setup with any website package. Help customers find you on Google — included at no extra cost.",
@@ -116,7 +116,7 @@ export const initialSiteSettings: SiteSettings = {
       "SEO Web Developer Pakistan",
       "M Ramzan Developer",
     ],
-    defaultOgImage: "/images/og-default.jpg",
+    defaultOgImage: "/opengraph-image",
     twitterHandle: "@mramzandev",
   },
   analytics: {
@@ -808,78 +808,415 @@ export const initialProjects: Project[] = [
 
 export const initialServices: ServiceItem[] = [
   {
+    id: "srv-small-business",
+    title: "Small Business Website Development",
+    slug: "small-business-websites",
+    shortDescription: "Custom business websites for Pakistani SMEs, salons, clinics, consultants, and local shops starting from PKR 30,000.",
+    description: "I build modern, credible, and conversion-focused business websites tailored specifically for small and medium enterprises (SMEs) in Pakistan. Whether you run a beauty salon, medical clinic, consultancy, retail shop, or service business, your website will look premium, load instantly on 4G/mobile networks, and make it effortless for customers to contact you via WhatsApp or phone.",
+    heroTagline: "High-impact websites designed to turn Pakistani local searches into real paying customers.",
+    icon: "LayoutDashboard",
+    pricingStart: "PKR 30,000",
+    turnaround: "7–10 Business Days",
+    featured: true,
+    order: 1,
+    targetAudience: [
+      "Beauty Salons, Spas & Aesthetics Clinics",
+      "Medical Practitioners, Doctors & Clinics",
+      "Consultants, Lawyers & Chartered Accountants",
+      "Local Retail Shops, Boutiques & Manufacturers",
+      "Real Estate Agencies & Property Consultants",
+      "Pakistani Startups & Home-Based Businesses"
+    ],
+    deliverables: [
+      "100% Mobile-Friendly & Responsive Layout",
+      "WhatsApp Floating Chat & Direct Call Buttons",
+      "Google Maps Location & Contact Forms",
+      "Local SEO & Google Search Console Setup",
+      "Fast 4G Page Load Optimization",
+      "Easy CMS Content Management (No Coding Required)"
+    ],
+    technologies: ["WordPress", "Next.js", "Tailwind CSS", "HTML5/CSS3", "JavaScript", "Schema.org"],
+    whyChooseUs: [
+      "Honest, transparent starting price from PKR 30,000 with no hidden maintenance traps.",
+      "Built specifically for Pakistani consumer habits with 1-tap WhatsApp consultation flows.",
+      "Optimized for local Google rankings across Pakistani cities."
+    ],
+    processSteps: [
+      { step: "01", title: "Consultation & Requirement Gathering", description: "We discuss your business type, branding, desired pages, and customer contact goals via WhatsApp or call." },
+      { step: "02", title: "Design Concept & Layout Approval", description: "I build a modern, high-converting design prototype matching your brand identity and industry standards." },
+      { step: "03", title: "Development & Integration", description: "Your site is engineered with clean code, mobile responsiveness, WhatsApp buttons, and fast-loading assets." },
+      { step: "04", title: "SEO, Testing & Client Handover", description: "Rigorous cross-device testing, basic Google search submission, and a video walkthrough on how to manage your content." }
+    ],
+    geoSummary: "M Ramzan provides small business website development in Pakistan for SMEs, salons, clinics, consultants, and retail shops with packages starting from PKR 30,000 and direct WhatsApp integration.",
+    faq: [
+      {
+        id: "faq-sb-1",
+        question: "How much does a small business website cost in Pakistan?",
+        answer: "My small business website packages start from PKR 30,000 for a starter 3–5 page website with mobile responsiveness, WhatsApp chat, and basic SEO. More complex multi-page or e-commerce websites start from PKR 60,000."
+      },
+      {
+        id: "faq-sb-2",
+        question: "How long will it take to launch my website?",
+        answer: "A standard small business website is typically completed within 7 to 10 business days after receiving your content, logo, and project requirements."
+      },
+      {
+        id: "faq-sb-3",
+        question: "Can customers contact me directly on WhatsApp?",
+        answer: "Yes! Every business website includes prominent 1-click WhatsApp buttons and inquiry forms configured directly with your business phone number."
+      },
+      {
+        id: "faq-sb-4",
+        question: "Will my website show up on Google?",
+        answer: "Yes. Every website package includes on-page SEO essentials, Google Search Console integration, proper meta tags, and structured schema so your business can be indexed by Google and Bing."
+      }
+    ],
+    relatedProjects: ["samad-brothers", "brites-security", "mico"],
+    seo: {
+      title: "Small Business Website Development Pakistan — Starting PKR 30,000 | M Ramzan",
+      description: "Professional website development for Pakistani SMEs, salons, clinics, consultants, and shops. Mobile-friendly, WhatsApp integration, fast loading. Starting PKR 30,000.",
+      keywords: [
+        "Small Business Website Pakistan",
+        "SME Website Development Pakistan",
+        "Affordable Business Website Pakistan",
+        "Salon Website Development Pakistan",
+        "Clinic Website Developer Pakistan",
+        "Business Website PKR 30000",
+        "Website Developer Pakistan"
+      ],
+      ogImage: ""
+    }
+  },
+  {
     id: "srv-web",
     title: "Modern Web Development",
     slug: "modern-web-development",
-    shortDescription: "Building fast, responsive, and user-friendly websites using React, Next.js, HTML, CSS, and JavaScript.",
-    description: "Developing clean, modern web applications and websites that load quickly, look great on all devices, and solve practical business needs. Built with clean code standards and mobile-first responsiveness.",
+    shortDescription: "Custom, ultra-fast web applications and bespoke portals engineered with React, Next.js, and TypeScript.",
+    description: "For companies and platforms requiring bespoke web applications, interactive dashboards, dynamic database integrations, or headless architectures, I engineer high-performance web solutions using React, Next.js, and TypeScript. From edtech portals to corporate platforms, every build guarantees sub-second page loads, ironclad security, and scalable infrastructure.",
+    heroTagline: "Custom web applications engineered with Next.js, React, and robust API backends.",
     icon: "Layers",
-    deliverables: [
-      "Responsive UI & Mobile-First Design",
-      "Clean React & Next.js Components",
-      "API Integrations & Dynamic Data",
-      "Speed & Core Web Vitals Optimization",
-      "Cross-Browser Compatibility Testing"
-    ],
-    technologies: ["Next.js", "React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+    pricingStart: "Custom Quote",
+    turnaround: "14–30 Business Days",
     featured: true,
-    order: 1,
+    order: 2,
+    targetAudience: [
+      "Tech Startups & SaaS Ventures",
+      "Educational Institutions & Online Academies",
+      "Corporate Enterprises & Agribusiness Organizations",
+      "Platforms Requiring Multi-User Portals & Dashboards"
+    ],
+    deliverables: [
+      "Custom Next.js App Router Architecture",
+      "Dynamic Relational Database (MySQL / PostgreSQL)",
+      "RESTful API & Third-Party Service Integrations",
+      "Authentication & Role-Based Access Control",
+      "Core Web Vitals 95+ Performance Tuning",
+      "Automated CI/CD Deployment on Vercel / Cloud"
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Node.js", "MySQL", "Tailwind CSS", "Redis"],
+    whyChooseUs: [
+      "Clean, modular TypeScript code with zero unnecessary dependencies.",
+      "Engineered for sub-second speeds, top Lighthouse scores, and effortless scalability.",
+      "Extensive experience building federal-level portals (LDDB) and global platforms (Alqadir Quran Academy)."
+    ],
+    processSteps: [
+      { step: "01", title: "Architecture & Data Modeling", description: "We define database entities, user roles, security rules, and system workflows." },
+      { step: "02", title: "UI/UX Design & Component System", description: "Design a luxury, responsive user interface with modular reusable components." },
+      { step: "03", title: "Full-Stack Development", description: "Build frontend client components, server actions, database queries, and API endpoints." },
+      { step: "04", title: "Stress Testing & Cloud Launch", description: "Conduct security auditing, load tests, SEO verification, and production edge deployment." }
+    ],
+    geoSummary: "M Ramzan develops custom modern web applications in Pakistan using React, Next.js, TypeScript, and MySQL for edtech, public sector, and enterprise clients.",
+    faq: [
+      {
+        id: "faq-mwd-1",
+        question: "Why choose Next.js and React over generic page builders?",
+        answer: "Next.js provides unmatched performance through server-side rendering (SSR) and edge caching, resulting in instant page loads, superior SEO scores, and custom functionality that generic builders cannot support."
+      },
+      {
+        id: "faq-mwd-2",
+        question: "Can you build custom portals with user logins and payments?",
+        answer: "Yes. I develop secure multi-tier user dashboards, student/customer portals, automated billing systems, and payment gateway integrations."
+      }
+    ],
+    relatedProjects: ["alqadir-quran-academy", "ziva-ideatech", "lddb", "pscdc"],
+    seo: {
+      title: "Modern Web Development Pakistan — Custom Next.js & React Solutions | M Ramzan",
+      description: "Custom web development services in Pakistan: Next.js, React, TypeScript, database architecture, and API integration by full-stack developer M Ramzan.",
+      keywords: [
+        "Modern Web Development Pakistan",
+        "Next.js Developer Pakistan",
+        "React Developer Pakistan",
+        "Custom Web Application Pakistan",
+        "Full Stack Developer Pakistan",
+        "Web Portal Development"
+      ],
+      ogImage: ""
+    }
   },
   {
     id: "srv-wordpress",
     title: "WordPress & CMS Solutions",
     slug: "wordpress-cms-solutions",
-    shortDescription: "Custom WordPress websites, theme customization, plugin setups, and easy content management.",
-    description: "Delivering practical WordPress websites and CMS solutions that allow business owners to update content easily without technical headaches. Perfect for corporate sites, blogs, and online stores.",
+    shortDescription: "Custom WordPress websites, WooCommerce stores, theme customization, and user-friendly content management.",
+    description: "WordPress powers over 40% of the web for a reason: it gives business owners full autonomy over their content without ongoing developer expenses. I create clean, secure, and fast WordPress websites tailored to your exact business needs — complete with WooCommerce online shopping, custom post types, easy visual editing, and zero plugin bloat.",
+    heroTagline: "Manage your own business website with confidence — fast, secure, and easy to edit.",
     icon: "LayoutDashboard",
-    deliverables: [
-      "Custom WordPress Theme Setup & Styling",
-      "Plugin Configuration & Form Integrations",
-      "Responsive Layouts for Mobile & Tablet",
-      "Content Migration & Blog Setup",
-      "Speed, Security & Regular Maintenance Setup"
-    ],
-    technologies: ["WordPress", "PHP", "MySQL", "HTML/CSS", "WooCommerce"],
+    pricingStart: "PKR 35,000",
+    turnaround: "7–14 Business Days",
     featured: true,
-    order: 2,
+    order: 3,
+    targetAudience: [
+      "E-Commerce Retailers & Product Sellers",
+      "Corporate Companies & Consulting Firms",
+      "Non-Profit Foundations & Charities",
+      "Bloggers, Publishers & News Portals"
+    ],
+    deliverables: [
+      "Custom Theme Setup & Clean Styling",
+      "WooCommerce E-Commerce & Product Catalog",
+      "Visual Page Builder or Gutenberg Block System",
+      "Speed Optimization & Caching Configuration",
+      "Security Hardening & Automated Backup Setup",
+      "Client Video Tutorial for Easy Content Editing"
+    ],
+    technologies: ["WordPress", "PHP", "MySQL", "WooCommerce", "Rank Math SEO", "HTML5/CSS3"],
+    whyChooseUs: [
+      "No slow, bloated themes. I configure lean, optimized WordPress setups that load under 1.5 seconds.",
+      "Complete handover with recorded walkthroughs so you never feel locked out of your own site.",
+      "Proven track record delivering major WordPress platforms including LDDB.pk, SamadBrothers.pk, and AnwarulQuran.org.pk."
+    ],
+    processSteps: [
+      { step: "01", title: "Theme Strategy & Content Architecture", description: "Select or craft the optimal theme structure and organize your service/product taxonomy." },
+      { step: "02", title: "Setup & Visual Customization", description: "Configure pages, product catalogs, contact forms, and custom branding." },
+      { step: "03", title: "Plugins, Security & Speed Tuning", description: "Install essential plugins, configure caching, image optimization, and anti-spam protection." },
+      { step: "04", title: "Training & Handover", description: "Deliver your admin access along with simple video guidance on updating text, images, and products." }
+    ],
+    geoSummary: "M Ramzan builds fast, secure WordPress websites and WooCommerce stores in Pakistan with custom theme styling, SEO optimization, and easy client management.",
+    faq: [
+      {
+        id: "faq-wp-1",
+        question: "Can I update text, images, and prices myself without coding?",
+        answer: "Yes, absolutely. WordPress provides an intuitive dashboard where you can easily edit text, add new blog posts, upload photos, and update product pricing in minutes."
+      },
+      {
+        id: "faq-wp-2",
+        question: "Do you build online stores with WooCommerce?",
+        answer: "Yes. I configure complete WooCommerce e-commerce websites with product catalogs, shopping carts, WhatsApp order notifications, and local payment methods."
+      }
+    ],
+    relatedProjects: ["samad-brothers", "lddb", "anwarul-quran", "mico"],
+    seo: {
+      title: "WordPress & CMS Developer Pakistan — Custom Themes & WooCommerce | M Ramzan",
+      description: "Custom WordPress website development in Pakistan. Fast loading, easy to manage, WooCommerce stores, and corporate sites by M Ramzan. Starting PKR 35,000.",
+      keywords: [
+        "WordPress Developer Pakistan",
+        "WordPress Website Development Pakistan",
+        "WooCommerce Developer Pakistan",
+        "CMS Website Developer Pakistan",
+        "WordPress Customization Pakistan",
+        "Ecommerce Website Developer Pakistan"
+      ],
+      ogImage: ""
+    }
   },
   {
     id: "srv-mobile",
-    title: "Cross-Platform Mobile Apps",
+    title: "Cross-Platform Mobile Apps (Flutter)",
     slug: "mobile-apps-flutter",
-    shortDescription: "Developing clean, high-performance Android and iOS mobile applications with Flutter.",
-    description: "Building intuitive, smooth mobile apps using Google Flutter from a single codebase. Ideal for businesses and startups wanting cost-effective iOS and Android solutions with clean UI and API connectivity.",
+    shortDescription: "Clean, high-performance iOS and Android mobile applications developed from a single Flutter codebase.",
+    description: "Reach your customers on both iOS and Android without paying for two separate development teams. I build smooth, responsive, and native-feeling mobile applications using Google Flutter. Every app features clean UI components, offline caching, secure backend API integrations, and complete readiness for App Store and Google Play distribution.",
+    heroTagline: "Cross-platform mobile applications for iOS & Android built with Google Flutter.",
     icon: "Sparkles",
-    deliverables: [
-      "Cross-Platform iOS & Android Apps",
-      "Clean Flutter UI & Intuitive Navigation",
-      "REST API & Backend Integration",
-      "State Management & Local Storage",
-      "App Store & Play Store Deployment Readiness"
-    ],
-    technologies: ["Flutter", "Dart", "Firebase", "REST APIs", "Mobile UI"],
+    pricingStart: "Custom Quote",
+    turnaround: "21–45 Business Days",
     featured: true,
-    order: 3,
+    order: 4,
+    targetAudience: [
+      "Startups Launching Mobile MVPs",
+      "Businesses Needing Client Booking Apps",
+      "E-Commerce Brands Wanting Mobile Shopping",
+      "Educational & Community Platforms"
+    ],
+    deliverables: [
+      "Dual iOS & Android Native-Compiled Builds",
+      "Fluid 60fps Flutter UI & Custom Animations",
+      "RESTful API & Firebase Cloud Backend Integration",
+      "Push Notifications & User Authentication",
+      "Offline SQLite / Hive Local Storage",
+      "Google Play Store & Apple App Store Submission Support"
+    ],
+    technologies: ["Flutter", "Dart", "Firebase", "REST APIs", "Provider / Riverpod", "SQLite"],
+    whyChooseUs: [
+      "Save up to 50% in development and maintenance costs compared to separate Swift and Kotlin codebases.",
+      "Fast, fluid performance with native rendering on both Apple and Android devices.",
+      "Clean architecture with well-documented state management for future expansion."
+    ],
+    processSteps: [
+      { step: "01", title: "App Wireframing & Screen Flows", description: "Map out user onboarding, navigation hierarchies, and key conversion paths." },
+      { step: "02", title: "Flutter UI Engineering", description: "Build pixel-perfect screens adhering to Material 3 and iOS Human Interface guidelines." },
+      { step: "03", title: "Backend & API Connectivity", description: "Connect authentication, real-time database endpoints, and cloud notifications." },
+      { step: "04", title: "Testing & Store Deployment", description: "Conduct multi-device QA testing and prepare release packages for Google Play and App Store." }
+    ],
+    geoSummary: "M Ramzan develops cross-platform Flutter mobile applications in Pakistan for iOS and Android with custom UI, Firebase backends, and App Store publishing.",
+    faq: [
+      {
+        id: "faq-fl-1",
+        question: "Does Flutter work equally well on both iPhone and Android?",
+        answer: "Yes. Flutter compiles directly to native ARM machine code on both platforms, providing native 60fps/120fps performance, fluid scrolling, and platform-specific styling."
+      },
+      {
+        id: "faq-fl-2",
+        question: "Will you help upload the app to Google Play Store and Apple App Store?",
+        answer: "Yes, I guide and manage the build generation, store asset preparation, and deployment process to ensure your app passes store reviews."
+      }
+    ],
+    relatedProjects: ["alqadir-quran-academy", "pscdc"],
+    seo: {
+      title: "Flutter App Developer Pakistan — iOS & Android Mobile Apps | M Ramzan",
+      description: "Cross-platform mobile app development in Pakistan with Google Flutter. Build high-performance iOS and Android apps with a single codebase. Free consultation.",
+      keywords: [
+        "Flutter Developer Pakistan",
+        "Mobile App Development Pakistan",
+        "iOS and Android App Developer",
+        "Cross Platform App Developer Pakistan",
+        "Flutter Mobile Apps"
+      ],
+      ogImage: ""
+    }
   },
   {
     id: "srv-seo",
-    title: "SEO, AEO & Web Optimization",
+    title: "SEO, AEO & Search Optimization",
     slug: "seo-aeo-web-optimization",
-    shortDescription: "Improving search rankings, AI answer visibility (ChatGPT / Google / Perplexity), and website load speeds.",
-    description: "Optimizing website structure, semantic HTML, meta tags, and structured schemas (JSON-LD) so potential clients and modern search engines can find and understand your business.",
+    shortDescription: "Boost visibility across Google Search, Bing Copilot, ChatGPT Search, and AI answer engines.",
+    description: "A beautiful website is useless if potential clients cannot find it. I optimize your website's technical architecture, on-page content, and structured JSON-LD schemas so search engines and modern AI answer engines (Google AI Overviews, ChatGPT Search, Bing Copilot, Perplexity) easily understand your business, rank your services, and cite your brand.",
+    heroTagline: "Engineered search visibility for both human searchers and AI-powered answer engines.",
     icon: "Wand2",
-    deliverables: [
-      "On-Page SEO & Meta Tag Optimization",
-      "JSON-LD Structured Data (Schema.org)",
-      "Answer Engine Optimization (AEO)",
-      "Speed Optimization & Clean Code Standards",
-      "XML Sitemap & Search Console Setup"
-    ],
-    technologies: ["Schema.org", "JSON-LD", "Google Search Console", "Semantic HTML5", "SEO Best Practices"],
+    pricingStart: "PKR 25,000",
+    turnaround: "5–10 Business Days",
     featured: true,
-    order: 4,
+    order: 5,
+    targetAudience: [
+      "Local Businesses Seeking High Google Rankings",
+      "SMEs In Need of Search Console & Indexing Fixes",
+      "Websites Suffering from Slow Load Times",
+      "Brands Wanting AI Search Citations & AEO Setup"
+    ],
+    deliverables: [
+      "Complete Technical SEO & Crawlability Audit",
+      "Schema.org JSON-LD Structured Data Implementation",
+      "Answer Engine Optimization (AEO) & FAQ Formatting",
+      "Page Speed & Core Web Vitals Optimization",
+      "XML Sitemap, robots.txt & Google Search Console Setup",
+      "Targeted Meta Title & Meta Description Strategy"
+    ],
+    technologies: ["Schema.org", "JSON-LD", "Google Search Console", "Bing Webmaster Tools", "Lighthouse", "Semantic HTML5"],
+    whyChooseUs: [
+      "100% white-hat techniques strictly following Google and Bing Webmaster Guidelines.",
+      "Forward-looking Generative Engine Optimization (GEO) ensuring discovery in modern AI engines.",
+      "Clear, measurable improvements in site speed, Core Web Vitals, and indexability."
+    ],
+    processSteps: [
+      { step: "01", title: "Comprehensive SEO & Speed Audit", description: "Analyze existing rankings, indexation status, mobile speed, and structured data gaps." },
+      { step: "02", title: "On-Page & Semantic HTML Enhancement", description: "Optimize title tags, meta descriptions, heading structures, and keyword mapping." },
+      { step: "03", title: "Structured Data & Schema Injection", description: "Implement rich JSON-LD for LocalBusiness, FAQPage, Service, and Breadcrumbs." },
+      { step: "04", title: "Search Engine Verification & Monitoring", description: "Submit updated XML sitemaps to Google and Bing, resolving all crawl and index errors." }
+    ],
+    geoSummary: "M Ramzan provides technical SEO, Answer Engine Optimization (AEO), and Schema.org structured data services in Pakistan for SMEs and commercial businesses.",
+    faq: [
+      {
+        id: "faq-seo-1",
+        question: "What is AEO and GEO optimization?",
+        answer: "AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) format your website data and FAQs so that AI engines like ChatGPT, Google AI Overviews, and Bing Copilot can accurately understand and cite your business as a direct answer."
+      },
+      {
+        id: "faq-seo-2",
+        question: "Do you guarantee #1 ranking on Google?",
+        answer: "No ethical developer or agency guarantees #1 rankings because rankings depend on search engine algorithms and market competition. However, I guarantee technically flawless on-page SEO, valid Schema.org markup, and optimal crawlability to maximize your organic potential."
+      }
+    ],
+    relatedProjects: ["brites-security", "samad-brothers", "lddb"],
+    seo: {
+      title: "SEO & AI Search Optimization Pakistan — Google & AEO Services | M Ramzan",
+      description: "Technical SEO, Schema.org JSON-LD, Answer Engine Optimization (AEO), and Google Search Console optimization for Pakistani businesses by M Ramzan.",
+      keywords: [
+        "SEO Services Pakistan",
+        "Technical SEO Pakistan",
+        "AEO Optimization",
+        "Schema Markup Specialist Pakistan",
+        "Local SEO Pakistan",
+        "Website Speed Optimization"
+      ],
+      ogImage: ""
+    }
+  },
+  {
+    id: "srv-redesign",
+    title: "Website Redesign & Speed Optimization",
+    slug: "website-redesign",
+    shortDescription: "Transform slow, outdated websites into sleek, modern, mobile-friendly digital assets that convert.",
+    description: "If your current website is slow, looks dated on mobile phones, or fails to generate business inquiries, a professional redesign will restore your credibility. I modernize existing websites with fresh UI design, mobile-first responsiveness, cleaned up code, speed optimization, and seamless migration with zero loss in search ranking history.",
+    heroTagline: "Turn an outdated, slow website into a high-converting, modern digital presence.",
+    icon: "LayoutDashboard",
+    pricingStart: "PKR 35,000",
+    turnaround: "7–14 Business Days",
+    featured: true,
+    order: 6,
+    targetAudience: [
+      "Businesses with Outdated Websites Built Years Ago",
+      "Websites That Fail on Mobile Phones or Tablets",
+      "Slow Sites with Poor Lighthouse / PageSpeed Scores",
+      "Companies Changing Brand Identity or Offerings"
+    ],
+    deliverables: [
+      "Modern Luxury UI Redesign Matching Modern Standards",
+      "Full Mobile & Tablet Responsive Overhaul",
+      "Preservation of Existing URLs & Search Engine Rankings",
+      "Speed Acceleration & Image WebP Conversion",
+      "Streamlined WhatsApp & Inquiry Conversion Paths",
+      "301 Redirect Mapping (Zero Broken Links)"
+    ],
+    technologies: ["WordPress", "Next.js", "Tailwind CSS", "JavaScript", "PHP", "Core Web Vitals"],
+    whyChooseUs: [
+      "Careful 301 redirection and SEO preservation to protect your historical Google rankings.",
+      "Vastly superior visual aesthetics designed to impress visitors immediately.",
+      "Clear, reliable communication throughout the overhaul process."
+    ],
+    processSteps: [
+      { step: "01", title: "Existing Site Audit", description: "Review current content, existing indexed URLs, speed bottlenecks, and user friction points." },
+      { step: "02", title: "Modern Design Prototype", description: "Create a refreshed, modern visual layout that elevates your brand and improves readability." },
+      { step: "03", title: "Rebuild & Content Migration", description: "Reconstruct the website with clean code, updated imagery, and optimized assets." },
+      { step: "04", title: "Redirect Mapping & Launch", description: "Map all old URLs to new paths, test mobile responsiveness, and launch without downtime." }
+    ],
+    geoSummary: "M Ramzan provides website redesign, speed optimization, and SEO preservation services in Pakistan for outdated business websites.",
+    faq: [
+      {
+        id: "faq-rd-1",
+        question: "Will I lose my existing Google ranking if I redesign my website?",
+        answer: "No. When done properly with accurate 301 redirects, preserved URL structures, and improved page speeds, a redesign typically improves search visibility rather than harming it."
+      },
+      {
+        id: "faq-rd-2",
+        question: "Can you redesign my existing WordPress website without starting from scratch?",
+        answer: "Yes. I can update your existing WordPress theme, reorganize your layout, clean up old plugins, and modernize the visual design while keeping your existing database and content intact."
+      }
+    ],
+    relatedProjects: ["samad-brothers", "brites-security", "anwarul-quran"],
+    seo: {
+      title: "Website Redesign Services Pakistan — Modern UI & Speed Overhaul | M Ramzan",
+      description: "Upgrade your outdated website with a modern redesign, mobile responsiveness, speed optimization, and SEO ranking protection by M Ramzan.",
+      keywords: [
+        "Website Redesign Pakistan",
+        "Website Makeover Pakistan",
+        "Website Modernization",
+        "Speed Optimization Pakistan",
+        "WordPress Redesign",
+        "Web Developer Pakistan"
+      ],
+      ogImage: ""
+    }
   }
 ];
+
 
 export const initialSkills: SkillCategory[] = [
   {
@@ -983,7 +1320,7 @@ export const initialPages: Page[] = [
       title: "M RAMZAN — Web & Mobile App Developer",
       description: "Portfolio of M Ramzan. Explore real-world web and mobile projects built with WordPress, React, Next.js, Flutter, and modern APIs.",
       keywords: ["Web Developer", "WordPress Developer", "React Developer", "Next.js", "Flutter Developer", "M Ramzan"],
-      ogImage: "/images/og-default.jpg"
+      ogImage: ""
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
   },
@@ -1003,7 +1340,7 @@ export const initialPages: Page[] = [
       title: "About M Ramzan — Web & Mobile App Developer",
       description: "Biography, development principles, skills, and work experience of M Ramzan.",
       keywords: ["About M Ramzan", "Web Developer Bio", "WordPress Developer Background"],
-      ogImage: "/images/og-default.jpg"
+      ogImage: ""
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
   },
@@ -1023,7 +1360,7 @@ export const initialPages: Page[] = [
       title: "Services & Offerings — M RAMZAN",
       description: "Web development, WordPress customization, Flutter mobile app development, and SEO optimization services.",
       keywords: ["Web Development Services", "WordPress Services", "Flutter App Developer", "SEO Services"],
-      ogImage: "/images/og-default.jpg"
+      ogImage: ""
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
   },
@@ -1041,7 +1378,7 @@ export const initialPages: Page[] = [
       title: "Contact M Ramzan — Web & Mobile App Developer",
       description: "Get in touch with M Ramzan to discuss your website or mobile application project.",
       keywords: ["Contact Web Developer", "Hire WordPress Developer", "Hire Flutter Developer"],
-      ogImage: "/images/og-default.jpg"
+      ogImage: ""
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
   }

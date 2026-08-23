@@ -1,4 +1,5 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -6,50 +7,118 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> >>
 endobj
 4 0 obj
-<< /Length 749 >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 2455 >>
 stream
 BT
-/F1 18 Tf
-50 750 Td
-(M RAMZAN - Curriculum Vitae) Tj
-/F1 12 Tf
-0 -30 Td
-(Lead Full-Stack Architect & Creative Technologist) Tj
+/F2 22 Tf
+50 740 Td
+(M RAMZAN) Tj
+/F2 12 Tf
+0 -22 Td
+(Web & Mobile Application Developer) Tj
+/F1 10 Tf
+0 -16 Td
+(Location: Pakistan | Email: contact@mramzan.dev | Portfolio: https://mramzan.dev) Tj
+0 -15 Td
+(_________________________________________________________________________________) Tj
+/F2 12 Tf
+0 -24 Td
+(PROFESSIONAL SUMMARY) Tj
+/F1 10 Tf
+0 -15 Td
+(Practical, results-driven Web & Mobile Developer with 5+ years experience building) Tj
+0 -13 Td
+(responsive websites, custom WordPress CMS platforms, and cross-platform Flutter apps) Tj
+0 -13 Td
+(for Pakistani SMEs, startups, and international organizations.) Tj
+/F2 12 Tf
+0 -24 Td
+(CORE TECHNICAL EXPERTISE) Tj
+/F2 10 Tf
+0 -15 Td
+(Frontend & Web:) Tj
+/F1 10 Tf
+100 0 Td
+(React.js, Next.js 15, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS) Tj
+-100 -14 Td
+/F2 10 Tf
+(CMS & Backend:) Tj
+/F1 10 Tf
+100 0 Td
+(WordPress (Custom Themes, WooCommerce, ACF), PHP, MySQL, REST APIs) Tj
+-100 -14 Td
+/F2 10 Tf
+(Mobile & Tools:) Tj
+/F1 10 Tf
+100 0 Td
+(Google Flutter, Dart (iOS & Android), Git, Figma, Rank Math SEO) Tj
+-100 -14 Td
+/F2 12 Tf
 0 -20 Td
-(Email: mramzan4055@gmail.com | Portfolio: https://mramzan.dev) Tj
-0 -40 Td
-(Summary: Specializing in Next.js 15, Wasmer MySQL, Headless CMS, and Luxury UI Architecture.) Tj
-0 -30 Td
-(Core Competencies: Next.js 15, TypeScript, MySQL, Headless CMS, GEO Optimization) Tj
-0 -30 Td
-(Flagship Projects:) Tj
-0 -20 Td
-(- Brites Security Solutions: SIA ACS Manned Guarding Platform) Tj
-0 -20 Td
-(- Anwarul Quran Foundation: 2002 Legacy Islamic EdTech & Welfare) Tj
-0 -20 Td
-(- Livestock & Dairy Development Board: National AgTech Infrastructure) Tj
-0 -20 Td
-(- Alqadir Quran Academy: Global LMS in 24+ Countries) Tj
+(KEY DELIVERED PROJECTS) Tj
+/F2 10 Tf
+0 -15 Td
+(1. Livestock & Dairy Development Board (lddb.pk)) Tj
+/F1 9.5 Tf
+0 -13 Td
+(   Federal AgTech platform for Ministry of National Food Security. Built with WordPress & MySQL.) Tj
+/F2 10 Tf
+0 -15 Td
+(2. Brites Security Solutions (britessecurity.co.uk)) Tj
+/F1 9.5 Tf
+0 -13 Td
+(   SIA ACS UK Security platform with live MI5 threat level integration & officer screening.) Tj
+/F2 10 Tf
+0 -15 Td
+(3. Anwarul Quran Foundation (anwarulquran.org.pk)) Tj
+/F1 9.5 Tf
+0 -13 Td
+(   Islamic educational foundation portal with dual-campus management and welfare donation flows.) Tj
+/F2 10 Tf
+0 -15 Td
+(4. Alqadir Quran Academy (alqadirquranacademy.com)) Tj
+/F1 9.5 Tf
+0 -13 Td
+(   Global distance learning platform across 24+ countries with multi-timezone scheduling.) Tj
+/F2 10 Tf
+0 -15 Td
+(5. Samad Brothers (Islamabad)) Tj
+/F1 9.5 Tf
+0 -13 Td
+(   Commercial product catalog & quotation portal, significantly boosting client inquiries.) Tj
+/F2 12 Tf
+0 -22 Td
+(WEBSITE PACKAGES & SERVICES) Tj
+/F1 9.5 Tf
+0 -14 Td
+( - Starter Business Website: From PKR 30,000 | 3-5 Pages, Mobile Responsive, WhatsApp, SEO) Tj
+0 -13 Td
+( - Business Growth Website: From PKR 60,000 | 5-10 Pages, WordPress CMS, Blog, Custom UI) Tj
+0 -13 Td
+( - Custom Projects & Apps: Custom Quote | E-Commerce, Portals, Flutter Mobile Applications) Tj
 ET
 endstream
 endobj
-5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
-endobj
 xref
-0 6
+0 7
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000234 00000 n 
-00000001029 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000354 00000 n 
+0000000456 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 7 /Root 1 0 R >>
 startxref
-1109
+2963
 %%EOF

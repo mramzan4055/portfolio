@@ -3,13 +3,23 @@ import { Metadata } from "next";
 import { getProjects, getSiteSettings } from "@/lib/data/store";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { WorkPortfolioClient } from "@/components/projects/WorkPortfolioClient";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "Projects & Portfolio — Web & Mobile Applications",
-      description: "Explore the complete portfolio of web applications, WordPress websites, and Flutter mobile apps developed by M Ramzan.",
+      title: "Projects & Portfolio Showcase — Real Web & Mobile Applications | M Ramzan",
+      description: "Explore the verified portfolio of web applications, WordPress websites, civic platforms, and Flutter mobile apps developed by M Ramzan.",
+      keywords: [
+        "Portfolio Web Developer Pakistan",
+        "Website Case Studies",
+        "WordPress Portfolio Pakistan",
+        "React Next.js Portfolio",
+        "M Ramzan Projects",
+        "Livestock Board LDDB",
+        "Samad Brothers Website"
+      ],
       canonical: "/work",
     },
     settings
@@ -17,10 +27,23 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function WorkPage() {
-  const projects = await getProjects({ status: "published" });
+  const [projects, settings] = await Promise.all([
+    getProjects({ status: "published" }),
+    getSiteSettings(),
+  ]);
 
   return (
     <div className="pt-36 pb-28 min-h-screen">
+      {/* BreadcrumbList Schema */}
+      <JsonLd
+        type="breadcrumbs"
+        data={[
+          { name: "Home", url: "/" },
+          { name: "Selected Works & Portfolio", url: "/work" },
+        ]}
+        settings={settings}
+      />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-12">
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-3xl">
@@ -28,10 +51,10 @@ export default async function WorkPage() {
             Portfolio Showcase
           </span>
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight">
-            Selected Works & Projects
+            Selected Works & Real Case Studies
           </h1>
           <p className="text-platinum-300 text-base sm:text-lg font-light leading-relaxed">
-            A showcase of modern websites, WordPress portals, and mobile applications built with clean code and reliable technologies.
+            A verified showcase of modern websites, WordPress portals, civic platforms, and mobile applications built with clean code and reliable technologies.
           </p>
         </div>
 
@@ -41,3 +64,4 @@ export default async function WorkPage() {
     </div>
   );
 }
+

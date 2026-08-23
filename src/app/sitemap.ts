@@ -1,16 +1,17 @@
 import { MetadataRoute } from "next";
-import { getProjects, getPages, getSiteSettings } from "@/lib/data/store";
+import { getProjects, getServices, getPages, getSiteSettings } from "@/lib/data/store";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [projects, pages, settings] = await Promise.all([
+  const [projects, services, pages, settings] = await Promise.all([
     getProjects({ status: "published" }),
+    getServices(),
     getPages(),
     getSiteSettings(),
   ]);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || settings.siteUrl || "https://mramzan.dev";
 
-  // Static route definitions
+  // Static core route definitions
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}`,
@@ -27,8 +28,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${siteUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/packages`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${siteUrl}/about`,
@@ -40,11 +47,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
   ];
 
-  // Dynamic published project routes
+  // Dynamic dedicated service landing pages
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${siteUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
+  // Dynamic published project case study routes
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
     lastModified: new Date(project.updatedAt || project.createdAt),
@@ -52,5 +67,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: project.featured ? 0.9 : 0.8,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes];
 }
+

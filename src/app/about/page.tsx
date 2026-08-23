@@ -7,13 +7,22 @@ import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { SkillsMatrixVisualizer } from "@/components/about/SkillsMatrixVisualizer";
 import { Avatar } from "@/components/common/Avatar";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "About — Engineering Leadership & Philosophy",
-      description: "Biography, career milestones, technical philosophy, and entity knowledge graph of M Ramzan.",
+      title: "About M Ramzan — Web & Mobile App Developer | Pakistan",
+      description: "Learn about M Ramzan, a web and mobile developer based in Pakistan building responsive websites and apps for small businesses using WordPress, React, Next.js, and Flutter.",
+      keywords: [
+        "About M Ramzan",
+        "Web Developer Pakistan",
+        "Frontend Developer Pakistan",
+        "WordPress Specialist Pakistan",
+        "Flutter Developer Pakistan",
+        "M Ramzan Background"
+      ],
       canonical: "/about",
     },
     settings
@@ -29,6 +38,17 @@ export default async function AboutPage() {
 
   return (
     <div className="pt-36 pb-28 min-h-screen">
+      {/* Structured Data: Person & BreadcrumbList */}
+      <JsonLd type="person" settings={settings} />
+      <JsonLd
+        type="breadcrumbs"
+        data={[
+          { name: "Home", url: "/" },
+          { name: "About M Ramzan", url: "/about" },
+        ]}
+        settings={settings}
+      />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-20">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -58,6 +78,9 @@ export default async function AboutPage() {
 
               <a
                 href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="M-Ramzan-Resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-full glass-panel hover:border-white/20 text-platinum-300 hover:text-white text-xs font-mono transition-all"
               >
                 <Download className="w-4 h-4 text-[#dfb15b]" />

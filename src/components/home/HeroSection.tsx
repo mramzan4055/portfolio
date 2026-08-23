@@ -164,7 +164,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
 
                 <Image
                   src="/images/profile.jpg"
-                  alt="M Ramzan — Web Developer"
+                  alt="M Ramzan — Website and Mobile Application Developer in Pakistan"
                   width={340}
                   height={420}
                   priority

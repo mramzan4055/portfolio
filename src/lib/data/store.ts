@@ -330,6 +330,12 @@ export async function getServices(): Promise<ServiceItem[]> {
   return [...(db.services || [])].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
+export async function getServiceBySlug(slug: string): Promise<ServiceItem | null> {
+  const db = getLocalData();
+  return (db.services || []).find((s) => s.slug === slug) || null;
+}
+
+
 export async function getSkills(): Promise<SkillCategory[]> {
   const db = getLocalData();
   return db.skills || [];

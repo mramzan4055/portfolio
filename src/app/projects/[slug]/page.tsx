@@ -27,6 +27,11 @@ interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+  const projects = await getProjects({ status: "published" });
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
 export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
   const [project, settings] = await Promise.all([
@@ -311,16 +316,34 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 <h4 className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
                   Services Provided
                 </h4>
-                <div className="flex flex-col gap-2">
-                  {(project.services || []).map((s, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-platinum-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#dfb15b]" />
-                      <span>{s}</span>
-                    </div>
-                  ))}
+                <div className="flex flex-col gap-2.5">
+                  {(project.services || []).map((s, idx) => {
+                    let serviceLink = "/services";
+                    const sLower = s.toLowerCase();
+                    if (sLower.includes("wordpress") || sLower.includes("cms")) serviceLink = "/services/wordpress-cms-solutions";
+                    else if (sLower.includes("seo")) serviceLink = "/services/seo-aeo-web-optimization";
+                    else if (sLower.includes("mobile") || sLower.includes("flutter")) serviceLink = "/services/mobile-apps-flutter";
+                    else if (sLower.includes("business") || sLower.includes("ecommerce") || sLower.includes("e-commerce")) serviceLink = "/services/small-business-websites";
+                    else if (sLower.includes("web development") || sLower.includes("portal")) serviceLink = "/services/modern-web-development";
+
+                    return (
+                      <Link
+                        key={idx}
+                        href={serviceLink}
+                        className="flex items-center justify-between text-xs text-platinum-300 hover:text-[#dfb15b] transition-colors group"
+                      >
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#dfb15b]" />
+                          <span>{s}</span>
+                        </div>
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#dfb15b]" />
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
+
           </div>
         </div>
 

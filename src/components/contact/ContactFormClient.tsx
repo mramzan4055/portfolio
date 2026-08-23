@@ -21,11 +21,21 @@ export function ContactFormClient() {
     setStatus("submitting");
 
     try {
-      const res = await fetch("/api/contact", {
+      // 1. Try Next.js API route first
+      let res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      // 2. Fallback to /contact.php on cPanel / static Apache environments
+      if (!res.ok) {
+        res = await fetch("/contact.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+      }
 
       if (res.ok) {
         setStatus("success");
@@ -33,7 +43,20 @@ export function ContactFormClient() {
         setStatus("error");
       }
     } catch {
-      setStatus("error");
+      try {
+        const phpRes = await fetch("/contact.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        if (phpRes.ok) {
+          setStatus("success");
+        } else {
+          setStatus("error");
+        }
+      } catch {
+        setStatus("error");
+      }
     }
   };
 
@@ -238,7 +261,7 @@ export function ContactFormClient() {
       <p className="text-center text-xs text-platinum-500 font-mono">
         Prefer to chat?{" "}
         <a
-          href="https://wa.me/923000000000?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20website%20project."
+          href="https://wa.me/923096734231?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20website%20project."
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#25D366] hover:underline inline-flex items-center gap-1"

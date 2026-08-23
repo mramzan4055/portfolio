@@ -56,9 +56,10 @@ export default async function RootLayout({
       className={`${sansFont.variable} ${displayFont.variable} ${serifFont.variable} ${monoFont.variable} dark`}
     >
       <body className="bg-[#08080a] text-[#f4f4f7] min-h-screen flex flex-col antialiased selection:bg-[#dfb15b] selection:text-black">
-        {/* Structured Data: Person & WebSite */}
+        {/* Structured Data: Person, WebSite & ProfessionalService */}
         <JsonLd type="person" settings={settings} />
         <JsonLd type="website" settings={settings} />
+        <JsonLd type="professionalService" settings={settings} />
 
         {/* Reading Progress Bar */}
         <ReadingProgress />

@@ -63,7 +63,7 @@ export function TestimonialsSection() {
               <span>Client Testimonials & Social Proof</span>
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-              Trusted by Engineering Leaders
+              Trusted by Real Pakistani Businesses
             </h2>
           </div>
 

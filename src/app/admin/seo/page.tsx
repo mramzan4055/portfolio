@@ -243,8 +243,53 @@ export default function AdminSeoPage() {
               />
             </div>
           </div>
+
+          {/* Search Engine Verification Fields */}
+          <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-4">
+            <h3 className="text-sm font-display font-bold text-white">
+              Search Console & Engine Verifications
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-mono uppercase text-platinum-400">
+                  Google Search Console Verification Code
+                </label>
+                <input
+                  type="text"
+                  value={settings.analytics?.googleSearchConsoleId || ""}
+                  onChange={(e) =>
+                    setSettings({
+                      ...settings,
+                      analytics: { ...settings.analytics, googleSearchConsoleId: e.target.value },
+                    })
+                  }
+                  placeholder="e.g. google-site-verification code"
+                  className="px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white font-mono focus:outline-none focus:border-[#dfb15b]"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-mono uppercase text-platinum-400">
+                  Bing Webmaster Tools Verification Code
+                </label>
+                <input
+                  type="text"
+                  value={settings.analytics?.bingVerificationId || ""}
+                  onChange={(e) =>
+                    setSettings({
+                      ...settings,
+                      analytics: { ...settings.analytics, bingVerificationId: e.target.value },
+                    })
+                  }
+                  placeholder="e.g. msvalidate.01 code"
+                  className="px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white font-mono focus:outline-none focus:border-[#dfb15b]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )}
+
     </div>
   );
 }

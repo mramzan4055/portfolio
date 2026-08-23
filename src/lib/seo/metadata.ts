@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { SiteSettings, Project } from "@/types";
+import { SiteSettings, Project, ServiceItem } from "@/types";
 import { initialSiteSettings } from "@/data/seed";
 
 export function generateSiteMetadata(
@@ -10,6 +10,7 @@ export function generateSiteMetadata(
     ogImage?: string;
     canonical?: string;
     noIndex?: boolean;
+    type?: "website" | "article" | "profile";
   },
   settings: SiteSettings = initialSiteSettings
 ): Metadata {
@@ -18,6 +19,19 @@ export function generateSiteMetadata(
   const description = pageMeta?.description || settings.seo.defaultDescription;
   const ogImage = pageMeta?.ogImage || settings.seo.defaultOgImage;
   const canonical = pageMeta?.canonical ? `${siteUrl}${pageMeta.canonical}` : siteUrl;
+
+  const googleVerification = settings.analytics?.googleSearchConsoleId || process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+  const bingVerification = settings.analytics?.bingVerificationId || process.env.NEXT_PUBLIC_BING_VERIFICATION;
+
+  const verification: Metadata["verification"] = {};
+  if (googleVerification) {
+    verification.google = googleVerification;
+  }
+  if (bingVerification) {
+    verification.other = {
+      "msvalidate.01": bingVerification,
+    };
+  }
 
   return {
     title: {
@@ -33,7 +47,7 @@ export function generateSiteMetadata(
       canonical,
     },
     openGraph: {
-      type: "website",
+      type: pageMeta?.type || "website",
       locale: "en_US",
       url: canonical,
       title,
@@ -66,19 +80,40 @@ export function generateSiteMetadata(
         "max-snippet": -1,
       },
     },
+    verification,
   };
 }
 
 export function generateProjectMetadata(project: Project, settings: SiteSettings = initialSiteSettings): Metadata {
   return generateSiteMetadata(
     {
-      title: project.seo.title || `${project.title} — Case Study`,
-      description: project.seo.description || project.shortDescription,
-      keywords: project.seo.keywords,
-      ogImage: project.seo.ogImage || project.heroImage,
+      title: project.seo?.title || `${project.title} — Case Study`,
+      description: project.seo?.description || project.shortDescription,
+      keywords: project.seo?.keywords,
+      ogImage: project.seo?.ogImage || project.heroImage,
       canonical: `/projects/${project.slug}`,
       noIndex: project.status === "draft",
     },
     settings
   );
 }
+
+export function generateServiceMetadata(service: ServiceItem, settings: SiteSettings = initialSiteSettings): Metadata {
+  return generateSiteMetadata(
+    {
+      title: service.seo?.title || `${service.title} — Web Development Services in Pakistan`,
+      description: service.seo?.description || service.shortDescription || service.description,
+      keywords: service.seo?.keywords || [
+        service.title,
+        `${service.title} Pakistan`,
+        "Web Developer Pakistan",
+        "Small Business Website Pakistan",
+        "Website Development",
+      ],
+      ogImage: service.seo?.ogImage || "/opengraph-image",
+      canonical: `/services/${service.slug}`,
+    },
+    settings
+  );
+}
+
