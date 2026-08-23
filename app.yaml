@@ -1,4 +1,6 @@
 name: portfolio
 package: mramzan4055/portfolio
 domains:
+  - mramzan.dev
+  - www.mramzan.dev
   - portfolio.wasmer.app

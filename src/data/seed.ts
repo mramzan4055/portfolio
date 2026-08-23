@@ -11,13 +11,13 @@ export const initialSiteSettings: SiteSettings = {
   authorBio: "Specializing in the intersection of rigorous engineering, refined editorial aesthetics, and high-performance web architecture. Creator of enterprise CMS platforms, bespoke web applications, and generative AI systems.",
   authorLocation: "Global / Remote",
   authorEmail: "contact@mramzan.dev",
-  authorPhone: "+1 (555) 019-2834",
-  availabilityStatus: "Available for Q1/Q2 Projects",
+  authorPhone: "+92 (300) 000-0000",
+  availabilityStatus: "Available for Projects",
   socialLinks: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
-    dribbble: "https://dribbble.com",
+    github: "https://github.com/mramzan4055",
+    linkedin: "https://linkedin.com/in/mramzan",
+    twitter: "https://twitter.com/mramzandev",
+    dribbble: "https://dribbble.com/mramzan",
   },
   seo: {
     defaultTitle: "M RAMZAN — Full-Stack Architect & Creative Technologist",
@@ -42,6 +42,7 @@ export const initialSiteSettings: SiteSettings = {
     googleSearchConsoleId: "",
   },
 };
+
 
 export const initialProjects: Project[] = [
   {

@@ -167,7 +167,7 @@ export interface SiteSettings {
   authorLocation: string;
   authorEmail: string;
   authorPhone?: string;
-  availabilityStatus: "Available for Q1/Q2 Projects" | "Selectively Available" | "Booked";
+  availabilityStatus: "Available for Q1/Q2 Projects" | "Available for Projects" | "Selectively Available" | "Open to Work" | "Booked";
   
   socialLinks: {
     github?: string;
