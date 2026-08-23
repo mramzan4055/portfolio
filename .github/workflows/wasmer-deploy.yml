@@ -1,0 +1,40 @@
+name: Deploy to Wasmer Edge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and Deploy to Wasmer
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://portfolio.wasmer.app' }}
+          ADMIN_SECRET_KEY: ${{ secrets.ADMIN_SECRET_KEY || 'luxury_portfolio_admin_secret_key_2026' }}
+
+      - name: Setup Wasmer CLI
+        uses: wasmerio/setup-wasmer@v2
+
+      - name: Deploy to Wasmer Edge
+        if: env.WASMER_TOKEN != ''
+        run: wasmer deploy --token="${{ secrets.WASMER_TOKEN }}" --no-persist-id
+        env:
+          WASMER_TOKEN: ${{ secrets.WASMER_TOKEN }}

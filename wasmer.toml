@@ -1,0 +1,21 @@
+[package]
+name = "mramzan4055/portfolio"
+version = "0.1.0"
+description = "Ultra-Luxury Portfolio Platform"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+"wasmer/static-web-server" = "^1.2"
+
+[fs]
+"/public" = "public"
+"/out" = "out"
+
+[[command]]
+name = "webserver"
+module = "wasmer/static-web-server:webserver"
+runner = "https://webc.org/runner/wasi"
+
+[command.webserver.annotations.wasi]
+main-args = ["-w", "/public", "--port", "8080", "--page-fallback", "/public/index.html"]
