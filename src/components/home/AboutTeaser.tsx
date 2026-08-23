@@ -32,9 +32,25 @@ export function AboutTeaser({ settings }: AboutTeaserProps) {
           >
             <div className="glass-panel-elevated p-8 sm:p-10 rounded-3xl relative z-10 flex flex-col gap-8">
               <div className="flex items-center gap-3">
-                <span className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#dfb15b] to-[#a27429] flex items-center justify-center font-bold text-black text-lg shadow-gold">
-                  MR
-                </span>
+                <div className="w-14 h-14 rounded-2xl overflow-hidden bg-gradient-to-br from-[#dfb15b] to-[#a27429] shadow-gold flex-shrink-0">
+                  <img
+                    src="/images/profile.jpg"
+                    alt="M Ramzan — Full-Stack Architect"
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = "none";
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                  />
+                  <span
+                    className="w-full h-full hidden items-center justify-center font-bold text-black text-lg"
+                    aria-hidden="true"
+                  >
+                    MR
+                  </span>
+                </div>
                 <div>
                   <h3 className="font-display font-bold text-lg text-white">
                     {settings.authorName}

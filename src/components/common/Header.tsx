@@ -59,9 +59,22 @@ export function Header({
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#dfb15b] to-[#a27429] flex items-center justify-center font-bold text-black text-sm tracking-wider shadow-gold group-hover:scale-105 transition-transform">
-            MR
-          </span>
+          <div className="w-8 h-8 rounded-lg overflow-hidden bg-gradient-to-br from-[#dfb15b] to-[#a27429] flex items-center justify-center shadow-gold group-hover:scale-105 transition-transform flex-shrink-0">
+            <img
+              src="/images/profile.jpg"
+              alt="M Ramzan"
+              className="w-full h-full object-cover object-top"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                target.style.display = "none";
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = "flex";
+              }}
+            />
+            <span className="w-full h-full hidden items-center justify-center font-bold text-black text-sm tracking-wider">
+              MR
+            </span>
+          </div>
           <div className="flex flex-col">
             <span className="font-display font-bold text-sm tracking-widest text-white uppercase group-hover:text-[#dfb15b] transition-colors">
               {authorName}
