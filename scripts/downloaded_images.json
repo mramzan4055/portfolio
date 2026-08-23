@@ -1,0 +1,72 @@
+{
+  "alqadir-quran-academy": {
+    "gallery": [
+      "/images/projects/alqadir-quran-academy/gallery-1.webp",
+      "/images/projects/alqadir-quran-academy/gallery-2.webp",
+      "/images/projects/alqadir-quran-academy/gallery-3.webp"
+    ],
+    "hero": "/images/projects/alqadir-quran-academy/hero.webp",
+    "thumbnail": "/images/projects/alqadir-quran-academy/thumbnail.png"
+  },
+  "ahtsham-ul-haq": {
+    "gallery": [
+      "/images/projects/ahtsham-ul-haq/gallery-1.webp",
+      "/images/projects/ahtsham-ul-haq/gallery-2.jpeg",
+      "/images/projects/ahtsham-ul-haq/gallery-3.jpg"
+    ],
+    "hero": "/images/projects/ahtsham-ul-haq/hero.jpg",
+    "thumbnail": "/images/projects/ahtsham-ul-haq/thumbnail.jpeg"
+  },
+  "ziva-ideatech": {
+    "gallery": [
+      "/images/projects/ziva-ideatech/gallery-1.webp",
+      "/images/projects/ziva-ideatech/gallery-2.webp",
+      "/images/projects/ziva-ideatech/gallery-3.webp"
+    ],
+    "hero": "/images/projects/ziva-ideatech/hero.webp",
+    "thumbnail": "/images/projects/ziva-ideatech/thumbnail.webp"
+  },
+  "samad-brothers": {
+    "gallery": [
+      "/images/projects/samad-brothers/gallery-1.png",
+      "/images/projects/samad-brothers/gallery-2.png",
+      "/images/projects/samad-brothers/gallery-3.png"
+    ],
+    "hero": "/images/projects/samad-brothers/hero.png",
+    "thumbnail": "/images/projects/samad-brothers/thumbnail.png"
+  },
+  "abm-foundation": {
+    "gallery": [
+      "/images/projects/abm-foundation/gallery-1.jpg",
+      "/images/projects/abm-foundation/gallery-2.jpg",
+      "/images/projects/abm-foundation/gallery-3.jpg"
+    ],
+    "hero": "/images/projects/abm-foundation/hero.jpg",
+    "thumbnail": "/images/projects/abm-foundation/thumbnail.jpg"
+  },
+  "mico": {
+    "gallery": [
+      "/images/projects/mico/gallery-1.webp",
+      "/images/projects/mico/gallery-2.webp",
+      "/images/projects/mico/gallery-3.webp"
+    ],
+    "hero": "/images/projects/mico/hero.webp",
+    "thumbnail": "/images/projects/mico/thumbnail.webp"
+  },
+  "anwarul-quran": {
+    "gallery": [
+      "/images/projects/anwarul-quran/gallery-1.jpeg",
+      "/images/projects/anwarul-quran/gallery-2.jpeg",
+      "/images/projects/anwarul-quran/gallery-3.jpeg"
+    ],
+    "hero": "/images/projects/anwarul-quran/hero.jpeg",
+    "thumbnail": "/images/projects/anwarul-quran/thumbnail.jpeg"
+  },
+  "pscdc": {
+    "gallery": [
+      "/images/projects/pscdc/gallery-1.jpeg"
+    ],
+    "hero": "/images/projects/pscdc/hero.jpeg",
+    "thumbnail": "/images/projects/pscdc/thumbnail.jpeg"
+  }
+}

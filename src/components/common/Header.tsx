@@ -6,24 +6,27 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Avatar } from "@/components/common/Avatar";
 
 interface HeaderProps {
-  authorName?: string;
-  availabilityStatus?: string;
+  authorName: string;
+  availabilityStatus: string;
 }
 
-export function Header({
-  authorName = "M RAMZAN",
-  availabilityStatus = "Available for Q1/Q2 Projects",
-}: HeaderProps) {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+export function Header({ authorName, availabilityStatus }: HeaderProps) {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,10 +37,10 @@ export function Header({
   }, [pathname]);
 
   const navLinks = [
-    { name: "Work", href: "/work" },
-    { name: "Services", href: "/services" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { label: "Selected Works", href: "/work" },
+    { label: "Capabilities", href: "/services" },
+    { label: "About & Principles", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   // Don't render public header on admin subpages if desired, but show a clean link to admin
@@ -49,32 +52,16 @@ export function Header({
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-[#09090d]/80 backdrop-blur-md border-b border-white/[0.06] py-3.5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#08080a]/80 backdrop-blur-xl border-b border-white/[0.06] py-3.5"
           : "bg-transparent py-6"
-      )}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg overflow-hidden bg-gradient-to-br from-[#dfb15b] to-[#a27429] flex items-center justify-center shadow-gold group-hover:scale-105 transition-transform flex-shrink-0">
-            <img
-              src="/images/profile.jpg"
-              alt="M Ramzan"
-              className="w-full h-full object-cover object-top"
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                target.style.display = "none";
-                const fallback = target.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = "flex";
-              }}
-            />
-            <span className="w-full h-full hidden items-center justify-center font-bold text-black text-sm tracking-wider">
-              MR
-            </span>
-          </div>
+          <Avatar size={36} className="w-8 h-8 rounded-lg group-hover:scale-105 transition-transform" />
           <div className="flex flex-col">
             <span className="font-display font-bold text-sm tracking-widest text-white uppercase group-hover:text-[#dfb15b] transition-colors">
               {authorName}
@@ -91,7 +78,7 @@ export function Header({
             const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
             return (
               <Link
-                key={link.name}
+                key={link.label}
                 href={link.href}
                 className={cn(
                   "relative px-4 py-1.5 text-xs tracking-wider uppercase font-medium rounded-full transition-all duration-200",
@@ -107,7 +94,7 @@ export function Header({
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span className="relative z-10">{link.name}</span>
+                <span className="relative z-10">{link.label}</span>
               </Link>
             );
           })}
@@ -175,7 +162,7 @@ export function Header({
 
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.label}
                   href={link.href}
                   className={cn(
                     "text-lg font-display tracking-wider py-2 border-b border-white/[0.05] transition-colors",
@@ -184,7 +171,7 @@ export function Header({
                       : "text-platinum-200 hover:text-white"
                   )}
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               ))}
 

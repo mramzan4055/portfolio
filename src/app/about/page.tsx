@@ -6,6 +6,7 @@ import { getExperience, getSkills, getSiteSettings } from "@/lib/data/store";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { SkillsMatrixVisualizer } from "@/components/about/SkillsMatrixVisualizer";
+import { Avatar } from "@/components/common/Avatar";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
@@ -67,22 +68,7 @@ export default async function AboutPage() {
           {/* Right Entity Card */}
           <div className="lg:col-span-5 glass-panel-elevated p-8 sm:p-10 rounded-3xl flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-2xl overflow-hidden bg-gradient-to-br from-[#dfb15b] to-[#a27429] shadow-gold flex-shrink-0 ring-2 ring-[#dfb15b]/30">
-                <img
-                  src="/images/profile.jpg"
-                  alt="M Ramzan"
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    const target = e.currentTarget as HTMLImageElement;
-                    target.style.display = "none";
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = "flex";
-                  }}
-                />
-                <span className="w-full h-full hidden items-center justify-center font-bold text-black text-lg">
-                  MR
-                </span>
-              </div>
+              <Avatar size={56} className="w-14 h-14 rounded-2xl" ring />
               <div>
                 <h3 className="font-display font-bold text-lg text-white">
                   {settings.authorName}

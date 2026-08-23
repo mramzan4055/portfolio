@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, Github, Linkedin, Twitter, Dribbble, Globe, Shield, Sparkles } from "lucide-react";
 import { SiteSettings } from "@/types";
 import { initialSiteSettings } from "@/data/seed";
+import { Avatar } from "@/components/common/Avatar";
 
 interface FooterProps {
   settings?: SiteSettings;
@@ -40,22 +41,7 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
           {/* Col 1: Brand & Entity Statement */}
           <div className="md:col-span-5 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg overflow-hidden bg-gradient-to-br from-[#dfb15b] to-[#a27429] shadow-gold flex-shrink-0">
-                <img
-                  src="/images/profile.jpg"
-                  alt="M Ramzan"
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    const target = e.currentTarget as HTMLImageElement;
-                    target.style.display = "none";
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = "flex";
-                  }}
-                />
-                <span className="w-full h-full hidden items-center justify-center font-bold text-black text-sm tracking-wider">
-                  MR
-                </span>
-              </div>
+              <Avatar size={40} className="w-9 h-9 rounded-lg" />
               <div>
                 <h3 className="font-display font-bold text-base tracking-widest text-white uppercase">
                   {settings.authorName}
