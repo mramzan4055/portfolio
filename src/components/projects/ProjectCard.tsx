@@ -23,7 +23,7 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
       className="group relative flex flex-col rounded-3xl overflow-hidden glass-panel hover:border-[#dfb15b]/40 transition-all duration-500 hover:shadow-luxury"
     >
       {/* Image Container with Cinematic Zoom */}
-      <Link href={`/projects/${project.slug}`} className="relative aspect-[16/10] w-full overflow-hidden bg-onyx-900 block">
+      <Link href={`/projects/${project.slug}`} prefetch={true} className="relative aspect-[16/10] w-full overflow-hidden bg-onyx-900 block">
         <Image
           src={project.heroImage || project.thumbnailImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"}
           alt={project.title}
@@ -61,13 +61,14 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
       <div className="p-6 sm:p-8 flex flex-col justify-between flex-1 gap-6 bg-[#0c0c11]/80 backdrop-blur-md">
         <div className="flex flex-col gap-2.5">
           <div className="flex items-start justify-between gap-4">
-            <Link href={`/projects/${project.slug}`} className="group-hover:text-[#dfb15b] transition-colors">
+            <Link href={`/projects/${project.slug}`} prefetch={true} className="group-hover:text-[#dfb15b] transition-colors">
               <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
                 {project.title}
               </h3>
             </Link>
             <Link
               href={`/projects/${project.slug}`}
+              prefetch={true}
               className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-platinum-300 group-hover:bg-[#dfb15b] group-hover:text-black group-hover:rotate-45 transition-all duration-300 flex-shrink-0"
               aria-label={`View ${project.title} Case Study`}
             >

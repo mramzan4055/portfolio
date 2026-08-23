@@ -83,15 +83,16 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
             </h4>
             <div className="flex flex-col gap-2.5 pt-1">
               {[
-                { name: "Selected Works", href: "/work" },
-                { name: "Services & Capabilities", href: "/services" },
-                { name: "About & Engineering Philosophy", href: "/about" },
-                { name: "Initiate Consultation", href: "/contact" },
-                { name: "Secure CMS Admin", href: "/admin" },
+                { name: "My Work & Projects", href: "/work" },
+                { name: "Services & What I Offer", href: "/services" },
+                { name: "About Me", href: "/about" },
+                { name: "Contact & Inquiries", href: "/contact" },
+                { name: "CMS Admin", href: "/admin" },
               ].map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
+                  prefetch={true}
                   className="text-sm text-platinum-400 hover:text-white hover:translate-x-1 transition-all flex items-center justify-between group"
                 >
                   <span>{item.name}</span>
@@ -104,10 +105,10 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
           {/* Col 3: Social Channels & Direct Inquiries */}
           <div className="md:col-span-4 flex flex-col gap-4">
             <h4 className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-              Direct Inquiries
+              Get in Touch
             </h4>
             <p className="text-sm text-platinum-400">
-              For bespoke software engineering, enterprise headless CMS architecture, or high-profile advisory:
+              For website development, WordPress customization, or Flutter mobile applications:
             </p>
             <a
               href={`mailto:${settings.authorEmail}`}

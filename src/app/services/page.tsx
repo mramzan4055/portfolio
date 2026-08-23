@@ -11,8 +11,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "Services & Capabilities — Full-Stack & CMS Consulting",
-      description: "High-impact web engineering services: Next.js architecture, headless CMS platforms, GEO optimization, and creative development by M Ramzan.",
+      title: "Services — Web & Mobile Application Development",
+      description: "Practical web and app development services: WordPress customization, React/Next.js development, Flutter mobile apps, and SEO optimization by M Ramzan.",
       canonical: "/services",
     },
     settings
@@ -27,20 +27,20 @@ export default async function ServicesPage() {
 
   const serviceFaqs = [
     {
-      question: "How do you approach bespoke CMS engineering without vendor lock-in?",
-      answer: "I architect custom headless CMS systems using Next.js App Router, MySQL / Relational Databases, and clean repository layers. Non-technical teams get visual drag-and-drop section builders and instant live previews, while your codebase remains 100% portable to any hosting or database infrastructure without proprietary license dependencies."
+      question: "What technologies do you primarily use for web and app projects?",
+      answer: "My primary stack includes WordPress, HTML5, CSS3, JavaScript, React, Next.js, and Flutter for cross-platform iOS and Android mobile apps. I also integrate standard REST APIs, PHP, and MySQL databases."
     },
     {
-      question: "What is Generative Engine Optimization (GEO) and why does it matter?",
-      answer: "Generative Engine Optimization (GEO) structures your application's entities, facts, and schemas (JSON-LD) so that AI-driven answer engines (ChatGPT, Perplexity, Claude, Google AI Overviews) accurately cite your brand, leadership, and products when users ask conversational queries."
+      question: "Can you build or customize an existing WordPress website?",
+      answer: "Yes. I customize WordPress themes, set up plugins, build bespoke layouts, optimize page loading speed, and configure user-friendly admin panels so you can easily manage your site content."
     },
     {
-      question: "What is the typical timeline and engagement model for a custom project?",
-      answer: "Engagement models range from focused architectural sprints (2-3 weeks) to full-scale platform builds (6-10 weeks). Every delivery includes strict TypeScript type safety, automated tests, full documentation, and post-launch support."
+      question: "Do you develop mobile applications with Flutter?",
+      answer: "Yes, I develop cross-platform mobile apps for both iOS and Android from a single clean Flutter codebase, integrating backend REST APIs, authentication, and responsive UI components."
     },
     {
-      question: "Do you offer full-stack maintenance and team training post-handover?",
-      answer: "Yes. Every custom build includes comprehensive CMS editorial walkthroughs, technical handoff documentation, and optional quarterly retainer agreements for continuous feature expansions."
+      question: "How do we get started on a project?",
+      answer: "You can reach out via the Contact page with your project details and requirements. I will review your goals, provide a clear timeline and quote, and guide you through each step of development."
     }
   ];
 
@@ -53,13 +53,13 @@ export default async function ServicesPage() {
         {/* Header */}
         <div className="flex flex-col gap-4 max-w-3xl">
           <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-            Capabilities & Deliverables
+            Services & Offerings
           </span>
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight">
-            Architectural Services & Advisory
+            Web & Mobile App Development
           </h1>
           <p className="text-platinum-300 text-base sm:text-lg font-light leading-relaxed">
-            Delivering end-to-end software solutions that combine enterprise backend engineering with high-end creative direction.
+            I build modern, responsive websites and mobile applications using industry-standard tools, frameworks, and reliable development practices.
           </p>
         </div>
 

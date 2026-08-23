@@ -28,23 +28,24 @@ export function ContactCTA({ settings }: ContactCTAProps) {
           <div className="relative z-10 max-w-3xl flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#dfb15b]/10 border border-[#dfb15b]/30 text-[#dfb15b] text-xs font-mono w-fit">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Direct Client Inquiries</span>
+              <span>Let&apos;s Work Together</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-tight">
-              Ready to architect something <span className="text-gradient-gold">extraordinary</span>?
+              Have a project in mind? Let&apos;s <span className="text-gradient-gold">build it</span>.
             </h2>
 
             <p className="text-platinum-300 text-base sm:text-lg font-light leading-relaxed">
-              Whether you require a bespoke digital flagship, an enterprise headless CMS platform, or an AI-ready application, let&apos;s discuss your vision.
+              Whether you need a modern business website, a customized WordPress site, or a Flutter mobile app, I&apos;m ready to help bring your ideas to life with clean code and reliable tools.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <Link
                 href="/contact"
+                prefetch={true}
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#dfb15b] via-[#e5c07b] to-[#c7963b] text-black font-semibold text-sm uppercase tracking-widest hover:shadow-gold hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
-                <span>Initiate Project Consultation</span>
+                <span>Start a Conversation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 

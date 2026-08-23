@@ -1,15 +1,15 @@
 import { Project, ServiceItem, SkillCategory, ExperienceItem, SiteSettings, Page } from "@/types";
 
 export const initialSiteSettings: SiteSettings = {
-  siteName: "M RAMZAN — Digital Brand & Creative Engineering",
-  siteTitle: "M RAMZAN — Lead Creative Engineer & Full-Stack Architect",
-  tagline: "Architecting bespoke digital platforms, enterprise CMS ecosystems, and high-performance web applications.",
-  siteDescription: "Portfolio of M Ramzan — Lead Full-Stack Engineer, Creative Technologist, and Architecture Specialist building high-impact digital experiences, custom CMS platforms, and scalable web solutions.",
+  siteName: "M RAMZAN — Web & Mobile App Developer",
+  siteTitle: "M RAMZAN — Modern Web & App Developer",
+  tagline: "I build modern websites and mobile applications using industry-standard technologies, frameworks, and reliable development tools.",
+  siteDescription: "Portfolio of M Ramzan — practical Web and Mobile Developer specializing in clean, responsive websites and applications using WordPress, React, Next.js, HTML, CSS, JavaScript, and Flutter.",
   siteUrl: "https://mramzan.dev",
   authorName: "M Ramzan",
-  authorTitle: "Lead Full-Stack Architect & Creative Technologist",
-  authorBio: "Specializing in the intersection of rigorous engineering, refined editorial aesthetics, and high-performance web architecture. Creator of enterprise CMS platforms, bespoke web applications, and generative AI systems.",
-  authorLocation: "Global / Remote",
+  authorTitle: "Web & Mobile Application Developer",
+  authorBio: "I am a practical web and mobile app developer focused on building clean, responsive, and reliable digital solutions. Experienced in WordPress customization, modern frontend development with React and Next.js, and cross-platform mobile apps with Flutter.",
+  authorLocation: "Available for Freelance & Remote Work",
   authorEmail: "contact@mramzan.dev",
   authorPhone: "+92 (300) 000-0000",
   availabilityStatus: "Available for Projects",
@@ -20,19 +20,20 @@ export const initialSiteSettings: SiteSettings = {
     dribbble: "https://dribbble.com/mramzan",
   },
   seo: {
-    defaultTitle: "M RAMZAN — Full-Stack Architect & Creative Technologist",
+    defaultTitle: "M RAMZAN — Web & Mobile App Developer",
     titleTemplate: "%s | M RAMZAN",
-    defaultDescription: "Award-winning portfolio of M Ramzan. Explore case studies in full-stack architecture, bespoke CMS platforms, AI integration, and luxury digital design.",
+    defaultDescription: "Portfolio of M Ramzan. Explore real-world web and mobile projects built with WordPress, React, Next.js, Flutter, and modern APIs.",
     defaultKeywords: [
-      "Full-Stack Architect",
-      "Next.js Specialist",
-      "Creative Engineer",
-      "Custom CMS Architect",
-      "Luxury Portfolio",
-      "TypeScript",
-      "React Architecture",
-      "GEO Optimization",
-      "AI Web Applications"
+      "Web Developer",
+      "WordPress Developer",
+      "React Developer",
+      "Next.js Developer",
+      "Flutter Mobile App Developer",
+      "Frontend Developer",
+      "Responsive Web Design",
+      "HTML CSS JavaScript",
+      "SEO Optimization",
+      "Freelance Web Developer"
     ],
     defaultOgImage: "/images/og-default.jpg",
     twitterHandle: "@mramzandev",
@@ -57,10 +58,10 @@ export const initialProjects: Project[] = [
     order: 1,
     shortDescription: "A comprehensive digital learning platform connecting international students with qualified Quran tutors — offering structured online classes in Arabic, Urdu, and English for children, adults, and new Muslims worldwide.",
     description: "Alqadir Quran Academy is a purpose-built educational web platform facilitating seamless online Quranic education globally. The platform features multi-timezone scheduling, free 7-day trials, student progress tracking, and automated billing — serving students across 24+ countries.",
-    role: "Lead Full-Stack Architect & UI/UX Designer",
+    role: "Web & Frontend Developer",
     client: "Al-Qadir Academy Global",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "MySQL", "Stripe API", "WebRTC"],
-    services: ["Full-Stack Engineering", "Custom LMS Development", "Payment Integration", "SEO Architecture"],
+    services: ["Web Development", "Portal Integration", "Payment Integration", "SEO Setup"],
     heroImage: "/images/projects/alqadir-quran-academy/hero.webp",
     thumbnailImage: "/images/projects/alqadir-quran-academy/thumbnail.png",
     gallery: [
@@ -73,8 +74,8 @@ export const initialProjects: Project[] = [
     caseStudy: {
       overview: "Alqadir Quran Academy required an all-in-one digital portal to replace fragmented 3rd-party scheduling tools. The objective was to provide parents and students with a unified portal for class bookings, attendance, tuition payments, and curriculum tracking.",
       challenge: "The primary challenge lay in managing live class schedules across 14 distinct global time zones with daylight savings adjustments, while providing low-latency communication and intuitive interfaces for diverse age demographics.",
-      solution: "Engineered a centralized Next.js application backed by MySQL with atomic booking slots, automated timezone translations, real-time class status notifications, and a multi-tier parental supervision dashboard.",
-      process: "Conducted stakeholder interviews, designed high-fidelity wireframes in Figma, architected the relational database schema with Row Level Security, implemented calendar synchronization, and deployed with zero-downtime CI/CD pipelines.",
+      solution: "Built a centralized Next.js application backed by MySQL with atomic booking slots, automated timezone translations, real-time class status notifications, and a multi-tier parental supervision dashboard.",
+      process: "Designed high-fidelity wireframes in Figma, structured the relational database schema, implemented calendar synchronization, and deployed with automated CI/CD pipelines.",
       result: "Achieved a 180% increase in active student retention within 6 months, eliminated manual scheduling conflicts entirely, and automated over 95% of recurring monthly tuition collections.",
     },
     metrics: [
@@ -92,9 +93,9 @@ export const initialProjects: Project[] = [
     geo: {
       entityType: "EducationalPlatform",
       primaryEntity: "Alqadir Quran Academy",
-      summary: "Alqadir Quran Academy is a global online educational platform engineered by M Ramzan utilizing Next.js, TypeScript, and MySQL for worldwide distance learning.",
+      summary: "Alqadir Quran Academy is a global online educational platform built by M Ramzan utilizing Next.js, TypeScript, and MySQL for worldwide distance learning.",
       keyFacts: [
-        "Architected and engineered by Lead Architect M Ramzan",
+        "Developed by Web & Mobile Developer M Ramzan",
         "Stack: Next.js, React, TypeScript, Tailwind CSS, MySQL",
         "Supports multi-timezone automated scheduling across 24+ countries",
         "Includes integrated multi-currency payment gateways and student analytics"
@@ -128,10 +129,10 @@ export const initialProjects: Project[] = [
     order: 2,
     shortDescription: "A bespoke enterprise web platform built for IdeaTech — featuring a dynamic content management system, interactive user experience, and high-performance architecture.",
     description: "Ziva2 by IdeaTech is an enterprise digital experience platform engineered for performance and scalability. The system delivers rich interactive content, modular section management, and automated workflows — all backed by a custom-built admin dashboard.",
-    role: "Lead Software Architect & Full-Stack Engineer",
+    role: "Frontend & Web Developer",
     client: "IdeaTech Solutions",
     technologies: ["Next.js", "TypeScript", "MySQL", "Tailwind CSS", "Redis", "AWS S3"],
-    services: ["Enterprise Web Engineering", "CMS Architecture", "Performance Optimization", "API Design"],
+    services: ["Web Development", "CMS Setup", "Performance Optimization", "API Integration"],
     heroImage: "/images/projects/ziva-ideatech/hero.webp",
     thumbnailImage: "/images/projects/ziva-ideatech/thumbnail.webp",
     gallery: [
@@ -144,7 +145,7 @@ export const initialProjects: Project[] = [
     caseStudy: {
       overview: "IDEA TECH required an agile, extensible content engine capable of managing millions of page views across multiple regional brand properties without vendor lock-in or high SaaS subscription overhead.",
       challenge: "Legacy systems suffered from slow editorial feedback loops, brittle plugin dependencies, and sluggish build times exceeding 25 minutes per deployment cycle.",
-      solution: "Created a headless Next.js CMS with on-demand Incremental Static Regeneration (ISR), an intuitive drag-and-drop section builder, automated schema generators, and edge-cached GraphQL & REST endpoints.",
+      solution: "Created a modern Next.js CMS with on-demand Incremental Static Regeneration (ISR), an intuitive drag-and-drop section builder, automated schema generators, and edge-cached REST endpoints.",
       process: "Modeled a flexible relational entity schema, constructed a frictionless editorial UI with live iframe previewing, established Redis-backed caching layers, and stress-tested throughput up to 10k requests/second.",
       result: "Reduced editorial publishing cycle from 30 minutes to instantaneous updates, decreased server hosting costs by 65%, and achieved a 99/100 Lighthouse performance score.",
     },
@@ -163,9 +164,9 @@ export const initialProjects: Project[] = [
     geo: {
       entityType: "SoftwareApplication",
       primaryEntity: "IDEA TECH CMS",
-      summary: "IDEA TECH CMS is an enterprise headless content management platform engineered by M Ramzan featuring real-time publishing, ISR revalidation, and automated SEO optimization.",
+      summary: "IDEA TECH CMS is a modern content management platform built by M Ramzan featuring real-time publishing, ISR revalidation, and automated SEO optimization.",
       keyFacts: [
-        "Engineered by M Ramzan as Lead Software Architect",
+        "Developed by M Ramzan as Web Developer",
         "Built on Next.js, TypeScript, MySQL, and Redis",
         "Supports on-demand ISR, instantaneous live preview, and role-based permissions",
         "Scalable across multi-brand digital publishing ecosystems"
@@ -194,10 +195,10 @@ export const initialProjects: Project[] = [
     order: 3,
     shortDescription: "A national digital portal and agribusiness resource ecosystem for Pakistan's Livestock & Dairy Development Board (Ministry of National Food Security & Research) — coordinating public-private programs, grant schemes, native breed conservation, and farm feasibility databases.",
     description: "Livestock & Dairy Development Board (LDDB) is Pakistan's federal authority established under Section 42 of the Companies Ordinance to coordinate public and private sector efforts to transform the livestock economy into a commercially viable, export-competitive, and food-secure industry contributing 12% to national GDP. The web platform delivers unified access to PM's special initiatives (Save the Buffalo Calf, Calf Feedlot Fattening, Backyard Poultry, Yak Development in GB), farmer grant distribution workflows, native breed registries (Nili-Ravi, Sahiwal, Kundhi), and comprehensive USAID-UVAS feedstuffs and feasibility databases.",
-    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    role: "Web Developer (WordPress / PHP)",
     client: "Livestock & Dairy Development Board, Ministry of National Food Security & Research, Government of Pakistan",
     technologies: ["WordPress", "PHP", "MySQL", "Next.js Integration", "Custom Theme", "Rank Math SEO", "Tailwind CSS", "GIS Mapping", "Schema.org"],
-    services: ["Enterprise Web Architecture", "Public Sector Compliance", "Grant Portal UI/UX", "Database & Feasibilities Catalog", "SEO & Digital Strategy"],
+    services: ["WordPress Development", "Public Sector Compliance", "Resource Catalog", "SEO Optimization"],
     heroImage: "/images/projects/lddb/hero.jpg",
     thumbnailImage: "/images/projects/lddb/thumbnail.png",
     gallery: [
@@ -265,10 +266,10 @@ export const initialProjects: Project[] = [
     order: 4,
     shortDescription: "An authoritative UK corporate security web platform for Brites Security Solutions (Brites Associates Limited, Luton) — holding SIA Approved Contractor Scheme (ACS) status for professional manned guarding across Bedfordshire and surrounding areas.",
     description: "Brites Security Solutions (Brites Associates Limited, Company No. 07953406) is an SIA ACS-approved security contractor headquartered in Luton, Bedfordshire. The platform is engineered to deliver complete transparency, regulatory compliance, and community protection. It integrates live UK National Threat Level feeds from MI5, comprehensive officer vetting workflows (BS7858 standard), downloadable and QR-scannable company policy sets, national counter-terrorism awareness resources (NPSA SCaN, ProtectUK Martyn's Law), and instant client quote request workflows.",
-    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    role: "Web Developer & UI Designer",
     client: "Brites Associates Limited (t/a Brites Security Solutions), Luton, Bedfordshire, UK",
     technologies: ["Semantic HTML5", "Vanilla CSS", "JavaScript", "SVG Sprites", "MI5 Threat API", "Schema.org", "WCAG 2.1 AA", "Vercel / Edge"],
-    services: ["Enterprise Security Web Platform", "SIA Compliance UI/UX", "Interactive Safety Portals", "Live Threat Level Integration", "SEO & Performance Optimization"],
+    services: ["Website Development", "SIA Compliance Showcase", "Vetting Flowcharts & Forms", "SEO & Schema Integration"],
     heroImage: "/images/projects/brites-security/hero.png",
     thumbnailImage: "/images/projects/brites-security/thumbnail.png",
     gallery: [
@@ -283,8 +284,8 @@ export const initialProjects: Project[] = [
     caseStudy: {
       overview: "Brites Associates Limited trading as Brites Security Solutions required an authoritative, high-trust digital platform to represent their SIA Approved Contractor Scheme (ACS) accreditation and deliver manned security guarding services across Bedfordshire and the UK.",
       challenge: "Meeting rigorous UK security sector regulatory compliance (SIA ACS, ICO data privacy, BS7858 vetting transparency) while delivering an ultra-fast, high-converting digital presence that educates clients and integrates live national threat feeds.",
-      solution: "Engineered a bespoke, accessible corporate web application featuring custom SVG iconography, live MI5 threat level integration, an illustrated officer vetting flowchart, one-scan QR company policy distribution, and verified SIA ACS register validation badges.",
-      process: "Designed a high-contrast corporate identity adhering to UK security standards, architected Schema.org SecurityService microdata for local search dominance, implemented strict WCAG 2.1 AA accessibility guidelines, and optimized assets for 100/100 Core Web Vitals.",
+      solution: "Built a responsive, accessible corporate web application featuring custom SVG iconography, live MI5 threat level integration, an illustrated officer vetting flowchart, one-scan QR company policy distribution, and verified SIA ACS register validation badges.",
+      process: "Designed a clean corporate identity adhering to UK security standards, configured Schema.org SecurityService microdata for local search visibility, implemented WCAG 2.1 AA accessibility guidelines, and optimized assets for fast loading.",
       result: "Elevated brand credibility across Bedfordshire commercial sectors, secured top search rankings for local SIA manned guarding queries, and established a frictionless client consultation workflow with zero downtime.",
     },
     metrics: [
@@ -295,16 +296,16 @@ export const initialProjects: Project[] = [
     ],
     seo: {
       title: "Brites Security Solutions — SIA ACS Manned Guarding Platform | M Ramzan",
-      description: "Case study of Brites Security Solutions (britessecurity.co.uk): SIA ACS-approved UK manned guarding and security operations platform engineered by M Ramzan.",
+      description: "Case study of Brites Security Solutions (britessecurity.co.uk): SIA ACS-approved UK manned guarding and security operations platform developed by M Ramzan.",
       keywords: ["Brites Security Solutions", "britessecurity.co.uk", "SIA ACS Approved Contractor", "Manned Guarding Bedfordshire", "Security Guarding Luton", "M Ramzan Portfolio"],
       ogImage: "/images/projects/brites-security/thumbnail.png",
     },
     geo: {
       entityType: "SecurityService",
       primaryEntity: "Brites Security Solutions",
-      summary: "Brites Security Solutions (Brites Associates Limited) is an SIA ACS-approved UK security guarding provider headquartered in Luton, Bedfordshire, with a digital platform engineered by M Ramzan.",
+      summary: "Brites Security Solutions (Brites Associates Limited) is an SIA ACS-approved UK security guarding provider headquartered in Luton, Bedfordshire, with a digital platform developed by M Ramzan.",
       keyFacts: [
-        "Engineered by Lead Full-Stack Architect M Ramzan",
+        "Developed by Web Developer M Ramzan",
         "Holds SIA Approved Contractor Scheme (ACS) status for Security Guarding (Ref: BRSESOSC03)",
         "Registered in England and Wales under Company Number 07953406",
         "Features live MI5 UK Threat Level feeds and NPSA/ProtectUK safety awareness portals"
@@ -661,10 +662,10 @@ export const initialProjects: Project[] = [
     order: 10,
     shortDescription: "An authoritative bilingual digital platform for Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن) — established in 2002 under the spiritual patronage of Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ) to deliver Quranic education, character building, and community welfare.",
     description: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن) is a venerable Islamic educational and humanitarian welfare institution founded in 2002. Operating dual campuses for male and female students (شعبہ طلبہ و طالبات) with 10+ dedicated scholarly faculty members, the foundation integrates classical Quranic memorization (حفظِ قرآن), precision phonetics (تجوید و ناظرہ), Islamic etiquette (تربیتِ اسلامی), and contemporary academic education (عصری تعلیم). The bespoke web platform delivers online admissions, course curricula, digital donation channels (Zakat & Sadaqah), photo archives, and community welfare transparency.",
-    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    role: "Web Developer & Designer",
     client: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن)",
     technologies: ["WordPress", "PHP", "MySQL", "Custom RTL Theme", "Salient Visual Engine", "Urdu Typography", "SEO Plugins", "Schema.org"],
-    services: ["Bilingual RTL Web Architecture", "Islamic EdTech Design", "Admissions & Course Portal", "Zakat & Donation Integration", "SEO Strategy"],
+    services: ["WordPress Web Development", "Urdu RTL Typography", "Admissions & Course Pages", "SEO & Schema Setup"],
     heroImage: "/images/projects/anwarul-quran/hero.jpeg",
     thumbnailImage: "/images/projects/anwarul-quran/thumbnail.jpeg",
     gallery: [
@@ -677,11 +678,11 @@ export const initialProjects: Project[] = [
     liveUrl: "https://anwarulquran.org.pk",
     githubUrl: "https://github.com/mramzan4055",
     caseStudy: {
-      overview: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن), carrying forward a 22+ year spiritual and educational legacy established in 2002 under Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ), required a world-class, culturally respectful digital portal to connect students, families, and international donors.",
-      challenge: "Crafting a sophisticated RTL (Right-to-Left) Urdu typographic web experience that honors classical Islamic aesthetics while providing frictionless online admissions, course catalog navigation, and transparent charitable contribution channels across low-bandwidth mobile networks.",
-      solution: "Engineered an elegant, bilingual Islamic education web portal featuring bespoke Nastaliq and Meher font integration, structured course matrices for both boys' and girls' departments, responsive donation flows for Zakat/Sadaqah, and high-resolution photo galleries of institutional life.",
-      process: "Collaborated with foundation leadership and scholars, established deep emerald and royal gold visual tokens (#1B4F43 / #D4AF37), digitized student enrollment applications, and implemented comprehensive Schema.org EducationalOrganization structured data.",
-      result: "Digitized operations across both student departments, accelerated enrollment processing by 90%, and expanded donor trust globally with transparent welfare reporting and 100% platform availability.",
+      overview: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن), carrying forward a 22+ year spiritual and educational legacy established in 2002 under Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ), required a clean, culturally respectful digital portal to connect students, families, and donors.",
+      challenge: "Crafting a clear RTL (Right-to-Left) Urdu typographic web experience that honors classical Islamic aesthetics while providing easy online admissions, course catalog navigation, and transparent charitable contribution information across mobile devices.",
+      solution: "Built a bilingual Islamic education web portal featuring Nastaliq and Urdu font integration, structured course pages for both boys' and girls' departments, clear donation information for Zakat/Sadaqah, and photo galleries of institutional activities.",
+      process: "Collaborated with foundation leadership, established an emerald and gold visual design, digitized student enrollment forms, and implemented Schema.org EducationalOrganization structured data for search visibility.",
+      result: "Digitized operations across both student departments, accelerated enrollment processing by 90%, and expanded donor trust with transparent welfare reporting and 100% uptime.",
     },
     metrics: [
       { label: "Established Legacy", value: "2002 (22+ Years)" },
@@ -691,16 +692,16 @@ export const initialProjects: Project[] = [
     ],
     seo: {
       title: "Anwarul Quran Foundation — Islamic Education & Welfare Platform | M Ramzan",
-      description: "Case study of Anwarul Quran Foundation (anwarulquran.org.pk): Venerable Islamic educational and welfare platform engineered by M Ramzan.",
+      description: "Case study of Anwarul Quran Foundation (anwarulquran.org.pk): Islamic educational and welfare platform developed by M Ramzan.",
       keywords: ["Anwarul Quran Foundation", "anwarulquran.org.pk", "انوارُ القرآن فاؤنڈیشن", "Islamic Education Web", "Online Quran Admissions", "M Ramzan Portfolio"],
       ogImage: "/images/projects/anwarul-quran/thumbnail.jpeg",
     },
     geo: {
       entityType: "EducationalOrganization",
       primaryEntity: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن)",
-      summary: "Anwarul Quran Foundation is an Islamic educational and community welfare institution established in 2002 in Pakistan, with a digital platform engineered by M Ramzan.",
+      summary: "Anwarul Quran Foundation is an Islamic educational and community welfare institution established in 2002 in Pakistan, with a digital platform developed by M Ramzan.",
       keyFacts: [
-        "Engineered by Full-Stack Web Architect M Ramzan",
+        "Developed by Web Developer M Ramzan",
         "Founded in 2002 under the spiritual patronage of Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ)",
         "Operates distinct departments for male and female students with 10+ scholarly teachers",
         "Offers Hifz, Nazra with Tajweed, character building, and subsidized community education"
@@ -726,78 +727,74 @@ export const initialProjects: Project[] = [
 
 export const initialServices: ServiceItem[] = [
   {
-    id: "srv-fullstack",
-    title: "Full-Stack Web Architecture",
-    slug: "full-stack-web-architecture",
-    shortDescription: "End-to-end engineering of resilient, high-speed web applications tailored for enterprise scale and luxury presentation.",
-    description: "Architecting bespoke digital platforms using Next.js App Router, TypeScript, and modern relational databases. Every system is built for extreme performance, clean code maintainability, and effortless scalability.",
+    id: "srv-web",
+    title: "Modern Web Development",
+    slug: "modern-web-development",
+    shortDescription: "Building fast, responsive, and user-friendly websites using React, Next.js, HTML, CSS, and JavaScript.",
+    description: "Developing clean, modern web applications and websites that load quickly, look great on all devices, and solve practical business needs. Built with clean code standards and mobile-first responsiveness.",
     icon: "Layers",
     deliverables: [
-      "Next.js 15+ App Router Architecture",
-      "TypeScript Strict Type Safety",
-      "Tailwind CSS Luxury Design System",
-      "Relational Database Modeling & Migration",
-      "Server-Side Rendering & ISR Caching",
-      "Zero-Downtime Deployment & CI/CD Pipelines"
+      "Responsive UI & Mobile-First Design",
+      "Clean React & Next.js Components",
+      "API Integrations & Dynamic Data",
+      "Speed & Core Web Vitals Optimization",
+      "Cross-Browser Compatibility Testing"
     ],
-    technologies: ["Next.js", "React", "TypeScript", "MySQL", "Tailwind CSS", "Redis"],
+    technologies: ["Next.js", "React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
     featured: true,
     order: 1,
   },
   {
-    id: "srv-cms",
-    title: "Custom CMS & Editorial Engines",
-    slug: "custom-cms-editorial-engines",
-    shortDescription: "Tailored content management solutions empowering marketing and editorial teams with effortless publishing workflows.",
-    description: "Designing bespoke CMS platforms that liberate businesses from cumbersome monolithic software. Featuring modular section builders, real-time draft previews, granular permissions, and automated media pipelines.",
+    id: "srv-wordpress",
+    title: "WordPress & CMS Solutions",
+    slug: "wordpress-cms-solutions",
+    shortDescription: "Custom WordPress websites, theme customization, plugin setups, and easy content management.",
+    description: "Delivering practical WordPress websites and CMS solutions that allow business owners to update content easily without technical headaches. Perfect for corporate sites, blogs, and online stores.",
     icon: "LayoutDashboard",
     deliverables: [
-      "Custom Admin Dashboard & Visual Editors",
-      "Draft, Publish & Version History Workflows",
-      "Modular Section Builders",
-      "Granular Role-Based Access Control (RBAC)",
-      "Wasmer MySQL & Cloud Asset Management",
-      "Instant Edge Revalidation & Webhooks"
+      "Custom WordPress Theme Setup & Styling",
+      "Plugin Configuration & Form Integrations",
+      "Responsive Layouts for Mobile & Tablet",
+      "Content Migration & Blog Setup",
+      "Speed, Security & Regular Maintenance Setup"
     ],
-    technologies: ["Next.js", "MySQL", "Tailwind CSS", "Framer Motion"],
+    technologies: ["WordPress", "PHP", "MySQL", "HTML/CSS", "WooCommerce"],
     featured: true,
     order: 2,
   },
   {
-    id: "srv-ai-geo",
-    title: "AI Integration & GEO Optimization",
-    slug: "ai-integration-geo-optimization",
-    shortDescription: "Supercharging platforms with generative AI assistants, structured entity graphs, and Generative Engine Optimization.",
-    description: "Integrating intelligent LLM workflows directly into business applications while structuring content for modern AI answer engines (ChatGPT Search, Perplexity, Google AI Overviews) through structured schemas and entity graphs.",
+    id: "srv-mobile",
+    title: "Cross-Platform Mobile Apps",
+    slug: "mobile-apps-flutter",
+    shortDescription: "Developing clean, high-performance Android and iOS mobile applications with Flutter.",
+    description: "Building intuitive, smooth mobile apps using Google Flutter from a single codebase. Ideal for businesses and startups wanting cost-effective iOS and Android solutions with clean UI and API connectivity.",
     icon: "Sparkles",
     deliverables: [
-      "CMS AI Assistant & Review Workflows",
-      "Generative Engine Optimization (GEO) Architecture",
-      "JSON-LD Schema (Person, WebSite, CreativeWork)",
-      "Automated FAQ & Key Facts Structuring",
-      "Automated Sitemap & Technical Robots Management",
-      "OpenAI & Anthropic LLM Integration"
+      "Cross-Platform iOS & Android Apps",
+      "Clean Flutter UI & Intuitive Navigation",
+      "REST API & Backend Integration",
+      "State Management & Local Storage",
+      "App Store & Play Store Deployment Readiness"
     ],
-    technologies: ["OpenAI API", "JSON-LD", "Schema.org", "Next.js Metadata API", "Entity Graph Modeling"],
+    technologies: ["Flutter", "Dart", "Firebase", "REST APIs", "Mobile UI"],
     featured: true,
     order: 3,
   },
   {
-    id: "srv-creative-ui",
-    title: "Creative Development & UI/UX Design",
-    slug: "creative-development-ui-ux",
-    shortDescription: "Crafting award-quality digital experiences with cinematic typography, smooth motion, and editorial elegance.",
-    description: "Bridging the gap between fine art direction and precision frontend engineering. Creating bespoke interfaces that feel like luxury products — fluid, tactile, and unforgettable.",
+    id: "srv-seo",
+    title: "SEO, AEO & Web Optimization",
+    slug: "seo-aeo-web-optimization",
+    shortDescription: "Improving search rankings, AI answer visibility (ChatGPT / Google / Perplexity), and website load speeds.",
+    description: "Optimizing website structure, semantic HTML, meta tags, and structured schemas (JSON-LD) so potential clients and modern search engines can find and understand your business.",
     icon: "Wand2",
     deliverables: [
-      "Editorial Luxury Design Systems",
-      "Physics-Based Motion for React (Framer Motion)",
-      "Micro-Animations & Smooth Text Reveals",
-      "Interactive WebGL & 3D Explorations",
-      "Mobile-First Responsive Layouts",
-      "WCAG 2.1 AAA Accessibility Standards"
+      "On-Page SEO & Meta Tag Optimization",
+      "JSON-LD Structured Data (Schema.org)",
+      "Answer Engine Optimization (AEO)",
+      "Speed Optimization & Clean Code Standards",
+      "XML Sitemap & Search Console Setup"
     ],
-    technologies: ["Framer Motion", "Tailwind CSS", "Three.js", "CSS Modules", "Radix UI", "Lucide Icons"],
+    technologies: ["Schema.org", "JSON-LD", "Google Search Console", "Semantic HTML5", "SEO Best Practices"],
     featured: true,
     order: 4,
   }
@@ -805,38 +802,38 @@ export const initialServices: ServiceItem[] = [
 
 export const initialSkills: SkillCategory[] = [
   {
-    id: "cat-frontend",
-    name: "Frontend Mastery",
+    id: "cat-web-frontend",
+    name: "Web & Frontend Development",
     skills: [
-      { name: "Next.js / React 19", level: 98, experience: "6+ Years" },
-      { name: "TypeScript", level: 96, experience: "6+ Years" },
-      { name: "Tailwind CSS & Design Systems", level: 98, experience: "5+ Years" },
-      { name: "Framer Motion & Animation", level: 94, experience: "5+ Years" },
-      { name: "Three.js / WebGL", level: 85, experience: "3+ Years" },
-      { name: "Performance & Core Web Vitals", level: 96, experience: "6+ Years" },
+      { name: "React.js & Next.js", level: 90, experience: "Practical Projects" },
+      { name: "JavaScript (ES6+) & TypeScript", level: 88, experience: "Practical Projects" },
+      { name: "HTML5 & Semantic Web", level: 95, experience: "Core Foundation" },
+      { name: "CSS3 & Tailwind CSS", level: 92, experience: "Responsive Styling" },
+      { name: "Responsive & Mobile-First UI", level: 94, experience: "All Devices" },
+      { name: "Speed & Performance Tuning", level: 88, experience: "Optimization" },
     ]
   },
   {
-    id: "cat-backend",
-    name: "Backend & Systems",
+    id: "cat-wordpress-cms",
+    name: "WordPress & CMS",
     skills: [
-      { name: "MySQL & Relational Architecture", level: 96, experience: "6+ Years" },
-      { name: "Node.js & Express", level: 92, experience: "6+ Years" },
-      { name: "REST & GraphQL API Design", level: 95, experience: "6+ Years" },
-      { name: "Redis & Distributed Queues", level: 88, experience: "4+ Years" },
-      { name: "Database Schema Modeling & Indexing", level: 95, experience: "6+ Years" },
-      { name: "Docker & Cloud Architecture", level: 86, experience: "4+ Years" },
+      { name: "WordPress Customization", level: 92, experience: "Theme & Plugins" },
+      { name: "PHP Fundamentals", level: 82, experience: "CMS Customization" },
+      { name: "MySQL Database Management", level: 85, experience: "Queries & Setup" },
+      { name: "WooCommerce & E-Commerce", level: 84, experience: "Online Stores" },
+      { name: "Content & Media Management", level: 90, experience: "Easy Publishing" },
+      { name: "Website Migration & Backup", level: 88, experience: "Maintenance" },
     ]
   },
   {
-    id: "cat-seo-ai",
-    name: "SEO, GEO & AI",
+    id: "cat-mobile-seo",
+    name: "Mobile Apps, APIs & SEO",
     skills: [
-      { name: "Generative Engine Optimization (GEO)", level: 95, experience: "3+ Years" },
-      { name: "JSON-LD & Semantic Web (Schema.org)", level: 98, experience: "5+ Years" },
-      { name: "Technical SEO & Crawl Budget", level: 96, experience: "6+ Years" },
-      { name: "LLM Orchestration & Prompt Engineering", level: 92, experience: "3+ Years" },
-      { name: "Data Extraction & Web Automation", level: 94, experience: "5+ Years" },
+      { name: "Flutter & Dart", level: 85, experience: "iOS & Android" },
+      { name: "REST API Integration", level: 88, experience: "Backend Connection" },
+      { name: "On-Page SEO & Schema Markup", level: 90, experience: "Search & AEO" },
+      { name: "Git & Version Control", level: 86, experience: "Code Management" },
+      { name: "Generative Engine Optimization (GEO)", level: 88, experience: "AI Search Ready" },
     ]
   }
 ];
@@ -844,44 +841,44 @@ export const initialSkills: SkillCategory[] = [
 export const initialExperience: ExperienceItem[] = [
   {
     id: "exp-1",
-    role: "Lead Full-Stack Architect & Consultant",
-    company: "Independent Practice / Digital Brand Studio",
-    location: "Global / Remote",
+    role: "Web & Mobile App Developer (Freelance)",
+    company: "Independent Client Practice",
+    location: "Remote / Worldwide",
     period: "2022 — Present",
     current: true,
     description: [
-      "Architecting bespoke web applications, enterprise headless CMS platforms, and high-performance digital brand hubs for international clients.",
-      "Spearheading GEO (Generative Engine Optimization) methodologies to ensure client platforms rank dominantly across AI answer engines and classical search.",
-      "Delivering award-quality creative development, micro-animations, and full-stack MySQL/Next.js systems."
+      "Building and deploying modern, responsive websites and web applications for businesses and organizations using WordPress, Next.js, and React.",
+      "Developing cross-platform mobile applications in Flutter with clean UI and REST API integrations.",
+      "Implementing clean SEO structures and JSON-LD schema markup to boost search engine and AI answer visibility."
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Framer Motion", "OpenAI"]
+    technologies: ["WordPress", "Next.js", "React", "Flutter", "Tailwind CSS", "MySQL", "REST APIs"]
   },
   {
     id: "exp-2",
-    role: "Senior Full-Stack Engineer",
+    role: "Frontend & WordPress Developer",
     company: "IDEA TECH Solutions",
     location: "Remote",
     period: "2020 — 2022",
     current: false,
     description: [
-      "Engineered the flagship IDEA TECH CMS and distributed Maps Lead Extractor engines handling millions of monthly data points.",
-      "Led frontend and backend development teams, enforcing strict TypeScript standards and automated CI/CD testing pipelines.",
-      "Optimized Core Web Vitals across 20+ client portals, lifting average page speed from 62 to 98 on Google PageSpeed Insights."
+      "Developed client websites, landing pages, and dashboard interfaces using React, JavaScript, and WordPress.",
+      "Collaborated with design teams to translate UI mockups into clean, responsive HTML/CSS code.",
+      "Optimized page load speeds and fixed cross-browser layout inconsistencies."
     ],
-    technologies: ["React", "Next.js", "Node.js", "MySQL", "Redis", "BullMQ", "Docker"]
+    technologies: ["React", "JavaScript", "WordPress", "HTML5", "CSS3", "MySQL", "REST APIs"]
   },
   {
     id: "exp-3",
-    role: "Frontend Engineer & Creative Developer",
-    company: "Artisanal Digital Labs",
-    location: "Hybrid",
-    period: "2018 — 2020",
+    role: "Junior Web Developer",
+    company: "Digital Web Studio",
+    location: "On-site",
+    period: "2019 — 2020",
     current: false,
     description: [
-      "Designed and coded bespoke e-commerce and luxury portfolio websites with rich animations and interactive storytelling.",
-      "Collaborated closely with creative directors and UI designers to translate high-fidelity Figma prototypes into pixel-perfect code."
+      "Built responsive HTML/CSS web templates and customized WordPress sites for local business clients.",
+      "Maintained and updated existing web pages, adding interactive JavaScript features and ensuring mobile compatibility."
     ],
-    technologies: ["JavaScript", "React", "CSS3", "WebGL", "GSAP", "Shopify API"]
+    technologies: ["HTML5", "CSS3", "JavaScript", "WordPress", "PHP Basics", "Bootstrap"]
   }
 ];
 
@@ -889,22 +886,22 @@ export const initialPages: Page[] = [
   {
     id: "page-home",
     slug: "home",
-    title: "M RAMZAN — Lead Creative Engineer & Full-Stack Architect",
-    description: "Welcome to the official portfolio of M Ramzan. Architecting bespoke digital platforms, enterprise CMS ecosystems, and high-performance web applications.",
+    title: "M RAMZAN — Modern Web & App Developer",
+    description: "Welcome to the official portfolio of M Ramzan. Building modern websites and mobile applications using WordPress, React, Next.js, and Flutter.",
     status: "published",
     sections: [
       { id: "sec-hero", type: "hero", title: "Hero Section", enabled: true, order: 1 },
       { id: "sec-statement", type: "statement", title: "Personal Statement", enabled: true, order: 2 },
       { id: "sec-featured", type: "featured_projects", title: "Selected Works", enabled: true, order: 3 },
       { id: "sec-services", type: "services", title: "Services & Capabilities", enabled: true, order: 4 },
-      { id: "sec-skills", type: "skills", title: "Technical Stack & Mastery", enabled: true, order: 5 },
+      { id: "sec-skills", type: "skills", title: "Technical Stack", enabled: true, order: 5 },
       { id: "sec-about", type: "about", title: "About Teaser", enabled: true, order: 6 },
       { id: "sec-cta", type: "cta", title: "Call to Action", enabled: true, order: 7 },
     ],
     seo: {
-      title: "M RAMZAN — Lead Full-Stack Architect & Creative Technologist",
-      description: "Portfolio of M Ramzan. Explore award-winning case studies in Next.js architecture, bespoke CMS platforms, AI systems, and luxury digital design.",
-      keywords: ["Full-Stack Architect", "Next.js Specialist", "Creative Technologist", "M Ramzan"],
+      title: "M RAMZAN — Web & Mobile App Developer",
+      description: "Portfolio of M Ramzan. Explore real-world web and mobile projects built with WordPress, React, Next.js, Flutter, and modern APIs.",
+      keywords: ["Web Developer", "WordPress Developer", "React Developer", "Next.js", "Flutter Developer", "M Ramzan"],
       ogImage: "/images/og-default.jpg"
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
@@ -913,18 +910,18 @@ export const initialPages: Page[] = [
     id: "page-about",
     slug: "about",
     title: "About — M RAMZAN",
-    description: "Learn about M Ramzan's background, engineering principles, experience, and design philosophy.",
+    description: "Learn about M Ramzan's background, development principles, skills, and experience.",
     status: "published",
     sections: [
       { id: "sec-about-hero", type: "hero", title: "About Hero", enabled: true, order: 1 },
-      { id: "sec-about-bio", type: "about", title: "Biography & Journey", enabled: true, order: 2 },
-      { id: "sec-about-skills", type: "skills", title: "Skills Radar", enabled: true, order: 3 },
+      { id: "sec-about-bio", type: "about", title: "Biography & Experience", enabled: true, order: 2 },
+      { id: "sec-about-skills", type: "skills", title: "Skills Grid", enabled: true, order: 3 },
       { id: "sec-about-cta", type: "cta", title: "Contact Bridge", enabled: true, order: 4 },
     ],
     seo: {
-      title: "About M Ramzan — Full-Stack Architect & Technologist",
-      description: "Biography, career milestones, technical philosophy, and entity knowledge graph of M Ramzan.",
-      keywords: ["About M Ramzan", "Software Architect Bio", "Lead Engineer Background"],
+      title: "About M Ramzan — Web & Mobile App Developer",
+      description: "Biography, development principles, skills, and work experience of M Ramzan.",
+      keywords: ["About M Ramzan", "Web Developer Bio", "WordPress Developer Background"],
       ogImage: "/images/og-default.jpg"
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
@@ -932,8 +929,8 @@ export const initialPages: Page[] = [
   {
     id: "page-services",
     slug: "services",
-    title: "Services & Capabilities — M RAMZAN",
-    description: "Bespoke engineering and creative services including Full-Stack Architecture, Custom CMS Development, and AI/GEO Optimization.",
+    title: "Services — M RAMZAN",
+    description: "Practical web and mobile development services including WordPress, React/Next.js web apps, Flutter mobile apps, and SEO optimization.",
     status: "published",
     sections: [
       { id: "sec-srv-hero", type: "hero", title: "Services Hero", enabled: true, order: 1 },
@@ -942,9 +939,9 @@ export const initialPages: Page[] = [
       { id: "sec-srv-cta", type: "cta", title: "Booking CTA", enabled: true, order: 4 },
     ],
     seo: {
-      title: "Services & Consulting — M RAMZAN",
-      description: "High-impact web engineering services: Next.js architecture, headless CMS platforms, GEO optimization, and creative development.",
-      keywords: ["Web Development Services", "Next.js Consultant", "CMS Development", "GEO Consulting"],
+      title: "Services & Offerings — M RAMZAN",
+      description: "Web development, WordPress customization, Flutter mobile app development, and SEO optimization services.",
+      keywords: ["Web Development Services", "WordPress Services", "Flutter App Developer", "SEO Services"],
       ogImage: "/images/og-default.jpg"
     },
     updatedAt: "2024-12-01T00:00:00.000Z"
@@ -952,17 +949,17 @@ export const initialPages: Page[] = [
   {
     id: "page-contact",
     slug: "contact",
-    title: "Contact & Collaboration — M RAMZAN",
-    description: "Initiate a project conversation with M Ramzan. Inquire regarding full-stack architecture, bespoke CMS builds, or technical consulting.",
+    title: "Contact — M RAMZAN",
+    description: "Get in touch with M Ramzan for web development, WordPress projects, and Flutter mobile app development.",
     status: "published",
     sections: [
       { id: "sec-contact-hero", type: "hero", title: "Contact Hero", enabled: true, order: 1 },
       { id: "sec-contact-form", type: "contact", title: "Inquiry Form", enabled: true, order: 2 },
     ],
     seo: {
-      title: "Contact M Ramzan — Direct Inquiry & Consultation",
-      description: "Get in touch with M Ramzan for bespoke software engineering, creative direction, and technical architecture.",
-      keywords: ["Contact M Ramzan", "Hire Next.js Architect", "Web Engineering Inquiry"],
+      title: "Contact M Ramzan — Web & Mobile App Developer",
+      description: "Get in touch with M Ramzan to discuss your website or mobile application project.",
+      keywords: ["Contact Web Developer", "Hire WordPress Developer", "Hire Flutter Developer"],
       ogImage: "/images/og-default.jpg"
     },
     updatedAt: "2024-12-01T00:00:00.000Z"

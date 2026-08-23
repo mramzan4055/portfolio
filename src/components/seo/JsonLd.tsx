@@ -18,8 +18,8 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       "@context": "https://schema.org",
       "@type": "Person",
       name: authorName,
-      jobTitle: settings?.authorTitle || "Lead Full-Stack Architect & Creative Technologist",
-      description: settings?.authorBio || "Lead Full-Stack Engineer and Creative Technologist specializing in luxury web platforms and enterprise CMS architecture.",
+      jobTitle: settings?.authorTitle || "Web & Mobile Application Developer",
+      description: settings?.authorBio || "Web and mobile application developer specializing in WordPress, HTML, CSS, JavaScript, React, Next.js, and Flutter.",
       url: siteUrl,
       email: settings?.authorEmail,
       sameAs: [
@@ -29,14 +29,18 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
         settings?.socialLinks?.dribbble,
       ].filter(Boolean),
       knowsAbout: [
-        "Full-Stack Web Development",
-        "Next.js Architecture",
-        "TypeScript",
-        "MySQL",
-        "Relational Database Architecture",
+        "Web Development",
+        "WordPress Development",
+        "React.js",
+        "Next.js",
+        "Flutter Mobile App Development",
+        "HTML5 & CSS3",
+        "JavaScript & TypeScript",
+        "Tailwind CSS",
+        "REST API Integration",
+        "Search Engine Optimization (SEO)",
         "Generative Engine Optimization (GEO)",
-        "Headless CMS Architecture",
-        "UI/UX Creative Direction"
+        "Responsive Web Design"
       ],
     };
   } else if (type === "website") {

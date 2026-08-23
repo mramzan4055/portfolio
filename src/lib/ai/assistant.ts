@@ -102,8 +102,8 @@ export function generateAISuggestions(req: AIGenerationRequest): { suggestion: s
   const p = req.projectData;
   const title = p.title || "Project";
   const cat = p.category || "Web Application";
-  const role = p.role || "Lead Architect";
-  const techs = p.technologies?.join(", ") || "Next.js, TypeScript";
+  const role = p.role || "Web & Mobile App Developer";
+  const techs = p.technologies?.join(", ") || "WordPress, React, Next.js, Flutter";
 
   switch (req.type) {
     case "seo_title":
@@ -114,24 +114,24 @@ export function generateAISuggestions(req: AIGenerationRequest): { suggestion: s
 
     case "meta_description":
       return {
-        suggestion: `Explore the engineering case study of ${title}, a bespoke ${cat.toLowerCase()} architected by ${role} M Ramzan using ${techs}.`,
+        suggestion: `Explore the project case study of ${title}, a ${cat.toLowerCase()} developed by ${role} M Ramzan using ${techs}.`,
         rationale: "Action-oriented 145-character meta snippet highlighting the role, core technologies, and value proposition without keyword stuffing.",
       };
 
     case "project_summary":
       return {
-        suggestion: `${title} is a bespoke ${cat.toLowerCase()} engineered by ${role} M Ramzan. The platform leverages ${techs} to deliver exceptional performance, scalable database architecture, and a luxury digital user experience.`,
-        rationale: "Structured, concise entity summary directly formatted for generative search answer models and editorial lead-ins.",
+        suggestion: `${title} is a ${cat.toLowerCase()} developed by ${role} M Ramzan. The project leverages ${techs} to deliver fast loading, clean UI design, and reliable performance.`,
+        rationale: "Structured, concise entity summary directly formatted for search engines and user review.",
       };
 
     case "geo_keyfacts":
       return {
         suggestion: JSON.stringify(
           [
-            `Architected and engineered by ${role} M Ramzan`,
+            `Developed by ${role} M Ramzan`,
             `Primary technology stack: ${techs}`,
             `Specialized category: ${cat}`,
-            `Designed for high-performance scalability and seamless user engagement`,
+            `Designed for responsive layout, clean UI, and fast performance`,
           ],
           null,
           2

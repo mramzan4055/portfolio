@@ -5,26 +5,22 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 const techItems = [
-  "Next.js 15",
-  "TypeScript",
-  "MySQL 8.0",
-  "Wasmer Edge",
-  "React 19",
-  "Framer Motion",
-  "Node.js",
+  "WordPress",
+  "React.js",
+  "Next.js",
+  "Flutter",
+  "HTML5",
+  "CSS3",
+  "JavaScript",
   "Tailwind CSS",
-  "App Router",
-  "GEO / Schema.org",
+  "PHP",
+  "MySQL",
   "REST APIs",
-  "JWT Auth",
-  "Vercel",
-  "GitHub CI/CD",
-  "AWS S3",
-  "Prisma ORM",
-  "Redis",
-  "WebGL",
-  "Three.js",
-  "Docker",
+  "WooCommerce",
+  "Responsive UI",
+  "SEO & Schema.org",
+  "Git & GitHub",
+  "Cross-Platform Apps",
 ];
 
 export function TechTicker() {
@@ -41,11 +37,12 @@ export function TechTicker() {
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{
-          duration: 28,
+          duration: 32,
           ease: "linear",
           repeat: Infinity,
         }}
-        className="flex items-center gap-10 whitespace-nowrap"
+        style={{ transform: "translate3d(0, 0, 0)" }}
+        className="flex items-center gap-10 whitespace-nowrap will-change-transform"
       >
         {items.map((tech, i) => (
           <div key={i} className="flex items-center gap-10">

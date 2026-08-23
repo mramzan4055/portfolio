@@ -46,9 +46,9 @@ export function HeroSection({ settings }: HeroSectionProps) {
           {/* Status Badge */}
           <motion.div variants={item} className="flex items-center gap-3 mb-6">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-[#dfb15b]/30 text-xs font-mono text-[#dfb15b]">
-              <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: "6s" }} />
+              <Sparkles className="w-3.5 h-3.5" />
               <span className="tracking-widest uppercase font-semibold">
-                Lead Full-Stack Architect & Technologist
+                Web & Mobile App Developer
               </span>
             </div>
           </motion.div>
@@ -58,7 +58,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
             variants={item}
             className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight leading-[1.08] mb-8"
           >
-            Engineering <span className="text-gradient-gold">luxury digital platforms</span> with architectural precision.
+            Building <span className="text-gradient-gold">modern websites & apps</span> with clean code and reliable tools.
           </motion.h1>
 
           {/* Subtitle / Personal Statement */}
@@ -67,7 +67,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
             className="text-lg sm:text-xl text-platinum-300 font-light leading-relaxed max-w-2xl mb-12"
           >
             {settings.tagline ||
-              "Architecting bespoke digital platforms, enterprise CMS ecosystems, and high-performance web applications tailored for global impact."}
+              "I build modern websites and mobile applications using industry-standard technologies, frameworks, and reliable development tools."}
           </motion.p>
 
           {/* Actions & CTAs */}
@@ -76,7 +76,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
               href="/work"
               className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#dfb15b] via-[#e5c07b] to-[#c7963b] text-black font-semibold text-sm uppercase tracking-widest hover:shadow-gold hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
-              <span>Explore Selected Works</span>
+              <span>Explore My Work</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
 
@@ -84,7 +84,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-panel hover:glass-panel-gold text-white font-medium text-sm uppercase tracking-widest transition-all"
             >
-              <span>Initiate Consultation</span>
+              <span>Get In Touch</span>
             </Link>
           </motion.div>
 
@@ -94,10 +94,10 @@ export function HeroSection({ settings }: HeroSectionProps) {
             className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 pt-12 border-t border-white/[0.08]"
           >
             {[
-              { label: "Core Stack", val: "Next.js 15+ & TS", icon: Code },
-              { label: "Data Architecture", val: "Wasmer MySQL & Relational DB", icon: Layers },
-              { label: "AI & Search", val: "GEO & Schema.org", icon: Sparkles },
-              { label: "Performance Target", val: "99+ Core Web Vitals", icon: ShieldCheck },
+              { label: "Frontend & Web", val: "React & Next.js", icon: Code },
+              { label: "CMS & Content", val: "WordPress & MySQL", icon: Layers },
+              { label: "Mobile Apps", val: "Flutter (iOS & Android)", icon: Sparkles },
+              { label: "Design & UX", val: "Clean & Responsive UI", icon: ShieldCheck },
             ].map((pillar, i) => {
               const Icon = pillar.icon;
               return (

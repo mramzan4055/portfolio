@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   return generateSiteMetadata(
     {
-      title: "Selected Works & Case Studies",
-      description: "Explore the complete portfolio of digital platforms, enterprise CMS architectures, and full-stack web applications by M Ramzan.",
+      title: "Projects & Portfolio — Web & Mobile Applications",
+      description: "Explore the complete portfolio of web applications, WordPress websites, and Flutter mobile apps developed by M Ramzan.",
       canonical: "/work",
     },
     settings
@@ -28,10 +28,10 @@ export default async function WorkPage() {
             Portfolio Showcase
           </span>
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight">
-            Selected Works & Systems
+            Selected Works & Projects
           </h1>
           <p className="text-platinum-300 text-base sm:text-lg font-light leading-relaxed">
-            A curated index of bespoke web applications, enterprise headless CMS platforms, and AI-enabled software architectures built for international clients.
+            A showcase of modern websites, WordPress portals, and mobile applications built with clean code and reliable technologies.
           </p>
         </div>
 

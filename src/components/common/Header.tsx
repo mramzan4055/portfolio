@@ -19,15 +19,20 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
   const pathname = usePathname();
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 20;
+          setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -67,7 +72,7 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
               {authorName}
             </span>
             <span className="text-[10px] text-platinum-400 tracking-wider font-mono">
-              CREATIVE ARCHITECT
+              WEB & APP DEVELOPER
             </span>
           </div>
         </Link>
@@ -80,6 +85,7 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
               <Link
                 key={link.label}
                 href={link.href}
+                prefetch={true}
                 className={cn(
                   "relative px-4 py-1.5 text-xs tracking-wider uppercase font-medium rounded-full transition-all duration-200",
                   isActive

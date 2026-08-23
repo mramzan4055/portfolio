@@ -2,29 +2,29 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Zap, Cpu, Sparkles } from "lucide-react";
+import { Layout, Smartphone, Globe, Code2 } from "lucide-react";
 
 export function StatementSection() {
   const principles = [
     {
-      icon: Award,
-      title: "Luxury Art Direction",
-      desc: "Editorial design language, bespoke typography, and cinema-grade micro-animations that elevate brands above generic templates.",
+      icon: Layout,
+      title: "Clean UI & Responsive Layouts",
+      desc: "Creating polished user interfaces that look great and work seamlessly across mobile phones, tablets, and desktop screens.",
     },
     {
-      icon: Zap,
-      title: "Sub-Second Performance",
-      desc: "Architected around Server Components, edge caching, and incremental static regeneration for instantaneous page loads.",
+      icon: Code2,
+      title: "Modern Web Technologies",
+      desc: "Building with React, Next.js, HTML5, CSS3, and JavaScript to deliver fast, reliable, and maintainable web applications.",
     },
     {
-      icon: Cpu,
-      title: "Enterprise Headless CMS",
-      desc: "Empowering non-technical teams with modular visual section builders, draft previews, and zero vendor lock-in.",
+      icon: Globe,
+      title: "WordPress & CMS Solutions",
+      desc: "Customizing and setting up easy-to-use WordPress sites and CMS tools that empower business owners to update content effortlessly.",
     },
     {
-      icon: Sparkles,
-      title: "GEO & AI-Ready Entities",
-      desc: "Structured JSON-LD knowledge graphs engineered so modern generative answer engines index key facts with flawless clarity.",
+      icon: Smartphone,
+      title: "Cross-Platform Flutter Apps",
+      desc: "Developing high-performance Android and iOS mobile applications from a single Flutter codebase with clean API integration.",
     },
   ];
 
@@ -35,13 +35,13 @@ export function StatementSection() {
           {/* Main Statement */}
           <div className="lg:col-span-6 flex flex-col gap-6">
             <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-              Engineering Philosophy
+              Development Philosophy
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white tracking-tight leading-tight">
-              Bridging the boundary between <span className="text-gradient-silver">fine aesthetics</span> and <span className="text-gradient-gold">rigorous systems engineering</span>.
+              Creating <span className="text-gradient-silver">clean, responsive websites</span> and <span className="text-gradient-gold">functional mobile apps</span> that work.
             </h2>
             <p className="text-platinum-300 text-base sm:text-lg leading-relaxed font-light">
-              True digital luxury is not merely visual polish; it is how an application responds, handles data under load, scales across global nodes, and presents its knowledge to both humans and artificial intelligence.
+              I focus on practical, real-world development. By leveraging modern frameworks, existing libraries, and reliable CMS tools, I help businesses launch fast, look professional, and deliver great user experiences without unnecessary complexity.
             </p>
           </div>
 

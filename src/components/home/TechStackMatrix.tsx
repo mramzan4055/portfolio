@@ -15,13 +15,13 @@ export function TechStackMatrix({ categories }: TechStackMatrixProps) {
         {/* Header */}
         <div className="flex flex-col gap-3 max-w-2xl mb-16">
           <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-            Architectural Mastery
+            Skills & Stack
           </span>
           <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-            Technical Stack & Ecosystem
+            Technologies & Tools
           </h2>
           <p className="text-platinum-400 text-sm sm:text-base leading-relaxed font-light">
-            Specialized engineering across modern frontend frameworks, relational database architectures, and generative engine optimization.
+            I build practical web and mobile solutions using industry-standard tools, frameworks, and reliable libraries.
           </p>
         </div>
 

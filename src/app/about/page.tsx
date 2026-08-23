@@ -34,24 +34,25 @@ export default async function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 flex flex-col gap-6">
             <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-              Personal Entity & Bio
+              About Me & Development Background
             </span>
             <h1 className="text-4xl sm:text-6xl font-display font-bold text-white tracking-tight leading-tight">
-              Architecting resilient digital systems with <span className="text-gradient-gold">uncompromising elegance</span>.
+              Building practical websites & mobile apps with <span className="text-gradient-gold">clean design & reliable code</span>.
             </h1>
             <p className="text-platinum-300 text-base sm:text-lg font-light leading-relaxed">
               {settings.authorBio}
             </p>
             <p className="text-platinum-400 text-sm sm:text-base font-light leading-relaxed">
-              With over 6+ years of specialized experience in full-stack architecture, I combine enterprise-level software engineering principles with high-end creative direction. My work spans high-throughput data platforms, bespoke headless CMS engines, and AI-ready web applications for visionary brands.
+              I build modern websites and mobile applications using industry-standard technologies, frameworks, and reliable development tools. My core stack includes WordPress, React, Next.js, HTML5, CSS3, JavaScript, and Flutter. I focus on clean UI, mobile responsiveness, smooth user experiences, and straightforward content management for clients.
             </p>
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
+                prefetch={true}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#dfb15b] to-[#c7963b] text-black font-semibold text-xs uppercase tracking-widest hover:shadow-gold transition-all"
               >
-                <span>Initiate Collaboration</span>
+                <span>Get In Touch</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 
@@ -60,7 +61,7 @@ export default async function AboutPage() {
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-full glass-panel hover:border-white/20 text-platinum-300 hover:text-white text-xs font-mono transition-all"
               >
                 <Download className="w-4 h-4 text-[#dfb15b]" />
-                <span>Download Press & CV Kit</span>
+                <span>Download CV / Resume</span>
               </a>
             </div>
           </div>
@@ -89,11 +90,11 @@ export default async function AboutPage() {
                 <span className="text-emerald-400">{settings.availabilityStatus}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-platinum-500">Core Specialty:</span>
-                <span>Next.js, CMS & AI/GEO</span>
+                <span className="text-platinum-500">Core Stack:</span>
+                <span>WordPress, React/Next.js, Flutter</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-platinum-500">Direct Inquiries:</span>
+                <span className="text-platinum-500">Direct Contact:</span>
                 <span className="text-white">{settings.authorEmail}</span>
               </div>
             </div>

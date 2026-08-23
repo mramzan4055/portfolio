@@ -13,10 +13,10 @@ interface AboutTeaserProps {
 
 export function AboutTeaser({ settings }: AboutTeaserProps) {
   const highlights = [
-    "Over 6+ years designing and implementing mission-critical web applications.",
-    "Specialized in Next.js 15+ App Router, full-stack TypeScript, and relational MySQL.",
-    "Pioneer in Generative Engine Optimization (GEO) and structured schema engineering.",
-    "Zero-dependency architectural approach ensuring longevity and zero vendor lock-in.",
+    "Focused on building clean, responsive websites and mobile applications that solve real-world problems.",
+    "Practical skills in WordPress customization, React, Next.js, HTML5, CSS3, JavaScript, and Flutter.",
+    "Creating user-friendly interfaces with fast load speeds and simple content management for clients.",
+    "Committed to clear communication, on-time delivery, and reliable ongoing support.",
   ];
 
   return (
@@ -48,10 +48,10 @@ export function AboutTeaser({ settings }: AboutTeaserProps) {
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.08]">
                 <div className="flex flex-col gap-1">
                   <span className="text-3xl sm:text-4xl font-display font-bold text-gradient-gold">
-                    6+
+                    10+
                   </span>
                   <span className="text-xs text-platinum-400 font-mono">
-                    Years Architectural Exp.
+                    Completed Projects
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
@@ -59,23 +59,23 @@ export function AboutTeaser({ settings }: AboutTeaserProps) {
                     100%
                   </span>
                   <span className="text-xs text-platinum-400 font-mono">
-                    Verified Deliveries
+                    Client Dedication
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-3xl sm:text-4xl font-display font-bold text-white">
-                    99+
+                  <span className="text-2xl sm:text-3xl font-display font-bold text-white">
+                    Web & App
                   </span>
                   <span className="text-xs text-platinum-400 font-mono">
-                    Core Web Vitals Target
+                    Multi-Platform
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-3xl sm:text-4xl font-display font-bold text-[#dfb15b]">
-                    24/7
+                  <span className="text-2xl sm:text-3xl font-display font-bold text-[#dfb15b]">
+                    Fast
                   </span>
                   <span className="text-xs text-platinum-400 font-mono">
-                    Resilient Architecture
+                    Turnaround Time
                   </span>
                 </div>
               </div>

@@ -39,22 +39,22 @@ export async function POST(req: NextRequest) {
           { label: "Selected Works", url: "/work" },
         ];
       } else if (query.includes("mysql") || query.includes("database") || query.includes("wasmer") || query.includes("backend")) {
-        resultText = "M Ramzan's database architecture leverages relational MySQL on Wasmer Edge with connection pooling, automatic JSON serialization/deserialization, strict migrations, ON DUPLICATE KEY upserts, and an instant local JSON file fallback for offline resilience.";
+        resultText = "M Ramzan works with relational MySQL and REST APIs to handle data storage, user authentication, and content management cleanly and reliably across web and mobile applications.";
         relevantLinks = [
-          { label: "Capabilities", url: "/services" },
+          { label: "Services", url: "/services" },
           { label: "About M Ramzan", url: "/about" },
         ];
-      } else if (query.includes("skill") || query.includes("stack") || query.includes("tech") || query.includes("next.js")) {
-        resultText = "M Ramzan's core engineering stack includes Next.js 15+ (App Router, Server Components, Route Handlers), TypeScript, MySQL 8.0, Tailwind CSS, Framer Motion, Wasmer Edge hosting, Generative Engine Optimization (GEO), Schema.org structured data, and custom Headless CMS engineering.";
+      } else if (query.includes("skill") || query.includes("stack") || query.includes("tech") || query.includes("next.js") || query.includes("wordpress") || query.includes("flutter")) {
+        resultText = "M Ramzan's technology stack includes WordPress, HTML5, CSS3, JavaScript, React, Next.js, and Flutter for cross-platform iOS/Android mobile apps, along with REST APIs, Tailwind CSS, MySQL, and SEO/GEO optimization.";
         relevantLinks = [
-          { label: "Skills & Capabilities", url: "/services" },
+          { label: "Skills & Services", url: "/services" },
           { label: "Browse Projects", url: "/work" },
         ];
       } else if (query.includes("available") || query.includes("hire") || query.includes("contact") || query.includes("cost") || query.includes("pricing") || query.includes("consult")) {
-        resultText = "M Ramzan is actively available for selected full-stack architecture engagements, custom CMS development, and advisory contracts. You can initiate a direct project consultation on the Contact page.";
+        resultText = "M Ramzan is available for freelance projects, WordPress customization, React/Next.js web development, and Flutter mobile app development. You can reach out directly via the Contact page.";
         relevantLinks = [
-          { label: "Book Consultation", url: "/contact" },
-          { label: "Explore Case Studies", url: "/work" },
+          { label: "Contact Ramzan", url: "/contact" },
+          { label: "Explore Projects", url: "/work" },
         ];
       } else {
         // Search matching projects by keywords
@@ -66,16 +66,16 @@ export async function POST(req: NextRequest) {
         );
 
         if (matched) {
-          resultText = `${matched.title} is a ${matched.category} project (${matched.year}) engineered by M Ramzan using ${(matched.technologies || []).slice(0, 4).join(", ")}. ${matched.shortDescription || matched.description}`;
+          resultText = `${matched.title} is a ${matched.category} project (${matched.year}) developed by M Ramzan using ${(matched.technologies || []).slice(0, 4).join(", ")}. ${matched.shortDescription || matched.description}`;
           relevantLinks = [
             { label: `View ${matched.title} Case Study`, url: `/projects/${matched.slug}` },
             { label: "All Projects", url: "/work" },
           ];
         } else {
-          resultText = "M Ramzan is a Lead Full-Stack Architect & Creative Technologist specializing in luxury digital platforms, Next.js App Router engineering, relational MySQL architecture, and Generative Engine Optimization (GEO). How can I assist your review of his work?";
+          resultText = "M Ramzan is a Web & Mobile App Developer specializing in building modern, responsive websites and mobile apps using WordPress, React, Next.js, and Flutter. How can I help you learn more about his work?";
           relevantLinks = [
-            { label: "Featured Work", url: "/work" },
-            { label: "Services & Capabilities", url: "/services" },
+            { label: "My Projects", url: "/work" },
+            { label: "Services", url: "/services" },
             { label: "Contact Ramzan", url: "/contact" },
           ];
         }

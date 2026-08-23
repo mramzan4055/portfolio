@@ -48,27 +48,30 @@
   background: #dfb15b;
 }
 
-/* Glassmorphic and Luxury Utilities */
+/* Glassmorphic and Luxury Utilities - Hardware Accelerated */
 .glass-panel {
-  background: rgba(15, 15, 20, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(15, 15, 20, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateZ(0);
 }
 
 .glass-panel-elevated {
-  background: rgba(22, 22, 30, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(20, 20, 28, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transform: translateZ(0);
 }
 
 .glass-panel-gold {
-  background: rgba(22, 22, 30, 0.8);
-  backdrop-filter: blur(16px);
+  background: rgba(22, 22, 30, 0.82);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(223, 177, 91, 0.3);
   box-shadow: 0 10px 30px -5px rgba(223, 177, 91, 0.12);
+  transform: translateZ(0);
 }
 
 .text-gradient-gold {
@@ -84,16 +87,18 @@
 }
 
 .bg-noise {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
 .ambient-glow {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(100px);
+  filter: blur(40px);
   pointer-events: none;
   opacity: 0.15;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 /* Reduced Motion Override */

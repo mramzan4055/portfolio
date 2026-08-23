@@ -33,18 +33,19 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="flex flex-col gap-3">
             <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
-              Capabilities & Offerings
+              Services & What I Offer
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-              Bespoke Engineering Services
+              Web & Mobile Development
             </h2>
           </div>
 
           <Link
             href="/services"
+            prefetch={true}
             className="inline-flex items-center gap-2 text-sm font-mono tracking-wider uppercase text-platinum-300 hover:text-[#dfb15b] transition-colors group"
           >
-            <span>Explore All Deliverables</span>
+            <span>View All Services</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
         </div>

@@ -30,10 +30,10 @@ export function SkillsMatrixVisualizer({ categories }: SkillsMatrixVisualizerPro
         <div className="flex flex-col gap-2">
           <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b] flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Technical Proficiency & Matrix</span>
+            <span>Technical Skills & Tools</span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Architectural Capabilities
+            Development Skills
           </h2>
         </div>
 
