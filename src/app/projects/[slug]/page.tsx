@@ -294,7 +294,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 Technologies & Tools
               </h4>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((t, idx) => (
+                {(project.technologies || []).map((t, idx) => (
                   <span
                     key={idx}
                     className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-platinum-300"
@@ -306,13 +306,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             </div>
 
             {/* Services Provided */}
-            {project.services && project.services.length > 0 && (
+            {(project.services || []).length > 0 && (
               <div className="glass-panel p-6 sm:p-8 rounded-3xl flex flex-col gap-4">
                 <h4 className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
                   Services Provided
                 </h4>
                 <div className="flex flex-col gap-2">
-                  {project.services.map((s, idx) => (
+                  {(project.services || []).map((s, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-xs text-platinum-300">
                       <CheckCircle className="w-3.5 h-3.5 text-[#dfb15b]" />
                       <span>{s}</span>

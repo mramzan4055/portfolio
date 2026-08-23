@@ -1,15 +1,21 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 export function ReadingProgress() {
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <motion.div

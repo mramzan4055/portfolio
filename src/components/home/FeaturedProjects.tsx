@@ -11,8 +11,8 @@ interface FeaturedProjectsProps {
 }
 
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
-  const featured = projects.filter((p) => p.featured && p.status === "published").slice(0, 4);
-  const displayProjects = featured.length > 0 ? featured : projects.slice(0, 4);
+  const featured = projects.filter((p) => p.featured && p.status === "published").slice(0, 6);
+  const displayProjects = featured.length > 0 ? featured : projects.slice(0, 6);
 
   return (
     <section className="py-28 relative">

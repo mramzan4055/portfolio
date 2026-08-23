@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { writeFile, mkdir } from "fs/promises";
+import path from "path";
 import { getMediaItems, saveMediaItem, deleteMediaItem } from "@/lib/data/store";
 import { MediaItem } from "@/types";
 
@@ -10,9 +12,6 @@ export async function GET() {
     return NextResponse.json({ success: false, error: "Failed to fetch media" }, { status: 500 });
   }
 }
-
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
 
 export async function POST(req: NextRequest) {
   try {

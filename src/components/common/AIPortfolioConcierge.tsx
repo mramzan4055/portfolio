@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
@@ -28,12 +29,13 @@ export function AIPortfolioConcierge() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "msg-welcome",
       sender: "assistant",
-      text: "Greetings. I am M Ramzan's interactive AI Concierge. How may I assist your exploration of his engineering case studies, MySQL architecture, or availability?",
+      text: "Greetings. I am M Ramzan's interactive AI Concierge. How may I assist your exploration of his engineering case studies (such as LDDB, Brites Security, Anwarul Quran), MySQL architecture, or availability?",
       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       links: [
         { label: "Featured Work", url: "/work" },
@@ -49,11 +51,17 @@ export function AIPortfolioConcierge() {
     }
   }, [messages, isOpen]);
 
-  const handleSend = async (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-    if (!input.trim() || loading) return;
+  // Suppress on admin routes
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
-    const userText = input.trim();
+  const handleSend = async (e?: React.FormEvent, directPrompt?: string) => {
+    if (e) e.preventDefault();
+    const promptToSend = directPrompt || input;
+    if (!promptToSend.trim() || loading) return;
+
+    const userText = promptToSend.trim();
     const userMsg: Message = {
       id: `usr-${Date.now()}`,
       sender: "user",
@@ -85,6 +93,10 @@ export function AIPortfolioConcierge() {
         sender: "assistant",
         text: aiReply,
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        links: data?.links || [
+          { label: "View Portfolio", url: "/work" },
+          { label: "Contact Ramzan", url: "/contact" },
+        ],
       };
 
       setMessages((prev) => [...prev, aiMsg]);
@@ -103,10 +115,10 @@ export function AIPortfolioConcierge() {
   };
 
   const samplePrompts = [
+    "Tell me about the LDDB AgTech project",
+    "How was Brites Security UK platform engineered?",
+    "Tell me about Anwarul Quran Foundation",
     "What are his core technical skills?",
-    "Tell me about the Alqadir LMS project",
-    "How does he handle custom CMS engineering?",
-    "Is he open to new engagements?",
   ];
 
   return (
@@ -213,7 +225,7 @@ export function AIPortfolioConcierge() {
                   <button
                     key={i}
                     onClick={() => {
-                      setInput(p);
+                      handleSend(undefined, p);
                     }}
                     className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] hover:border-[#dfb15b]/40 text-platinum-400 hover:text-white transition-colors text-left"
                   >

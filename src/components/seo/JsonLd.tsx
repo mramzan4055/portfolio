@@ -23,10 +23,10 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       url: siteUrl,
       email: settings?.authorEmail,
       sameAs: [
-        settings?.socialLinks.github,
-        settings?.socialLinks.linkedin,
-        settings?.socialLinks.twitter,
-        settings?.socialLinks.dribbble,
+        settings?.socialLinks?.github,
+        settings?.socialLinks?.linkedin,
+        settings?.socialLinks?.twitter,
+        settings?.socialLinks?.dribbble,
       ].filter(Boolean),
       knowsAbout: [
         "Full-Stack Web Development",
@@ -70,7 +70,7 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       },
       applicationCategory: project.category,
       operatingSystem: "Web",
-      keywords: project.technologies.join(", "),
+      keywords: (project.technologies || []).join(", "),
       offers: {
         "@type": "Offer",
         price: "0",

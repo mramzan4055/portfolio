@@ -71,7 +71,7 @@ export function KeyFactsCard({
               </div>
               <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] text-xs text-platinum-300">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#dfb15b] flex-shrink-0 mt-0.5" />
-                <span>Core Stack: {technologies.slice(0, 3).join(", ")}</span>
+                <span>Core Stack: {(technologies || []).slice(0, 3).join(", ")}</span>
               </div>
             </>
           )}

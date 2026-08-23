@@ -32,9 +32,9 @@ export function WorkPortfolioClient({ projects }: WorkPortfolioClientProps) {
         selectedCategory === "All" || project.category === selectedCategory;
       const matchesSearch =
         searchQuery === "" ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.technologies.some((t) =>
+        (project.title || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (project.shortDescription || project.description || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (project.technologies || []).some((t) =>
           t.toLowerCase().includes(searchQuery.toLowerCase())
         );
 

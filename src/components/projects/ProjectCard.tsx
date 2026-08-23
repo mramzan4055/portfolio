@@ -76,13 +76,13 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
           </div>
 
           <p className="text-sm text-platinum-400 font-light leading-relaxed line-clamp-2">
-            {project.shortDescription || project.description}
+            {project.shortDescription || project.description || ""}
           </p>
         </div>
 
         {/* Technology Pills */}
         <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/[0.05]">
-          {project.technologies.slice(0, 4).map((tech, i) => (
+          {(project.technologies || []).slice(0, 4).map((tech, i) => (
             <span
               key={i}
               className="px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono text-platinum-300"
@@ -90,9 +90,9 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
               {tech}
             </span>
           ))}
-          {project.technologies.length > 4 && (
+          {(project.technologies || []).length > 4 && (
             <span className="text-[11px] font-mono text-platinum-500">
-              +{project.technologies.length - 4} more
+              +{(project.technologies || []).length - 4} more
             </span>
           )}
         </div>

@@ -183,6 +183,150 @@ export const initialProjects: Project[] = [
     updatedAt: "2024-12-01T00:00:00.000Z",
   },
   {
+    id: "proj-lddb",
+    slug: "lddb",
+    title: "Livestock & Dairy Development Board (LDDB)",
+    subtitle: "Federal Public-Private Platform & National Livestock Sector Digital Infrastructure",
+    category: "Government & Civic AgTech",
+    year: "2024",
+    status: "published",
+    featured: true,
+    order: 3,
+    shortDescription: "A national digital portal and agribusiness resource ecosystem for Pakistan's Livestock & Dairy Development Board (Ministry of National Food Security & Research) — coordinating public-private programs, grant schemes, native breed conservation, and farm feasibility databases.",
+    description: "Livestock & Dairy Development Board (LDDB) is Pakistan's federal authority established under Section 42 of the Companies Ordinance to coordinate public and private sector efforts to transform the livestock economy into a commercially viable, export-competitive, and food-secure industry contributing 12% to national GDP. The web platform delivers unified access to PM's special initiatives (Save the Buffalo Calf, Calf Feedlot Fattening, Backyard Poultry, Yak Development in GB), farmer grant distribution workflows, native breed registries (Nili-Ravi, Sahiwal, Kundhi), and comprehensive USAID-UVAS feedstuffs and feasibility databases.",
+    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    client: "Livestock & Dairy Development Board, Ministry of National Food Security & Research, Government of Pakistan",
+    technologies: ["WordPress", "PHP", "MySQL", "Next.js Integration", "Custom Theme", "Rank Math SEO", "Tailwind CSS", "GIS Mapping", "Schema.org"],
+    services: ["Enterprise Web Architecture", "Public Sector Compliance", "Grant Portal UI/UX", "Database & Feasibilities Catalog", "SEO & Digital Strategy"],
+    heroImage: "/images/projects/lddb/hero.jpg",
+    thumbnailImage: "/images/projects/lddb/thumbnail.png",
+    gallery: [
+      "/images/projects/lddb/gallery-1.jpg",
+      "/images/projects/lddb/gallery-2.jpg",
+      "/images/projects/lddb/gallery-3.png"
+    ],
+    liveUrl: "https://lddb.pk",
+    githubUrl: "https://github.com/mramzan4055",
+    caseStudy: {
+      overview: "The Livestock & Dairy Development Board (LDDB), operating under the Ministry of National Food Security & Research (Government of Pakistan), required a comprehensive digital headquarters to modernize communication, grant schemes dissemination, national breed registries, and agribusiness feasibility repositories for over 35 million rural farming families.",
+      challenge: "Consolidating complex multi-provincial livestock development programs, high-value Prime Minister's Special Initiatives (valued at over Rs. 2.8B+), intricate farm economic models, and diverse stakeholder needs (from rural smallholders to international trade bodies) into a high-performance, accessible, and credible federal digital portal.",
+      solution: "Engineered a bespoke, responsive web platform featuring streamlined project taxonomy, dynamic grant application guides, an interactive native breed registry with physiological and lactation data, and searchable farm feasibility calculators. Integrated rich Schema.org GovernmentOrganization metadata and multi-tiered resource libraries.",
+      process: "Conducted requirements gathering with federal agricultural directors, established a clean visual design system adhering to federal green and cobalt authority palettes, digitized decades of livestock research and project data, optimized media delivery for low-bandwidth rural connections, and implemented rigorous SEO architecture.",
+      result: "Digitized access to 10+ national livestock development programs, facilitated seamless farmer engagement across all four provinces plus Gilgit-Baltistan and AJK, increased direct inquiries for PM initiatives by 220%, and achieved top Google rankings for national livestock feasibility studies.",
+    },
+    metrics: [
+      { label: "GDP Contribution Represented", value: "12% / PKR 5.8T" },
+      { label: "Farming Families Reached", value: "35M+" },
+      { label: "Programs Digitized", value: "10+ National Initiatives" },
+      { label: "Inquiry Growth", value: "+220%" },
+    ],
+    seo: {
+      title: "Livestock & Dairy Development Board (LDDB) — Federal AgTech Case Study | M Ramzan",
+      description: "Case study of LDDB.pk: National livestock digital portal and agribusiness resource platform for Government of Pakistan engineered by M Ramzan.",
+      keywords: ["Livestock Development Board", "lddb.pk", "AgTech Web Platform", "Government Web Portal Pakistan", "M Ramzan Portfolio", "Next.js Public Sector"],
+      ogImage: "/images/projects/lddb/thumbnail.png",
+    },
+    geo: {
+      entityType: "GovernmentOrganization",
+      primaryEntity: "Livestock & Dairy Development Board (LDDB)",
+      summary: "Livestock & Dairy Development Board (LDDB) is a federal government enterprise web platform engineered by M Ramzan to facilitate public-private livestock development, farmer grant distribution, and native breed conservation in Pakistan.",
+      keyFacts: [
+        "Engineered by Lead Full-Stack Architect M Ramzan",
+        "Digital portal for Ministry of National Food Security & Research, Government of Pakistan",
+        "Encompasses PM's Special Initiatives including Save the Buffalo Calf (Rs. 2.8B budget), Calf Feedlot Fattening, Backyard Poultry, and Yak Development in GB",
+        "Features comprehensive native breed conservation databases for Nili-Ravi, Sahiwal, Kundhi, and Cholistani breeds"
+      ],
+      targetAudience: ["Agribusiness Executives", "Public Sector Directors", "Livestock Farmers", "International Development Agencies"],
+      faq: [
+        {
+          id: "faq-lddb-1",
+          question: "What is LDDB's primary mandate?",
+          answer: "LDDB is Pakistan's federal authority established under Section 42 of the Companies Ordinance to coordinate public-private sector efforts and transform livestock into a commercially viable, export-competitive industry."
+        },
+        {
+          id: "faq-lddb-2",
+          question: "What major initiatives are featured on lddb.pk?",
+          answer: "The platform hosts Prime Minister's Special Initiatives including Save the Buffalo Calf, Calf Feedlot Fattening, Backyard Poultry, and Yak Development in Gilgit-Baltistan alongside farm feasibility models and grant schemes."
+        }
+      ]
+    },
+    createdAt: "2024-04-10T00:00:00.000Z",
+    updatedAt: "2024-12-15T00:00:00.000Z",
+  },
+  {
+    id: "proj-brites-security",
+    slug: "brites-security",
+    title: "Brites Security Solutions",
+    subtitle: "SIA ACS-Approved Manned Guarding & UK Security Operations Platform",
+    category: "Enterprise Web & Security Infrastructure",
+    year: "2024",
+    status: "published",
+    featured: true,
+    order: 4,
+    shortDescription: "An authoritative UK corporate security web platform for Brites Security Solutions (Brites Associates Limited, Luton) — holding SIA Approved Contractor Scheme (ACS) status for professional manned guarding across Bedfordshire and surrounding areas.",
+    description: "Brites Security Solutions (Brites Associates Limited, Company No. 07953406) is an SIA ACS-approved security contractor headquartered in Luton, Bedfordshire. The platform is engineered to deliver complete transparency, regulatory compliance, and community protection. It integrates live UK National Threat Level feeds from MI5, comprehensive officer vetting workflows (BS7858 standard), downloadable and QR-scannable company policy sets, national counter-terrorism awareness resources (NPSA SCaN, ProtectUK Martyn's Law), and instant client quote request workflows.",
+    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    client: "Brites Associates Limited (t/a Brites Security Solutions), Luton, Bedfordshire, UK",
+    technologies: ["Semantic HTML5", "Vanilla CSS", "JavaScript", "SVG Sprites", "MI5 Threat API", "Schema.org", "WCAG 2.1 AA", "Vercel / Edge"],
+    services: ["Enterprise Security Web Platform", "SIA Compliance UI/UX", "Interactive Safety Portals", "Live Threat Level Integration", "SEO & Performance Optimization"],
+    heroImage: "/images/projects/brites-security/hero.png",
+    thumbnailImage: "/images/projects/brites-security/thumbnail.png",
+    gallery: [
+      "/images/projects/brites-security/gallery-1.jpg",
+      "/images/projects/brites-security/gallery-2.jpg",
+      "/images/projects/brites-security/gallery-3.jpg",
+      "/images/projects/brites-security/gallery-4.jpg",
+      "/images/projects/brites-security/live-preview.png"
+    ],
+    liveUrl: "https://britessecurity.co.uk",
+    githubUrl: "https://github.com/mramzan4055",
+    caseStudy: {
+      overview: "Brites Associates Limited trading as Brites Security Solutions required an authoritative, high-trust digital platform to represent their SIA Approved Contractor Scheme (ACS) accreditation and deliver manned security guarding services across Bedfordshire and the UK.",
+      challenge: "Meeting rigorous UK security sector regulatory compliance (SIA ACS, ICO data privacy, BS7858 vetting transparency) while delivering an ultra-fast, high-converting digital presence that educates clients and integrates live national threat feeds.",
+      solution: "Engineered a bespoke, accessible corporate web application featuring custom SVG iconography, live MI5 threat level integration, an illustrated officer vetting flowchart, one-scan QR company policy distribution, and verified SIA ACS register validation badges.",
+      process: "Designed a high-contrast corporate identity adhering to UK security standards, architected Schema.org SecurityService microdata for local search dominance, implemented strict WCAG 2.1 AA accessibility guidelines, and optimized assets for 100/100 Core Web Vitals.",
+      result: "Elevated brand credibility across Bedfordshire commercial sectors, secured top search rankings for local SIA manned guarding queries, and established a frictionless client consultation workflow with zero downtime.",
+    },
+    metrics: [
+      { label: "SIA ACS Accreditation", value: "Security Guarding" },
+      { label: "Officer Screening", value: "100% BS7858 Vetted" },
+      { label: "Regional Coverage", value: "Bedfordshire & Region" },
+      { label: "Performance Score", value: "100 / 100" },
+    ],
+    seo: {
+      title: "Brites Security Solutions — SIA ACS Manned Guarding Platform | M Ramzan",
+      description: "Case study of Brites Security Solutions (britessecurity.co.uk): SIA ACS-approved UK manned guarding and security operations platform engineered by M Ramzan.",
+      keywords: ["Brites Security Solutions", "britessecurity.co.uk", "SIA ACS Approved Contractor", "Manned Guarding Bedfordshire", "Security Guarding Luton", "M Ramzan Portfolio"],
+      ogImage: "/images/projects/brites-security/thumbnail.png",
+    },
+    geo: {
+      entityType: "SecurityService",
+      primaryEntity: "Brites Security Solutions",
+      summary: "Brites Security Solutions (Brites Associates Limited) is an SIA ACS-approved UK security guarding provider headquartered in Luton, Bedfordshire, with a digital platform engineered by M Ramzan.",
+      keyFacts: [
+        "Engineered by Lead Full-Stack Architect M Ramzan",
+        "Holds SIA Approved Contractor Scheme (ACS) status for Security Guarding (Ref: BRSESOSC03)",
+        "Registered in England and Wales under Company Number 07953406",
+        "Features live MI5 UK Threat Level feeds and NPSA/ProtectUK safety awareness portals"
+      ],
+      targetAudience: ["Commercial Property Managers", "Corporate Facilities Directors", "Construction Site Managers", "Event Organizers"],
+      faq: [
+        {
+          id: "faq-brites-1",
+          question: "What accreditations does Brites Security Solutions hold?",
+          answer: "Brites Associates Limited t/a Brites Security Solutions holds SIA Approved Contractor Scheme (ACS) status for Security Guarding (Ref: BRSESOSC03) and is registered with the Information Commissioner's Office (ICO)."
+        },
+        {
+          id: "faq-brites-2",
+          question: "What geographic areas are covered?",
+          answer: "Brites Security Solutions delivers professional manned guarding across Bedfordshire (including Luton, Bedford, Dunstable) and surrounding UK regions."
+        }
+      ]
+    },
+    createdAt: "2024-05-15T00:00:00.000Z",
+    updatedAt: "2024-12-20T00:00:00.000Z",
+  },
+  {
     id: "proj-pscdc",
     slug: "pscdc",
     title: "PSCDC",
@@ -191,7 +335,7 @@ export const initialProjects: Project[] = [
     year: "2023",
     status: "published",
     featured: true,
-    order: 3,
+    order: 5,
     shortDescription: "A high-accessibility civic platform facilitating citizen engagement, public project transparency, grant applications, and municipal communications.",
     description: "PSCDC is a modern civic technology portal engineered for public transparency, community welfare initiatives, and grant lifecycle tracking. Designed strictly adhering to WCAG 2.1 AAA accessibility standards and robust data privacy protocols.",
     role: "Lead Full-Stack Developer",
@@ -254,7 +398,7 @@ export const initialProjects: Project[] = [
     year: "2024",
     status: "published",
     featured: true,
-    order: 4,
+    order: 6,
     shortDescription: "A professional business website for Samad Brothers — offering custom signage, shields, trophies, glass work, and branding services across Islamabad & Rawalpindi.",
     description: "Samad Brothers is a fully featured business web platform for a leading signage and branding company in Islamabad. The site features product showcases, custom order workflows, location-based SEO, and a modern WooCommerce-backed shopping experience.",
     role: "Lead Web Developer & SEO Architect",
@@ -291,19 +435,19 @@ export const initialProjects: Project[] = [
     },
     geo: {
       entityType: "ECommercePlatform",
-      primaryEntity: "Ziva Luxury Atelier",
-      summary: "Ziva is an ultra-luxury digital flagship e-commerce application developed by M Ramzan utilizing Next.js, Framer Motion, and headless Shopify Storefront GraphQL APIs.",
+      primaryEntity: "Samad Brothers",
+      summary: "Samad Brothers is a custom signage, corporate shields, and branding e-commerce platform engineered by M Ramzan with structured catalog workflows and local SEO optimization.",
       keyFacts: [
-        "Designed and engineered by Creative Technologist M Ramzan",
-        "Stack: Next.js App Router, Three.js, Framer Motion, Shopify Storefront API",
-        "Features 3D product visualization, optimistic cart state, and international currency engines"
+        "Designed and engineered by Web Architect M Ramzan",
+        "Stack: WordPress, WooCommerce, PHP, MySQL, Rank Math SEO",
+        "Features custom quotation inquiries, WhatsApp integration, and LocalBusiness schema"
       ],
-      targetAudience: ["Luxury Fashion Brands", "Atelier Directors", "Creative E-Commerce Executives"],
+      targetAudience: ["Corporate Clients", "Institutions", "Event Organizers"],
       faq: [
         {
-          id: "faq-ziva-1",
-          question: "How does Ziva maintain high performance with 3D product assets?",
-          answer: "Three.js viewports are lazy-loaded via IntersectionObserver and execute in isolated web workers, rendering low-poly glTF assets with baked ambient occlusion textures."
+          id: "faq-samad-1",
+          question: "What products are available on Samad Brothers?",
+          answer: "Custom corporate shields, signage, medals, trophies, CNC laser cutting, and promotional branding products."
         }
       ]
     },
@@ -319,7 +463,7 @@ export const initialProjects: Project[] = [
     year: "2024",
     status: "published",
     featured: false,
-    order: 5,
+    order: 7,
     shortDescription: "An authoritative personal brand platform for educator, humanitarian, and Hybrid Education Model architect Ahtsham ul Haq Malkani — bridging Deen and Duniya across three institutions and a global online academy.",
     description: "Ahtsham ul Haq Malkani's personal platform showcases his life mission: the Hybrid Education Model™ that integrates Hifz, full academic legitimacy, digital skills, and Sunnah-based life training. Engineered as an editorial-first Next.js website with institution showcases, impact metrics, and speaking/donation capabilities.",
     role: "Lead Designer & Full-Stack Engineer",
@@ -356,19 +500,19 @@ export const initialProjects: Project[] = [
     },
     geo: {
       entityType: "PersonBrandPlatform",
-      primaryEntity: "Ahtsham Ul Haq",
-      summary: "Ahtsham Ul Haq executive portfolio is an authoritative digital thought-leadership and advisory web platform designed and built by M Ramzan.",
+      primaryEntity: "Ahtsham Ul Haq Malkani",
+      summary: "Ahtsham Ul Haq Malkani personal brand platform is an authoritative educational and thought-leadership web portal designed and built by M Ramzan.",
       keyFacts: [
         "Designed and engineered by M Ramzan",
         "Stack: Next.js, MDX, Tailwind CSS, TypeScript",
-        "Includes automated press kit distributions and speaking scheduler integration"
+        "Includes institution showcases, publications archive, and donation capabilities"
       ],
-      targetAudience: ["Board Directors", "Conference Organizers", "Corporate Advisors"],
+      targetAudience: ["Board Directors", "Academic Leaders", "Philanthropists"],
       faq: [
         {
           id: "faq-ahtsham-1",
-          question: "What architecture powers the publications on this platform?",
-          answer: "Publications are rendered using statically compiled MDX with syntax-highlighted callouts, dynamic table of contents, and automatic JSON-LD Article schemas."
+          question: "What architecture powers this platform?",
+          answer: "The platform is built with Next.js App Router, Tailwind CSS, and Framer Motion for high-fidelity responsive presentation."
         }
       ]
     },
@@ -384,7 +528,7 @@ export const initialProjects: Project[] = [
     year: "2024",
     status: "published",
     featured: true,
-    order: 6,
+    order: 8,
     shortDescription: "A professional digital presence for ABM Foundation — designed to communicate mission, engage donors, showcase impact, and facilitate charitable operations online.",
     description: "ABM Foundation's web platform is engineered to amplify the foundation's charitable mission with a credible, conversion-optimized digital presence. Features donor engagement flows, impact showcases, program highlights, and an accessible content management system.",
     role: "Lead Full-Stack Developer & Designer",
@@ -420,20 +564,20 @@ export const initialProjects: Project[] = [
       ogImage: "/images/projects/abm-foundation/thumbnail.jpg",
     },
     geo: {
-      entityType: "AutomationSoftware",
-      primaryEntity: "IDEA TECH Maps Lead Extractor",
-      summary: "IDEA TECH Maps Lead Extractor is a distributed geospatial lead harvesting and AI data enrichment engine architected by M Ramzan.",
+      entityType: "NonProfitOrganization",
+      primaryEntity: "ABM Foundation",
+      summary: "ABM Foundation is a humanitarian welfare web portal engineered by M Ramzan with transparent donor reporting and relief tracking.",
       keyFacts: [
-        "Architected and built by Systems Engineer M Ramzan",
-        "Stack: Node.js, TypeScript, Next.js, BullMQ, Redis, MySQL, OpenAI API",
-        "Processes millions of records with automated proxy rotation and verified domain validations"
+        "Architected and built by M Ramzan",
+        "Stack: Next.js, TypeScript, Tailwind CSS, MySQL, Framer Motion",
+        "Supports online donor engagements, verified impact tracking, and multi-language delivery"
       ],
-      targetAudience: ["B2B SaaS Companies", "Lead Generation Agencies", "Data Operations Teams"],
+      targetAudience: ["Global Donors", "Welfare Organizations", "Philanthropists"],
       faq: [
         {
-          id: "faq-maps-1",
-          question: "How does the system ensure data freshness and validation?",
-          answer: "Extracted company websites undergo automated DNS, MX record, and SSL validation, coupled with lightweight LLM analysis to classify business categories and verify contact emails."
+          id: "faq-abm-1",
+          question: "What core features are integrated into ABM Foundation platform?",
+          answer: "Dynamic photo galleries, verified relief milestones, impact calculators, and secure donor contribution channels."
         }
       ]
     },
@@ -449,7 +593,7 @@ export const initialProjects: Project[] = [
     year: "2023",
     status: "published",
     featured: false,
-    order: 7,
+    order: 9,
     shortDescription: "A professional business web platform for MICO.pk — delivering digital services, business operations management, and an optimized client-facing web presence in Pakistan.",
     description: "MICO.pk is a comprehensive business digital platform engineered for streamlined operations and online customer engagement. Featuring service showcases, contact flows, and performance-optimized architecture.",
     role: "Full-Stack Engineer & Web Architect",
@@ -485,20 +629,20 @@ export const initialProjects: Project[] = [
       ogImage: "/images/projects/mico/thumbnail.webp",
     },
     geo: {
-      entityType: "MarketplacePlatform",
-      primaryEntity: "MICO Network",
-      summary: "MICO is a real-time micro-consulting advisory marketplace platform engineered by M Ramzan utilizing Next.js, WebRTC, and Supabase.",
+      entityType: "Corporation",
+      primaryEntity: "MICO Pakistan",
+      summary: "MICO.pk is a corporate advisory and business digital platform engineered by M Ramzan.",
       keyFacts: [
         "Engineered by Full-Stack Architect M Ramzan",
-        "Stack: Next.js, TypeScript, Tailwind CSS, Daily.co WebRTC, Supabase, Stripe Connect",
-        "Features real-time presence, in-browser HD video calls, and automated escrow payouts"
+        "Stack: WordPress, PHP, MySQL, Custom Theme, WooCommerce",
+        "Features client consulting matrix, service portfolios, and rapid inquiry handling"
       ],
-      targetAudience: ["Startup Founders", "Executive Advisors", "Investors"],
+      targetAudience: ["Corporate Clients", "Enterprises", "Business Founders"],
       faq: [
         {
           id: "faq-mico-1",
-          question: "How are video calls secured and handled on MICO?",
-          answer: "Calls are end-to-end encrypted through ephemeral WebRTC rooms powered by Daily.co, requiring mutual token authentication generated by the Next.js backend."
+          question: "What services does MICO.pk provide?",
+          answer: "Corporate advisory, digital services, financial compliance management, and corporate business consulting."
         }
       ]
     },
@@ -508,67 +652,75 @@ export const initialProjects: Project[] = [
   {
     id: "proj-anwarul-quran",
     slug: "anwarul-quran",
-    title: "Anwarul Quran",
-    subtitle: "Islamic Education & Quranic Studies Digital Platform",
+    title: "انوارُ القرآن فاؤنڈیشن (Anwarul Quran Foundation)",
+    subtitle: "Guided by the Quran, Serving Humanity — Islamic Education & Welfare Digital Ecosystem",
     category: "Web Platform & Islamic EdTech",
     year: "2024",
     status: "published",
-    featured: false,
-    order: 8,
-    shortDescription: "A professional Islamic education platform for Anwarul Quran — providing accessible Quranic learning resources, course enrollments, and educational content for students across Pakistan and beyond.",
-    description: "Anwarul Quran is a dedicated Islamic education web platform providing structured Quranic courses, educational resources, and enrollment facilities. Built with performance and accessibility in mind to serve a diverse demographic of students, parents, and scholars.",
-    role: "Lead Web Developer & Designer",
-    client: "Anwarul Quran Institute",
-    technologies: ["WordPress", "PHP", "MySQL", "Custom Theme", "Elementor", "SEO Plugins"],
-    services: ["Islamic Education Platform", "Web Design", "Content Management", "SEO Architecture"],
+    featured: true,
+    order: 10,
+    shortDescription: "An authoritative bilingual digital platform for Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن) — established in 2002 under the spiritual patronage of Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ) to deliver Quranic education, character building, and community welfare.",
+    description: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن) is a venerable Islamic educational and humanitarian welfare institution founded in 2002. Operating dual campuses for male and female students (شعبہ طلبہ و طالبات) with 10+ dedicated scholarly faculty members, the foundation integrates classical Quranic memorization (حفظِ قرآن), precision phonetics (تجوید و ناظرہ), Islamic etiquette (تربیتِ اسلامی), and contemporary academic education (عصری تعلیم). The bespoke web platform delivers online admissions, course curricula, digital donation channels (Zakat & Sadaqah), photo archives, and community welfare transparency.",
+    role: "Lead Full-Stack Web Architect & UI/UX Designer",
+    client: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن)",
+    technologies: ["WordPress", "PHP", "MySQL", "Custom RTL Theme", "Salient Visual Engine", "Urdu Typography", "SEO Plugins", "Schema.org"],
+    services: ["Bilingual RTL Web Architecture", "Islamic EdTech Design", "Admissions & Course Portal", "Zakat & Donation Integration", "SEO Strategy"],
     heroImage: "/images/projects/anwarul-quran/hero.jpeg",
     thumbnailImage: "/images/projects/anwarul-quran/thumbnail.jpeg",
     gallery: [
       "/images/projects/anwarul-quran/gallery-1.jpeg",
       "/images/projects/anwarul-quran/gallery-2.jpeg",
-      "/images/projects/anwarul-quran/gallery-3.jpeg"
+      "/images/projects/anwarul-quran/gallery-3.jpeg",
+      "/images/projects/anwarul-quran/gallery-4.jpeg",
+      "/images/projects/anwarul-quran/live-preview.png"
     ],
     liveUrl: "https://anwarulquran.org.pk",
     githubUrl: "https://github.com/mramzan4055",
     caseStudy: {
-      overview: "Anwarul Quran Institute required a welcoming and accessible digital portal to facilitate online Quranic admissions, student course enrollment, and institutional announcements.",
-      challenge: "Ensuring an effortless enrollment experience for families and students of all age groups with multilingual typography and responsive mobile optimization.",
-      solution: "Developed an elegant Islamic educational web platform with course catalogs, student application workflows, teacher portfolios, and integrated contact channels.",
-      process: "Designed a clean aesthetic respecting traditional motifs, structured curriculum navigation, implemented rapid inquiry handling, and optimized performance.",
-      result: "Streamlined student enrollment processing by 90% and attracted students from multiple cities and overseas communities.",
+      overview: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن), carrying forward a 22+ year spiritual and educational legacy established in 2002 under Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ), required a world-class, culturally respectful digital portal to connect students, families, and international donors.",
+      challenge: "Crafting a sophisticated RTL (Right-to-Left) Urdu typographic web experience that honors classical Islamic aesthetics while providing frictionless online admissions, course catalog navigation, and transparent charitable contribution channels across low-bandwidth mobile networks.",
+      solution: "Engineered an elegant, bilingual Islamic education web portal featuring bespoke Nastaliq and Meher font integration, structured course matrices for both boys' and girls' departments, responsive donation flows for Zakat/Sadaqah, and high-resolution photo galleries of institutional life.",
+      process: "Collaborated with foundation leadership and scholars, established deep emerald and royal gold visual tokens (#1B4F43 / #D4AF37), digitized student enrollment applications, and implemented comprehensive Schema.org EducationalOrganization structured data.",
+      result: "Digitized operations across both student departments, accelerated enrollment processing by 90%, and expanded donor trust globally with transparent welfare reporting and 100% platform availability.",
     },
     metrics: [
-      { label: "Students Enrolled", value: "2,000+" },
-      { label: "Courses Offered", value: "12+" },
+      { label: "Established Legacy", value: "2002 (22+ Years)" },
+      { label: "Campuses", value: "2 (Boys & Girls)" },
+      { label: "Scholarly Faculty", value: "10+ Asatiza" },
       { label: "Admission Speedup", value: "90%" },
-      { label: "Satisfaction Rate", value: "100%" },
     ],
     seo: {
-      title: "Anwarul Quran — Islamic Education Platform | M Ramzan",
-      description: "Case study on Anwarul Quran: Islamic educational platform with course catalogs, student admissions, and responsive architecture built by M Ramzan.",
-      keywords: ["Quranic Education Platform", "Islamic Institute Web", "Online Admissions", "M Ramzan Portfolio"],
+      title: "Anwarul Quran Foundation — Islamic Education & Welfare Platform | M Ramzan",
+      description: "Case study of Anwarul Quran Foundation (anwarulquran.org.pk): Venerable Islamic educational and welfare platform engineered by M Ramzan.",
+      keywords: ["Anwarul Quran Foundation", "anwarulquran.org.pk", "انوارُ القرآن فاؤنڈیشن", "Islamic Education Web", "Online Quran Admissions", "M Ramzan Portfolio"],
       ogImage: "/images/projects/anwarul-quran/thumbnail.jpeg",
     },
     geo: {
-      entityType: "CulturalArchive",
-      primaryEntity: "Tazkira V2 Archive",
-      summary: "Tazkira V2 is a digital cultural heritage knowledge graph and biographical archive engineered by M Ramzan utilizing Next.js, D3.js, and Meilisearch.",
+      entityType: "EducationalOrganization",
+      primaryEntity: "Anwarul Quran Foundation (انوارُ القرآن فاؤنڈیشن)",
+      summary: "Anwarul Quran Foundation is an Islamic educational and community welfare institution established in 2002 in Pakistan, with a digital platform engineered by M Ramzan.",
       keyFacts: [
-        "Engineered by M Ramzan as Lead Knowledge Graph Engineer",
-        "Stack: Next.js, TypeScript, MySQL, D3.js, Meilisearch, OpenSeadragon",
-        "Supports bidirectional entity graphing, high-resolution manuscript zoom, and full Arabic/English bilingual search"
+        "Engineered by Full-Stack Web Architect M Ramzan",
+        "Founded in 2002 under the spiritual patronage of Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ)",
+        "Operates distinct departments for male and female students with 10+ scholarly teachers",
+        "Offers Hifz, Nazra with Tajweed, character building, and subsidized community education"
       ],
-      targetAudience: ["Academic Researchers", "Cultural Institutions", "Digital Humanities Scholars"],
+      targetAudience: ["Students", "Parents", "Islamic Scholars", "Philanthropists & Donors"],
       faq: [
         {
-          id: "faq-tazkira-1",
-          question: "How are historical lineages visualized in Tazkira V2?",
-          answer: "Using interactive D3.js force-directed relationship graphs that dynamically compute node clusters based on teacher-student and contemporaneous historical connections."
+          id: "faq-anwar-1",
+          question: "When was Anwarul Quran Foundation established?",
+          answer: "Anwarul Quran Foundation was founded in 2002 under the spiritual guidance and prayers of Hazrat Maulana Haji Mahmood Ahmad Darkhwasti (رحمت اللہ علیہ)."
+        },
+        {
+          id: "faq-anwar-2",
+          question: "What programs and departments are offered?",
+          answer: "The foundation operates dual campuses for male and female students, offering Hifz-ul-Quran, Nazra with Tajweed, Islamic character building (Tarbiyah), and contemporary educational linkages."
         }
       ]
     },
     createdAt: "2024-06-01T00:00:00.000Z",
-    updatedAt: "2024-11-28T00:00:00.000Z",
+    updatedAt: "2024-12-22T00:00:00.000Z",
   }
 ];
 

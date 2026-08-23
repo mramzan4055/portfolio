@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
@@ -18,11 +18,26 @@ import {
   X,
 } from "lucide-react";
 import { initialProjects } from "@/data/seed";
+import { Project } from "@/types";
 
 export function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [projects, setProjects] = useState<Project[]>(initialProjects);
   const router = useRouter();
+  const pathname = usePathname();
+
+  // Dynamically load latest projects
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.projects) && data.projects.length > 0) {
+          setProjects(data.projects);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   // Keyboard shortcut listener (Cmd+K or Ctrl+K or /)
   useEffect(() => {
@@ -40,6 +55,10 @@ export function CommandPalette() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   const staticNav = [
     { label: "Selected Works & Case Studies", href: "/work", icon: Briefcase, category: "Pages" },
     { label: "Services & Architectural Capabilities", href: "/services", icon: Layers, category: "Pages" },
@@ -48,12 +67,12 @@ export function CommandPalette() {
     { label: "Admin CMS Portal", href: "/admin", icon: Shield, category: "Administration" },
   ];
 
-  const projectItems = initialProjects.map((p) => ({
+  const projectItems = projects.map((p) => ({
     label: `${p.title} — ${p.subtitle}`,
     href: `/projects/${p.slug}`,
     icon: Sparkles,
     category: "Case Studies",
-    tags: p.technologies.join(" "),
+    tags: (p.technologies || []).join(" "),
   }));
 
   const allItems = [...staticNav, ...projectItems];

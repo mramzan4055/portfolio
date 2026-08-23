@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, Github, Linkedin, Twitter, Dribbble, Globe, Shield, Sparkles } from "lucide-react";
 import { SiteSettings } from "@/types";
 import { initialSiteSettings } from "@/data/seed";
@@ -13,6 +14,7 @@ interface FooterProps {
 
 export function Footer({ settings = initialSiteSettings }: FooterProps) {
   const [timeString, setTimeString] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const updateTime = () => {
@@ -30,6 +32,11 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Suppress public footer on admin subroutes
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <footer className="relative border-t border-white/[0.08] bg-[#070709] pt-20 pb-12 overflow-hidden">
@@ -111,10 +118,10 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
 
             <div className="flex items-center gap-3 pt-3">
               {[
-                { name: "GitHub", href: settings.socialLinks.github || "https://github.com", icon: Github },
-                { name: "LinkedIn", href: settings.socialLinks.linkedin || "https://linkedin.com", icon: Linkedin },
-                { name: "Twitter", href: settings.socialLinks.twitter || "https://twitter.com", icon: Twitter },
-                { name: "Dribbble", href: settings.socialLinks.dribbble || "https://dribbble.com", icon: Dribbble },
+                { name: "GitHub", href: settings?.socialLinks?.github || "https://github.com", icon: Github },
+                { name: "LinkedIn", href: settings?.socialLinks?.linkedin || "https://linkedin.com", icon: Linkedin },
+                { name: "Twitter", href: settings?.socialLinks?.twitter || "https://twitter.com", icon: Twitter },
+                { name: "Dribbble", href: settings?.socialLinks?.dribbble || "https://dribbble.com", icon: Dribbble },
               ].map((s) => {
                 const Icon = s.icon;
                 return (
