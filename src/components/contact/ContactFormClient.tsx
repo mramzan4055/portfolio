@@ -20,11 +20,46 @@ export function ContactFormClient() {
     e.preventDefault();
     setStatus("submitting");
 
-    // Simulate submission delay or post to contact webhook
-    setTimeout(() => {
-      setStatus("success");
-    }, 1000);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
+
+  if (status === "error") {
+    return (
+      <div className="glass-panel-elevated p-10 sm:p-12 rounded-3xl flex flex-col items-center justify-center text-center gap-6">
+        <div className="w-16 h-16 rounded-full bg-red-950/40 border border-red-500/30 flex items-center justify-center text-red-400">
+          <span className="text-2xl">!</span>
+        </div>
+        <div className="flex flex-col gap-2 max-w-md">
+          <h3 className="text-2xl font-display font-bold text-white">
+            Transmission Failed
+          </h3>
+          <p className="text-sm text-platinum-300 font-light leading-relaxed">
+            Something went wrong sending your message. Please try again or reach out directly via email.
+          </p>
+        </div>
+        <button
+          onClick={() => setStatus("idle")}
+          className="px-6 py-2.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-mono text-platinum-300 hover:text-white"
+        >
+          Try Again
+        </button>
+      </div>
+    );
+  }
 
   if (status === "success") {
     return (

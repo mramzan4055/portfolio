@@ -2,6 +2,7 @@ import React from "react";
 import { getProjects, getServices, getSkills, getSiteSettings } from "@/lib/data/store";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatementSection } from "@/components/home/StatementSection";
+import { TechTicker } from "@/components/home/TechTicker";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 import { TechStackMatrix } from "@/components/home/TechStackMatrix";
@@ -22,6 +23,9 @@ export default async function HomePage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero with Interactive Typography & Magnetic CTA */}
       <HeroSection settings={settings} />
+
+      {/* Scrolling Tech Stack Marquee */}
+      <TechTicker />
 
       {/* Engineering Philosophy Statement */}
       <StatementSection />

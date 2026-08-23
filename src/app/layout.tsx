@@ -10,6 +10,7 @@ import { BackgroundGradients } from "@/components/common/BackgroundGradients";
 import { CommandPalette } from "@/components/common/CommandPalette";
 import { AIPortfolioConcierge } from "@/components/common/AIPortfolioConcierge";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
+import { ReadingProgress } from "@/components/common/ReadingProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const sansFont = Plus_Jakarta_Sans({
@@ -57,6 +58,9 @@ export default async function RootLayout({
         {/* Structured Data: Person & WebSite */}
         <JsonLd type="person" settings={settings} />
         <JsonLd type="website" settings={settings} />
+
+        {/* Reading Progress Bar */}
+        <ReadingProgress />
 
         {/* Ambient Lighting & Luxury FX */}
         <BackgroundGradients />
