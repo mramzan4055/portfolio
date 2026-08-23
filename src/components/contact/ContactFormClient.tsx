@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, CheckCircle2, Loader2, Send } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Loader2, Send, MessageCircle } from "lucide-react";
 
 export function ContactFormClient() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    organization: "",
-    service: "Full-Stack Architecture",
-    budget: "$10k — $25k",
-    timeline: "1 — 2 Months",
+    phone: "",
+    businessName: "",
+    service: "Business Website",
+    budget: "PKR 30,000 – 50,000",
     message: "",
   });
 
@@ -45,10 +45,10 @@ export function ContactFormClient() {
         </div>
         <div className="flex flex-col gap-2 max-w-md">
           <h3 className="text-2xl font-display font-bold text-white">
-            Transmission Failed
+            Something Went Wrong
           </h3>
           <p className="text-sm text-platinum-300 font-light leading-relaxed">
-            Something went wrong sending your message. Please try again or reach out directly via email.
+            Your message couldn&apos;t be sent. Please try again, or reach out directly via WhatsApp or email.
           </p>
         </div>
         <button
@@ -69,10 +69,10 @@ export function ContactFormClient() {
         </div>
         <div className="flex flex-col gap-2 max-w-md">
           <h3 className="text-2xl font-display font-bold text-white">
-            Inquiry Successfully Transmitted
+            Message Received!
           </h3>
           <p className="text-sm text-platinum-300 font-light leading-relaxed">
-            Thank you for reaching out. I will review your project requirements and respond within 24 business hours.
+            Thank you for reaching out. I&apos;ll review your project details and get back to you within 24 hours — usually much sooner on WhatsApp.
           </p>
         </div>
         <button
@@ -81,10 +81,10 @@ export function ContactFormClient() {
             setFormData({
               name: "",
               email: "",
-              organization: "",
-              service: "Full-Stack Architecture",
-              budget: "$10k — $25k",
-              timeline: "1 — 2 Months",
+              phone: "",
+              businessName: "",
+              service: "Business Website",
+              budget: "PKR 30,000 – 50,000",
               message: "",
             });
           }}
@@ -97,8 +97,9 @@ export function ContactFormClient() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass-panel-elevated p-8 sm:p-12 rounded-3xl flex flex-col gap-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="glass-panel-elevated p-8 sm:p-10 rounded-3xl flex flex-col gap-5">
+      {/* Row 1: Name + Phone */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
           <label className="text-xs font-mono uppercase text-platinum-400">
             Your Name <span className="text-[#dfb15b]">*</span>
@@ -106,7 +107,7 @@ export function ContactFormClient() {
           <input
             type="text"
             required
-            placeholder="e.g. Eleanor Vance"
+            placeholder="e.g. Ali Hassan"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-platinum-600 focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
@@ -115,115 +116,138 @@ export function ContactFormClient() {
 
         <div className="flex flex-col gap-2">
           <label className="text-xs font-mono uppercase text-platinum-400">
-            Work Email <span className="text-[#dfb15b]">*</span>
+            WhatsApp / Phone <span className="text-[#dfb15b]">*</span>
           </label>
           <input
-            type="email"
+            type="tel"
             required
-            placeholder="e.g. eleanor@brand.com"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="e.g. +92 300 1234567"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-platinum-600 focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {/* Row 2: Email + Business Name */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
           <label className="text-xs font-mono uppercase text-platinum-400">
-            Company / Organization
+            Email Address <span className="text-[#dfb15b]">*</span>
           </label>
           <input
-            type="text"
-            placeholder="e.g. Vance Atelier Ltd."
-            value={formData.organization}
-            onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+            type="email"
+            required
+            placeholder="e.g. ali@mybusiness.com"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-platinum-600 focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
           />
         </div>
 
         <div className="flex flex-col gap-2">
           <label className="text-xs font-mono uppercase text-platinum-400">
-            Target Service
+            Business / Shop Name
+          </label>
+          <input
+            type="text"
+            placeholder="e.g. Ali's Salon, Hassan Clinic..."
+            value={formData.businessName}
+            onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+            className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-platinum-600 focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
+          />
+        </div>
+      </div>
+
+      {/* Row 3: Service + Budget */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="flex flex-col gap-2">
+          <label className="text-xs font-mono uppercase text-platinum-400">
+            I Need a...
           </label>
           <select
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
             className="w-full px-4 py-3 rounded-xl bg-[#0e0e14] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
           >
-            <option value="Full-Stack Architecture">Full-Stack Architecture</option>
-            <option value="Custom Headless CMS">Custom Headless CMS</option>
-            <option value="AI Integration & GEO">AI Integration & GEO</option>
-            <option value="Creative UI/UX & WebGL">Creative UI/UX & WebGL</option>
-            <option value="Technical Consulting / Audit">Technical Consulting / Audit</option>
+            <option value="Business Website">Business Website</option>
+            <option value="WordPress / CMS Website">WordPress / CMS Website</option>
+            <option value="Portfolio Website">Portfolio Website</option>
+            <option value="Landing Page">Landing Page</option>
+            <option value="Website Redesign">Website Redesign</option>
+            <option value="E-commerce / Online Store">E-commerce / Online Store</option>
+            <option value="Mobile App (Flutter)">Mobile App (Flutter)</option>
+            <option value="Website Maintenance">Website Maintenance</option>
+            <option value="Other / Not Sure">Other / Not Sure</option>
           </select>
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-2">
           <label className="text-xs font-mono uppercase text-platinum-400">
-            Estimated Budget Range
+            Estimated Budget
           </label>
           <select
             value={formData.budget}
             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
             className="w-full px-4 py-3 rounded-xl bg-[#0e0e14] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
           >
-            <option value="< $10k">&lt; $10k (Advisory / Audit)</option>
-            <option value="$10k — $25k">$10k — $25k</option>
-            <option value="$25k — $50k">$25k — $50k</option>
-            <option value="$50k+">$50k+ (Enterprise Architecture)</option>
-          </select>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <label className="text-xs font-mono uppercase text-platinum-400">
-            Target Timeline
-          </label>
-          <select
-            value={formData.timeline}
-            onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#0e0e14] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono"
-          >
-            <option value="Immediate (1-2 Weeks)">Immediate (1-2 Weeks)</option>
-            <option value="1 — 2 Months">1 — 2 Months</option>
-            <option value="Q3/Q4 Planning">Q3/Q4 Planning</option>
+            <option value="PKR 30,000 – 50,000">PKR 30,000 – 50,000</option>
+            <option value="PKR 50,000 – 100,000">PKR 50,000 – 100,000</option>
+            <option value="PKR 100,000+">PKR 100,000+</option>
+            <option value="Not Sure / Need Consultation">Not Sure / Need Consultation</option>
           </select>
         </div>
       </div>
 
+      {/* Message */}
       <div className="flex flex-col gap-2">
         <label className="text-xs font-mono uppercase text-platinum-400">
-          Project Vision & Requirements <span className="text-[#dfb15b]">*</span>
+          Tell me about your project <span className="text-[#dfb15b]">*</span>
         </label>
         <textarea
           required
-          rows={5}
-          placeholder="Briefly describe your objectives, key challenges, and desired launch targets..."
+          rows={4}
+          placeholder="What does your business do? What pages do you need? Any design preferences or specific features?"
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-platinum-600 focus:outline-none focus:border-[#dfb15b]/50 transition-colors font-mono resize-none"
         />
       </div>
 
+      {/* Submit */}
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-4 rounded-full bg-gradient-to-r from-[#dfb15b] via-[#e5c07b] to-[#c7963b] text-black font-bold text-xs uppercase tracking-widest hover:shadow-gold hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-2"
+        id="contact-submit-btn"
+        className="w-full py-4 rounded-full bg-gradient-to-r from-[#dfb15b] via-[#e5c07b] to-[#c7963b] text-black font-bold text-xs uppercase tracking-widest hover:shadow-gold hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 mt-1"
       >
         {status === "submitting" ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin" />
-            <span>Encrypting & Sending...</span>
+            <span>Sending...</span>
           </>
         ) : (
           <>
-            <span>Transmit Project Proposal</span>
+            <span>Send My Project Inquiry</span>
             <Send className="w-3.5 h-3.5" />
           </>
         )}
       </button>
+
+      {/* WhatsApp quick alternative */}
+      <p className="text-center text-xs text-platinum-500 font-mono">
+        Prefer to chat?{" "}
+        <a
+          href="https://wa.me/923000000000?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20website%20project."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#25D366] hover:underline inline-flex items-center gap-1"
+        >
+          <MessageCircle className="w-3 h-3" />
+          Message on WhatsApp
+        </a>
+        {" "}— I reply fast!
+      </p>
     </form>
   );
 }

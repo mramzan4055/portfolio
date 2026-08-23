@@ -1,5 +1,27 @@
 export type ProjectStatus = "draft" | "published" | "archived";
 
+export interface PackageItem {
+  id: string;
+  title: string;
+  price: string;
+  priceNote?: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+  ctaText: string;
+  turnaround?: string;
+  bestFor?: string;
+}
+
+export interface SpecialOffer {
+  enabled: boolean;
+  badge: string;
+  title: string;
+  description: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
 export interface CaseStudy {
   overview: string;
   challenge: string;
@@ -168,7 +190,16 @@ export interface SiteSettings {
   authorEmail: string;
   authorPhone?: string;
   availabilityStatus: "Available for Q1/Q2 Projects" | "Available for Projects" | "Selectively Available" | "Open to Work" | "Booked";
-  
+
+  // WhatsApp Contact
+  whatsappNumber?: string;
+  whatsappDefaultMessage?: string;
+  whatsappEnabled?: boolean;
+
+  // Website Packages & Offers
+  packages?: PackageItem[];
+  specialOffer?: SpecialOffer;
+
   socialLinks: {
     github?: string;
     linkedin?: string;

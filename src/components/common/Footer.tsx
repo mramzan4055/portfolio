@@ -83,11 +83,12 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
             </h4>
             <div className="flex flex-col gap-2.5 pt-1">
               {[
-                { name: "My Work & Projects", href: "/work" },
-                { name: "Services & What I Offer", href: "/services" },
+                { name: "Portfolio", href: "/work" },
+                { name: "Services", href: "/services" },
+                { name: "Packages & Pricing", href: "/packages" },
                 { name: "About Me", href: "/about" },
-                { name: "Contact & Inquiries", href: "/contact" },
-                { name: "CMS Admin", href: "/admin" },
+                { name: "Contact", href: "/contact" },
+                { name: "Admin", href: "/admin" },
               ].map((item) => (
                 <Link
                   key={item.name}

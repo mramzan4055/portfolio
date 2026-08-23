@@ -12,6 +12,7 @@ import { AIPortfolioConcierge } from "@/components/common/AIPortfolioConcierge";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { ReadingProgress } from "@/components/common/ReadingProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FloatingWhatsApp } from "@/components/common/FloatingWhatsApp";
 
 const sansFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -79,6 +80,13 @@ export default async function RootLayout({
         <CommandPalette />
         <AIPortfolioConcierge />
         <ScrollToTop />
+
+        {/* Floating WhatsApp Button */}
+        <FloatingWhatsApp
+          number={settings.whatsappNumber || ""}
+          message={settings.whatsappDefaultMessage || "Hi, I would like to discuss a website project."}
+          enabled={settings.whatsappEnabled !== false}
+        />
 
         {/* Global Footer */}
         <Footer settings={settings} />

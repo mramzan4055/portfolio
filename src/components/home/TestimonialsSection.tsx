@@ -16,7 +16,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: "t-1",
-    text: "M Ramzan's architectural expertise transformed our digital operations. The global student platform he engineered for Al-Qadir handles multi-timezone scheduling, interactive classrooms, and automated tuition across 24+ countries flawlessly.",
+    text: "M Ramzan built a proper online platform for our Quran academy. Students can register, book classes, and manage their schedules — everything works well. He was responsive and delivered on time. Would recommend to anyone needing a functional educational website.",
     author: "M. Abdul Wahid",
     role: "Director of Academic Operations",
     company: "Al-Qadir Quran Academy",
@@ -24,15 +24,15 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "t-2",
-    text: "An exceptional digital architect and creative technologist. He translated the vision of the Hybrid Education Model™ into a world-class editorial platform with unmatched speed, clarity, and elegance.",
+    text: "Good experience working with M Ramzan on our foundation's website. He understood what we needed, kept things simple and professional, and made sure the site was easy to update. The final result was clean and well-organized.",
     author: "Ahtsham ul Haq Malkani",
     role: "Founder & Educator",
-    company: "Unity Aid Foundation",
+    company: "Ahtsham ul Haq — Foundation",
     rating: 5,
   },
   {
     id: "t-3",
-    text: "The e-commerce and commercial product catalog platform M Ramzan built for Samad Brothers increased our online quotation inquiries by over 160% and established dominant local Google search rankings.",
+    text: "M Ramzan built our product catalog website for Samad Brothers. It's easy for customers to browse our products and contact us directly. Since launching, we've seen more online inquiries. The work was done professionally and within budget.",
     author: "Abdul Samad",
     role: "Managing Director",
     company: "Samad Brothers Islamabad",
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "t-4",
-    text: "Working with M Ramzan was a masterclass in full-stack precision. He delivered our humanitarian portal with transparent impact reporting, high-speed donor journeys, and 100% uptime during peak relief campaigns.",
+    text: "He developed a clean and professional website for ABM Foundation. The donation and contact sections work well, and the site clearly communicates our mission. M Ramzan was easy to work with and explained everything clearly throughout the process.",
     author: "Tariq Mahmood",
     role: "Executive Trustee",
     company: "ABM Foundation",

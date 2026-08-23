@@ -10,6 +10,8 @@ import { StatsSection } from "@/components/home/StatsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { ContactCTA } from "@/components/home/ContactCTA";
+import { PackagesSection } from "@/components/home/PackagesSection";
+import { SpecialOfferBanner } from "@/components/home/SpecialOfferBanner";
 
 export default async function HomePage() {
   const [projects, services, skills, settings] = await Promise.all([
@@ -21,36 +23,50 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero with Interactive Typography & Magnetic CTA */}
+      {/* Special Offer Banner — just below hero */}
+      {settings.specialOffer?.enabled && (
+        <SpecialOfferBanner offer={settings.specialOffer} />
+      )}
+
+      {/* Hero with 2-column photo layout */}
       <HeroSection settings={settings} />
 
       {/* Scrolling Tech Stack Marquee */}
       <TechTicker />
 
-      {/* Engineering Philosophy Statement */}
+      {/* Developer Philosophy Statement */}
       <StatementSection />
 
       {/* Curated Featured Projects */}
       <FeaturedProjects projects={projects} />
 
-      {/* Animated Impact & Engineering Metrics */}
+      {/* Website Packages & Pricing */}
+      {settings.packages && settings.packages.length > 0 && (
+        <PackagesSection
+          packages={settings.packages}
+          whatsappNumber={settings.whatsappNumber}
+          whatsappMessage={settings.whatsappDefaultMessage}
+          whatsappEnabled={settings.whatsappEnabled}
+        />
+      )}
+
+      {/* Animated Impact Metrics */}
       <StatsSection />
 
-      {/* Core Engineering Offerings */}
+      {/* Core Services */}
       <ServicesShowcase services={services} />
 
-      {/* Architecture & Tech Matrix */}
+      {/* Tech Stack Matrix */}
       <TechStackMatrix categories={skills} />
 
-      {/* Client Testimonials & Social Proof */}
+      {/* Client Testimonials */}
       <TestimonialsSection />
 
-      {/* Personal Identity & Background */}
+      {/* About Teaser */}
       <AboutTeaser settings={settings} />
 
-      {/* Luxury Conversion CTA */}
+      {/* Conversion CTA */}
       <ContactCTA settings={settings} />
     </div>
   );
 }
-

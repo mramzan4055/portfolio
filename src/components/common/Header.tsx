@@ -42,9 +42,10 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
   }, [pathname]);
 
   const navLinks = [
-    { label: "Selected Works", href: "/work" },
-    { label: "Capabilities", href: "/services" },
-    { label: "About & Principles", href: "/about" },
+    { label: "Portfolio", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "Packages", href: "/packages" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 

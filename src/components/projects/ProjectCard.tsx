@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles, ExternalLink } from "lucide-react";
 import { Project } from "@/types";
 
 interface ProjectCardProps {
@@ -97,6 +97,20 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
             </span>
           )}
         </div>
+
+        {/* Live Website CTA */}
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="mt-2 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#dfb15b]/50 hover:bg-[#dfb15b]/8 text-platinum-300 hover:text-[#dfb15b] text-xs font-mono uppercase tracking-wider transition-all duration-300 w-full justify-center"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            View Live Website
+          </a>
+        )}
       </div>
     </motion.div>
   );
