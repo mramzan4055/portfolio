@@ -5,6 +5,7 @@ import { ArrowUpRight, CheckCircle2, Briefcase, Calendar, MapPin, Download, Shie
 import { getExperience, getSkills, getSiteSettings } from "@/lib/data/store";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { ContactCTA } from "@/components/home/ContactCTA";
+import { SkillsMatrixVisualizer } from "@/components/about/SkillsMatrixVisualizer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
@@ -100,8 +101,11 @@ export default async function AboutPage() {
           </div>
         </div>
 
+        {/* Interactive Skills Matrix Visualizer */}
+        <SkillsMatrixVisualizer categories={skills} />
+
         {/* Career Timeline & Experience */}
-        <div className="flex flex-col gap-10 pt-10 border-t border-white/[0.08]">
+        <div className="flex flex-col gap-10 pt-16 border-t border-white/[0.08]">
           <div className="flex flex-col gap-2">
             <span className="text-xs font-mono uppercase tracking-widest text-[#dfb15b]">
               Career Milestones

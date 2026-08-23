@@ -7,6 +7,8 @@ import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import { CustomCursor } from "@/components/common/CustomCursor";
 import { BackgroundGradients } from "@/components/common/BackgroundGradients";
+import { CommandPalette } from "@/components/common/CommandPalette";
+import { AIPortfolioConcierge } from "@/components/common/AIPortfolioConcierge";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const sansFont = Plus_Jakarta_Sans({
@@ -67,6 +69,10 @@ export default async function RootLayout({
 
         {/* Main Content Area */}
         <main className="flex-1">{children}</main>
+
+        {/* Interactive Floating Features */}
+        <CommandPalette />
+        <AIPortfolioConcierge />
 
         {/* Global Footer */}
         <Footer settings={settings} />
