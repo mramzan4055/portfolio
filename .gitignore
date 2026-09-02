@@ -29,6 +29,10 @@
 *.tar.gz
 *.rar
 
+# Deployment folders (contain sensitive .env and passwords)
+/hostinger-deploy/
+/cpanel-deployment-ready/
+
 # Vercel
 .vercel
 
