@@ -11,7 +11,7 @@
  */
 const https = require("https");
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mramzan.dev";
+const SITE_URL = "https://mramzan.dev";
 const INDEXNOW_KEY = "e4c57f840c8593c86e7d3e6735234c87";
 const HOST = new URL(SITE_URL).host;
 
@@ -22,6 +22,7 @@ const STATIC_PATHS = [
   "/packages",
   "/about",
   "/contact",
+  "/sitemap",
   "/services/small-business-websites",
   "/services/modern-web-development",
   "/services/wordpress-cms-solutions",

@@ -1,7 +1,9 @@
 import React from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { HelpCircle, ArrowUpRight, MessageCircle } from "lucide-react";
 import { getProjects, getServices, getSkills, getSiteSettings } from "@/lib/data/store";
+import { generateSiteMetadata } from "@/lib/seo/metadata";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatementSection } from "@/components/home/StatementSection";
 import { TechTicker } from "@/components/home/TechTicker";
@@ -15,6 +17,34 @@ import { ContactCTA } from "@/components/home/ContactCTA";
 import { PackagesSection } from "@/components/home/PackagesSection";
 import { SpecialOfferBanner } from "@/components/home/SpecialOfferBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
+  return generateSiteMetadata(
+    {
+      title: "M RAMZAN — Web & Mobile App Developer | WordPress, Next.js & Flutter Pakistan",
+      description:
+        "Official portfolio of M Ramzan, practical web and mobile application developer in Pakistan. High-speed WordPress websites, custom Next.js web applications, and Flutter mobile apps starting from PKR 30,000.",
+      keywords: [
+        "Web Developer Pakistan",
+        "M Ramzan Developer",
+        "WordPress Developer Pakistan",
+        "Next.js Developer Pakistan",
+        "React Developer Pakistan",
+        "Flutter Mobile App Developer",
+        "Small Business Website Pakistan",
+        "Affordable Website Development PKR 30000",
+        "Freelance Web Developer Pakistan",
+        "Professional Website Services Pakistan",
+        "Website Redesign Pakistan",
+        "Web Development Islamabad Lahore Karachi",
+      ],
+      canonical: "/",
+      type: "website",
+    },
+    settings
+  );
+}
 
 export default async function HomePage() {
   const [projects, services, skills, settings] = await Promise.all([

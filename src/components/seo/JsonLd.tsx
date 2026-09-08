@@ -2,13 +2,13 @@ import React from "react";
 import { SiteSettings, Project, ServiceItem } from "@/types";
 
 interface JsonLdProps {
-  type: "person" | "website" | "professionalService" | "service" | "project" | "breadcrumbs" | "faq";
+  type: "person" | "website" | "professionalService" | "service" | "project" | "breadcrumbs" | "faq" | "profilePage";
   data?: any;
   settings?: SiteSettings;
 }
 
 export function JsonLd({ type, data, settings }: JsonLdProps) {
-  const siteUrl = settings?.siteUrl || "https://mramzan.dev";
+  const siteUrl = "https://mramzan.dev";
   const authorName = settings?.authorName || "M Ramzan";
 
   let schema: Record<string, any> = {};
@@ -19,37 +19,49 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
       name: authorName,
+      alternateName: ["Muhammad Ramzan", "M. Ramzan"],
       jobTitle: settings?.authorTitle || "Web & Mobile Application Developer",
-      description: settings?.authorBio || "Web and mobile application developer in Pakistan specializing in WordPress, React, Next.js, Flutter, and business websites for SMEs.",
+      description:
+        settings?.authorBio ||
+        "Web and mobile application developer in Pakistan specializing in WordPress, React, Next.js, Flutter, and high-performance websites for SMEs and startups.",
       url: siteUrl,
-      email: settings?.authorEmail,
-      telephone: settings?.authorPhone || undefined,
+      image: `${siteUrl}/images/profile.jpg`,
+      email: settings?.authorEmail || "info@mramzan.dev",
+      telephone: settings?.authorPhone || "+92 309 6734231",
+      nationality: {
+        "@type": "Country",
+        name: "Pakistan",
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: "M Ramzan Development Solutions",
+        url: siteUrl,
+      },
       address: {
         "@type": "PostalAddress",
         addressCountry: "PK",
         addressRegion: "Pakistan",
       },
       sameAs: [
-        settings?.socialLinks?.github,
-        settings?.socialLinks?.linkedin,
-        settings?.socialLinks?.twitter,
-        settings?.socialLinks?.dribbble,
+        settings?.socialLinks?.github || "https://github.com/mramzan4055",
+        settings?.socialLinks?.linkedin || "https://linkedin.com/in/mramzan",
+        settings?.socialLinks?.twitter || "https://twitter.com/mramzandev",
+        settings?.socialLinks?.dribbble || "https://dribbble.com/mramzan",
       ].filter(Boolean),
       knowsAbout: [
         "Website Development Pakistan",
         "Small Business Websites",
-        "SME Website Solutions",
         "WordPress Development",
-        "React.js & Next.js",
+        "Next.js App Router",
+        "React.js",
         "Flutter Cross-Platform Mobile Apps",
-        "HTML5 & Semantic Web",
-        "Tailwind CSS",
-        "REST API Integration",
+        "PHP & MySQL Backend Architecture",
         "Search Engine Optimization (SEO)",
         "Answer Engine Optimization (AEO)",
         "Generative Engine Optimization (GEO)",
+        "Tailwind CSS & Modern UI/UX",
         "Responsive Web Design",
-        "Website Redesign & Speed Optimization"
+        "Website Redesign & Speed Optimization",
       ],
     };
   } else if (type === "professionalService") {
@@ -57,15 +69,23 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       "@context": "https://schema.org",
       "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": `${siteUrl}/#business`,
-      name: `M Ramzan — Website Development & App Solutions`,
+      name: "M Ramzan — Website Development & App Solutions",
       alternateName: "M Ramzan Web Developer",
-      description: "Professional website development, WordPress CMS, and Flutter mobile application services for small businesses and SMEs in Pakistan. Packages starting from PKR 30,000.",
+      description:
+        "Professional website development, WordPress CMS, and Flutter mobile application services for small businesses and SMEs in Pakistan. Packages starting from PKR 30,000.",
       url: siteUrl,
+      image: `${siteUrl}/opengraph-image`,
+      logo: `${siteUrl}/icon`,
       telephone: settings?.authorPhone || "+92 309 6734231",
       email: settings?.authorEmail || "info@mramzan.dev",
       priceRange: "PKR 30,000 - PKR 150,000+",
-      currenciesAccepted: "PKR, USD",
-      paymentAccepted: "Bank Transfer, JazzCash, EasyPaisa, Wire",
+      currenciesAccepted: "PKR, USD, EUR, GBP",
+      paymentAccepted: "Bank Transfer, Raast, JazzCash, EasyPaisa, Wire, Payoneer",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 31.5204,
+        longitude: 74.3587,
+      },
       areaServed: [
         {
           "@type": "Country",
@@ -86,7 +106,7 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
         {
           "@type": "AdministrativeArea",
           name: "Khyber Pakhtunkhwa",
-        }
+        },
       ],
       address: {
         "@type": "PostalAddress",
@@ -115,10 +135,11 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
             itemOffered: {
               "@type": "Service",
               name: "Starter Business Website",
-              description: "3-5 responsive pages, mobile-friendly design, contact form & WhatsApp integration for local businesses.",
+              description: "3-5 responsive pages, mobile-friendly design, contact form & WhatsApp integration for local businesses in Pakistan.",
             },
             price: "30000",
             priceCurrency: "PKR",
+            availability: "https://schema.org/InStock",
           },
           {
             "@type": "Offer",
@@ -129,6 +150,7 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
             },
             price: "60000",
             priceCurrency: "PKR",
+            availability: "https://schema.org/InStock",
           },
           {
             "@type": "Offer",
@@ -138,6 +160,7 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
               description: "Bespoke portals, e-commerce stores, custom web apps, and iOS/Android mobile apps with Flutter.",
             },
             priceCurrency: "PKR",
+            availability: "https://schema.org/InStock",
           },
         ],
       },
@@ -147,11 +170,33 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: settings?.siteName || "M Ramzan Portfolio",
+      name: settings?.siteName || "M RAMZAN — Web & Mobile Developer",
       url: siteUrl,
       description: settings?.siteDescription,
       inLanguage: "en-US",
       publisher: {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: authorName,
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteUrl}/work?search={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    };
+  } else if (type === "profilePage") {
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/about#webpage`,
+      url: `${siteUrl}/about`,
+      name: `About ${authorName} — Web & Mobile Application Developer`,
+      description: `Professional background, verified skills, and development experience of ${authorName}.`,
+      mainEntity: {
         "@type": "Person",
         "@id": `${siteUrl}/#person`,
         name: authorName,
@@ -198,7 +243,10 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
     const project = data as Project;
     schema = {
       "@context": "https://schema.org",
-      "@type": project.geo?.entityType === "EducationalPlatform" ? "EducationalOccupationalProgram" : (project.geo?.entityType || "SoftwareApplication"),
+      "@type":
+        project.geo?.entityType === "EducationalPlatform"
+          ? "EducationalOccupationalProgram"
+          : project.geo?.entityType || "SoftwareApplication",
       name: project.title,
       headline: project.subtitle,
       description: project.description || project.shortDescription,

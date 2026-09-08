@@ -38,8 +38,9 @@ export default async function AboutPage() {
 
   return (
     <div className="pt-36 pb-28 min-h-screen">
-      {/* Structured Data: Person & BreadcrumbList */}
+      {/* Structured Data: Person, ProfilePage & BreadcrumbList */}
       <JsonLd type="person" settings={settings} />
+      <JsonLd type="profilePage" settings={settings} />
       <JsonLd
         type="breadcrumbs"
         data={[

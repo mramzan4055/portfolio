@@ -1,0 +1,43 @@
+# Robots.txt for https://mramzan.dev
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+Disallow: /_next/data/*
+
+# Standard Search Spiders
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: Baiduspider
+User-agent: YandexBot
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+
+# Generative AI Engines & Answer Engines
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Allow: /work
+Allow: /services
+Allow: /packages
+Allow: /about
+Allow: /contact
+Allow: /sitemap
+Allow: /llms.txt
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+
+Host: https://mramzan.dev
+Sitemap: https://mramzan.dev/sitemap.xml

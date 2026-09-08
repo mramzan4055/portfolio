@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getProjects, getServices, getPages, getSiteSettings } from "@/lib/data/store";
+import { getCanonicalBaseUrl } from "@/lib/seo/metadata";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [projects, services, pages, settings] = await Promise.all([
@@ -9,14 +10,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getSiteSettings(),
   ]);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || settings.siteUrl || "https://mramzan.dev";
+  const siteUrl = getCanonicalBaseUrl(settings.siteUrl);
 
   // Static core route definitions
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 1.0,
     },
     {
@@ -49,6 +50,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/sitemap`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
   ];
 
   // Dynamic dedicated service landing pages
@@ -67,6 +74,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: project.featured ? 0.9 : 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...projectRoutes];
+  // Dynamic published custom pages
+  const pageRoutes: MetadataRoute.Sitemap = (pages || [])
+    .filter((p) => p.status === "published")
+    .map((p) => ({
+      url: `${siteUrl}/${p.slug}`,
+      lastModified: new Date(p.updatedAt || new Date()),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
+
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...pageRoutes];
 }
+
 

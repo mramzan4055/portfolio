@@ -87,8 +87,8 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
                 { name: "Services", href: "/services" },
                 { name: "Packages & Pricing", href: "/packages" },
                 { name: "About Me", href: "/about" },
-                { name: "Contact", href: "/contact" },
-                { name: "Admin", href: "/admin" },
+                { name: "Contact & Hire", href: "/contact" },
+                { name: "HTML Sitemap", href: "/sitemap" },
               ].map((item) => (
                 <Link
                   key={item.name}
@@ -146,13 +146,27 @@ export function Footer({ settings = initialSiteSettings }: FooterProps) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-platinum-500 font-mono">
           <p>© {new Date().getFullYear()} {settings.authorName}. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <Link
+              href="/sitemap.xml"
+              target="_blank"
+              className="text-platinum-400 hover:text-[#dfb15b] transition-colors"
+            >
+              XML Sitemap
+            </Link>
+            <Link
+              href="/sitemap"
+              className="text-platinum-400 hover:text-[#dfb15b] transition-colors"
+            >
+              Site Index
+            </Link>
             <span className="flex items-center gap-1.5 text-platinum-400">
               <Sparkles className="w-3.5 h-3.5 text-[#dfb15b]" />
-              <span>Next.js 15 App Router • GEO Optimized</span>
+              <span>Next.js 15 • SEO & GEO Ready</span>
             </span>
             <Link
               href="/admin"
+              rel="nofollow"
               className="flex items-center gap-1 text-platinum-500 hover:text-platinum-300 transition-colors"
             >
               <Shield className="w-3.5 h-3.5" />
