@@ -13,6 +13,7 @@ export const initialSiteSettings: SiteSettings = {
   authorEmail: "info@mramzan.dev",
   authorPhone: "+92 309 6734231",
   availabilityStatus: "Available for Projects",
+  projectDisplayOrder: "latest_first",
 
   // WhatsApp Contact
   whatsappNumber: "+923096734231",

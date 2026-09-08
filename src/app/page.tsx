@@ -83,9 +83,14 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Structured Data: ProfessionalService & FAQPage */}
+      {/* Structured Data: ProfessionalService, FAQPage & BreadcrumbList */}
       <JsonLd type="professionalService" settings={settings} />
       <JsonLd type="faq" data={homeFaqs} settings={settings} />
+      <JsonLd
+        type="breadcrumbs"
+        data={[{ name: "Home", url: "/" }]}
+        settings={settings}
+      />
 
       {/* Special Offer Banner — just below hero */}
       {settings.specialOffer?.enabled && (

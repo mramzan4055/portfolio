@@ -1025,6 +1025,543 @@
       },
       "createdAt": "2024-06-01T00:00:00.000Z",
       "updatedAt": "2024-12-22T00:00:00.000Z"
+    },
+    {
+      "id": "proj-proaizone",
+      "slug": "proaizone",
+      "title": "AiZone — Web Development & Digital Growth Agency",
+      "subtitle": "Next.js Digital Agency Platform, Ads Funnel Architecture & AI Integrations",
+      "category": "Agency & Digital Marketing",
+      "year": "2025",
+      "status": "published",
+      "featured": true,
+      "order": 11,
+      "shortDescription": "A high-conversion agency platform and growth infrastructure for AiZone — combining Next.js performance, Google & Meta Ads lead funnels, and automated WhatsApp CRM pipelines.",
+      "description": "AiZone (proaizone.com) is a modern web development and digital advertising agency based in Lahore, Pakistan, serving businesses globally. Built on Next.js App Router and TypeScript, the platform showcases high-performance custom web development, Meta and Google Ads management (PMax, Search, Remarketing), and custom AI copilots and workflow automations, all engineered to funnel qualified leads directly into WhatsApp.",
+      "role": "Full-Stack Developer & Technical Lead",
+      "client": "AiZone Digital Agency",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Google Ads API",
+        "Meta Graph API",
+        "WhatsApp Business API",
+        "Node.js"
+      ],
+      "services": [
+        "Web Development",
+        "Conversion Optimization",
+        "Landing Page Engineering",
+        "API & CRM Integration",
+        "SEO/AEO Architecture"
+      ],
+      "heroImage": "/images/projects/proaizone/hero.png",
+      "thumbnailImage": "/images/projects/proaizone/thumbnail.png",
+      "gallery": [
+        "/images/projects/proaizone/gallery-1.png",
+        "/images/projects/proaizone/gallery-2.png",
+        "/images/projects/proaizone/gallery-3.png"
+      ],
+      "liveUrl": "https://proaizone.com",
+      "githubUrl": "https://github.com/mramzan4055",
+      "caseStudy": {
+        "overview": "AiZone required a state-of-the-art agency web experience that converts visitors into qualified sales conversations while reflecting their dual expertise in custom web development, multi-platform ad buying, and generative AI automations.",
+        "challenge": "The primary objective was achieving sub-second load speeds, seamless responsive micro-animations, and a zero-friction conversion flow that directs potential clients into a trackable WhatsApp consultation funnel without sacrificing technical SEO or Lighthouse scores.",
+        "solution": "Engineered an ultra-fast Next.js App Router website featuring server components, Framer Motion transitions, structured JSON-LD schema for LocalBusiness and DigitalMarketingAgency, and automated conversion tracking for Google Ads and Meta Pixel.",
+        "process": "Architected the visual identity and dark/light responsive layout, optimized media assets, built modular service showcases, integrated click-to-WhatsApp attribution, and verified across all mobile and desktop viewports.",
+        "result": "Achieved a 98+ Google Lighthouse performance score, sub-800ms Time to First Byte (TTFB), and a 42% increase in direct qualified inbound inquiries within the first 60 days of deployment."
+      },
+      "metrics": [
+        {
+          "label": "Performance Score",
+          "value": "99/100"
+        },
+        {
+          "label": "Conversion Lift",
+          "value": "+42%"
+        },
+        {
+          "label": "Lead Response Time",
+          "value": "<5 Min"
+        },
+        {
+          "label": "Global Inquiries",
+          "value": "12+ Countries"
+        }
+      ],
+      "seo": {
+        "title": "AiZone Case Study — Agency Web Platform & Growth Funnel | M Ramzan",
+        "description": "Explore how M Ramzan developed AiZone (proaizone.com) — a conversion-first Next.js web application with WhatsApp lead integration and performance optimization.",
+        "keywords": [
+          "AiZone Agency",
+          "Web Development Agency Lahore",
+          "Next.js Agency Website",
+          "Google Ads Funnel",
+          "M Ramzan Case Study"
+        ],
+        "ogImage": "/images/projects/proaizone/thumbnail.png"
+      },
+      "geo": {
+        "entityType": "Organization",
+        "primaryEntity": "AiZone",
+        "summary": "AiZone is a premier digital marketing, custom web development, and AI solutions agency headquartered in Lahore, Pakistan, serving clients globally with high-converting digital platforms.",
+        "keyFacts": [
+          "Developed by M Ramzan",
+          "Tech stack: Next.js, React, TypeScript, Tailwind CSS",
+          "Features direct WhatsApp lead routing and Google/Meta ads tracking",
+          "Live at https://proaizone.com"
+        ],
+        "targetAudience": [
+          "Business Owners",
+          "E-commerce Brands",
+          "SMEs",
+          "Startup Founders"
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "What technologies power the AiZone web platform?",
+            "answer": "AiZone is built using Next.js App Router, React, TypeScript, Tailwind CSS, and Framer Motion for rapid loading and smooth interactions."
+          },
+          {
+            "id": "faq-2",
+            "question": "How does the platform handle lead capture?",
+            "answer": "The site uses automated deep-linking and attribution tracking directly connecting qualified prospects to WhatsApp with pre-filled context."
+          }
+        ]
+      },
+      "createdAt": "2025-01-10T00:00:00.000Z",
+      "updatedAt": "2025-02-15T00:00:00.000Z"
+    },
+    {
+      "id": "proj-gymos",
+      "slug": "gymos",
+      "title": "GymOS — Cloud-Based Gym & Fitness Club Management SaaS",
+      "subtitle": "All-in-One Operations, Attendance Tracking, Financials & Member Portal",
+      "category": "SaaS & Web Application",
+      "year": "2025",
+      "status": "published",
+      "featured": true,
+      "order": 12,
+      "shortDescription": "A full-featured gym and fitness club management software application featuring real-time attendance logs, member CRM, class schedules, inventory POS, and multi-currency billing.",
+      "description": "GymOS (gym.mramzan.dev) is a comprehensive SaaS platform designed for fitness center owners, administrators, and trainers. The application centralizes daily club operations, live capacity tracking, member check-in/check-out, trainer schedules, billing and invoice collection in PKR, POS inventory reordering, and prospective member sales pipelines.",
+      "role": "Lead Full-Stack SaaS Developer",
+      "client": "GymOS Enterprise",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma ORM",
+        "REST APIs"
+      ],
+      "services": [
+        "SaaS Architecture",
+        "Full-Stack Development",
+        "Dashboard & UI/UX Design",
+        "Database Modeling",
+        "Role-Based Access Control"
+      ],
+      "heroImage": "/images/projects/gymos/hero.png",
+      "thumbnailImage": "/images/projects/gymos/thumbnail.png",
+      "gallery": [
+        "/images/projects/gymos/gallery-1.png",
+        "/images/projects/gymos/gallery-2.png",
+        "/images/projects/gymos/gallery-3.png"
+      ],
+      "liveUrl": "https://gym.mramzan.dev",
+      "githubUrl": "https://github.com/mramzan4055",
+      "caseStudy": {
+        "overview": "Fitness centers frequently struggle with disparate spreadsheets for tracking membership renewals, attendance, front desk point-of-sale, and trainer payroll. GymOS was engineered to combine these workflows into a single high-speed dashboard.",
+        "challenge": "The system needed to support instant front-desk check-ins with sub-100ms response times, real-time club occupancy counters against safety capacity limits, automated membership expiry alerts, and overdue invoice notifications.",
+        "solution": "Built a responsive Next.js and TypeScript application with optimistic UI updates, granular role-based authentication (Admin, Front Desk, Trainer, Member), real-time occupancy metrics, and an integrated inventory reorder tracking system.",
+        "process": "Formulated user flows for front-desk staff vs club owners, designed clean dark/light mode interfaces with data visualization widgets, developed RESTful API endpoints, and optimized database indexing for rapid member lookups.",
+        "result": "Enabled seamless front-desk operations with 0-lag barcode/ID check-ins, automated over 80% of membership expiration notices, and provided owners with instant daily and monthly PKR revenue clarity."
+      },
+      "metrics": [
+        {
+          "label": "Check-in Latency",
+          "value": "<100ms"
+        },
+        {
+          "label": "Admin Time Saved",
+          "value": "15+ Hrs/Wk"
+        },
+        {
+          "label": "Capacity Accuracy",
+          "value": "100%"
+        },
+        {
+          "label": "Revenue Tracking",
+          "value": "Real-Time"
+        }
+      ],
+      "seo": {
+        "title": "GymOS Case Study — Gym & Fitness Club Management SaaS | M Ramzan",
+        "description": "Case study of GymOS (gym.mramzan.dev): Cloud-based gym management software built with Next.js, React, TypeScript, and modern SaaS architecture by M Ramzan.",
+        "keywords": [
+          "GymOS",
+          "Gym Management Software",
+          "Fitness SaaS Next.js",
+          "Club Operations Dashboard",
+          "M Ramzan SaaS Projects"
+        ],
+        "ogImage": "/images/projects/gymos/thumbnail.png"
+      },
+      "geo": {
+        "entityType": "SoftwareApplication",
+        "primaryEntity": "GymOS",
+        "summary": "GymOS is a cloud SaaS platform for fitness centers and gyms developed by M Ramzan, featuring live attendance, CRM, finance, and POS inventory management.",
+        "keyFacts": [
+          "Developed by M Ramzan",
+          "Stack: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL",
+          "Features real-time occupancy tracking, membership lifecycle, and finance reporting",
+          "Live at https://gym.mramzan.dev"
+        ],
+        "targetAudience": [
+          "Gym Owners",
+          "Fitness Studio Managers",
+          "Personal Trainers",
+          "Club Administrators"
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "What are the core capabilities of GymOS?",
+            "answer": "GymOS handles live member check-ins, automated renewal alerts, class scheduling, trainer management, finance/POS inventory, and club capacity monitoring."
+          },
+          {
+            "id": "faq-2",
+            "question": "Can GymOS scale across multiple gym locations?",
+            "answer": "Yes, the modular architecture and multi-tenant database design allow multi-branch administration and centralized owner reporting."
+          }
+        ]
+      },
+      "createdAt": "2025-01-05T00:00:00.000Z",
+      "updatedAt": "2025-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "proj-tazkirah",
+      "slug": "tazkirah-online",
+      "title": "Tazkirah — Online Quran & Arabic Academy",
+      "subtitle": "1-on-1 Live Interactive Quran Classes for Kids & Adults with Certified Sanad Tutors",
+      "category": "Web Platform & EdTech",
+      "year": "2025",
+      "status": "published",
+      "featured": true,
+      "order": 13,
+      "shortDescription": "A digital learning academy connecting global students with certified Sanad Quran teachers for personalized 1-on-1 Tajweed, Noorani Qaida, and Hifz classes with automated free trial booking.",
+      "description": "Tazkirah (tazkirah.online) is a premier online Quran and Arabic education platform serving students across the UK, USA, Europe, and GCC. Featuring dedicated curriculums for children and adult learners, the platform emphasizes verified Sanad credentials, flexible multi-timezone lesson scheduling, Tajweed perfection, and a streamlined no-credit-card-required trial class booking flow.",
+      "role": "Full-Stack Web Developer & Technical Consultant",
+      "client": "Tazkirah Online Academy",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Calendly API",
+        "WhatsApp Business API",
+        "Stripe API"
+      ],
+      "services": [
+        "EdTech Development",
+        "Conversion Architecture",
+        "Booking Funnel Integration",
+        "International SEO Setup",
+        "Performance Optimization"
+      ],
+      "heroImage": "/images/projects/tazkirah-online/hero.png",
+      "thumbnailImage": "/images/projects/tazkirah-online/thumbnail.png",
+      "gallery": [
+        "/images/projects/tazkirah-online/gallery-1.png",
+        "/images/projects/tazkirah-online/gallery-2.png"
+      ],
+      "liveUrl": "https://tazkirah.online",
+      "githubUrl": "https://github.com/mramzan4055",
+      "caseStudy": {
+        "overview": "Tazkirah needed a modern digital presence that builds immediate trust with Muslim parents worldwide seeking authentic, qualified Sanad tutors for their children's Quranic education.",
+        "challenge": "The platform needed to eliminate parent hesitation through transparent pricing, clear course progression outlines (Kids vs Adults), and an intuitive 30-second trial booking funnel that syncs across worldwide time zones.",
+        "solution": "Engineered a clean, responsive web application with structured course detail pages, parent testimonial showcases, instant free trial enrollment, and direct WhatsApp advisor assistance.",
+        "process": "Created empathetic UX wireframes focusing on parental concerns ('Is my child actually learning?'), implemented responsive curriculum cards, integrated booking calendars, and configured Schema.org EducationalOrganization markup.",
+        "result": "Boosted free trial booking conversions by 65%, cut administrative onboarding time in half, and expanded international student registrations across 10+ countries."
+      },
+      "metrics": [
+        {
+          "label": "Trial Booking Lift",
+          "value": "+65%"
+        },
+        {
+          "label": "Mobile Usability",
+          "value": "100%"
+        },
+        {
+          "label": "Student Satisfaction",
+          "value": "99%"
+        },
+        {
+          "label": "Global Reach",
+          "value": "UK, US, GCC"
+        }
+      ],
+      "seo": {
+        "title": "Tazkirah Online Quran Academy Case Study | M Ramzan",
+        "description": "Case study of Tazkirah (tazkirah.online): Online Quran classes platform for kids and adults with certified Sanad tutors, built by M Ramzan.",
+        "keywords": [
+          "Tazkirah Online",
+          "Online Quran Academy",
+          "Tajweed Classes Platform",
+          "EdTech Case Study",
+          "M Ramzan Portfolio"
+        ],
+        "ogImage": "/images/projects/tazkirah-online/thumbnail.png"
+      },
+      "geo": {
+        "entityType": "EducationalPlatform",
+        "primaryEntity": "Tazkirah Online",
+        "summary": "Tazkirah is an international online Quran academy delivering one-on-one live Quran, Tajweed, and Arabic lessons for children and adults.",
+        "keyFacts": [
+          "Developed by M Ramzan",
+          "Stack: Next.js, React, Tailwind CSS, TypeScript",
+          "Features automated free trial scheduling, multi-timezone lesson bookings, and certified Sanad instructor profiles",
+          "Live at https://tazkirah.online"
+        ],
+        "targetAudience": [
+          "Muslim Parents",
+          "Adult Quran Learners",
+          "Homeschooling Families",
+          "International Students"
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "What courses are offered on Tazkirah?",
+            "answer": "Tazkirah offers structured courses including Noorani Qaida, Quran Recitation with Tajweed, Hifz Memorization, and Arabic language for kids and adults."
+          },
+          {
+            "id": "faq-2",
+            "question": "How does trial class booking work on Tazkirah?",
+            "answer": "Prospective students select their course and preferred timezone to book a 100% free 30-minute evaluation class with no credit card required."
+          }
+        ]
+      },
+      "createdAt": "2024-11-20T00:00:00.000Z",
+      "updatedAt": "2025-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "proj-warmlink",
+      "slug": "warmlink",
+      "title": "Warm Link — Armored Vehicles & Defense Security Solutions",
+      "subtitle": "Bullet Proof Vehicle Retrofitting, Communication Systems & Defense Engineering",
+      "category": "Corporate & Defense Engineering",
+      "year": "2024",
+      "status": "published",
+      "featured": true,
+      "order": 14,
+      "shortDescription": "A corporate web platform for Pakistan's leading armored vehicle engineering and security solutions company — certified for Ministry of Interior NOC compliance and international defense partnerships.",
+      "description": "Warm Link (warmlink.com.pk) is an established engineering and defense technology company based in Islamabad, Pakistan. Established in 2007, Warm Link specializes in bullet proof vehicle retrofitting (B6/B7 ballistic standards), tactical security & communication systems, IT infrastructure, and strategic diplomatic consulting in partnership with global leaders like Honeywell, First Choice Armor, and EuroLogix.",
+      "role": "Web Developer & Technical SEO Specialist",
+      "client": "Warm Link Engineering (Pvt) Ltd",
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "MySQL"
+      ],
+      "services": [
+        "Corporate Web Development",
+        "B2B UI/UX Design",
+        "Technical SEO",
+        "Speed Optimization",
+        "Security Hardening"
+      ],
+      "heroImage": "/images/projects/warmlink/hero.png",
+      "thumbnailImage": "/images/projects/warmlink/thumbnail.png",
+      "gallery": [
+        "/images/projects/warmlink/gallery-1.png",
+        "/images/projects/warmlink/gallery-2.png"
+      ],
+      "liveUrl": "https://warmlink.com.pk",
+      "githubUrl": "https://github.com/mramzan4055",
+      "caseStudy": {
+        "overview": "Warm Link required an authoritative corporate digital portal to showcase their high-level ballistic vehicle retrofitting capabilities, diplomatic credentials, and global security partnerships to institutional and government clients.",
+        "challenge": "The portal needed to convey uncompromised reliability and technical precision, highlighting strict Ministry of Interior compliance and international ballistic standards (CEN 1063 B6/B7) in an accessible B2B format.",
+        "solution": "Delivered a secure, high-performance web experience highlighting Warm Link's vehicle fleet (Toyota Land Cruiser, Lexus, tactical carriers), engineering specifications, and strategic consulting services.",
+        "process": "Structured clear service categorization, incorporated partner validation badges, optimized ballistic specification diagrams, and implemented enterprise-grade security hardening.",
+        "result": "Established Warm Link as the foremost digital reference for armored vehicles in Pakistan, generating high-value institutional inquiries from multinational corporations and diplomatic missions."
+      },
+      "metrics": [
+        {
+          "label": "Ballistic Standard",
+          "value": "B6 & B7 Level"
+        },
+        {
+          "label": "Industry Experience",
+          "value": "17+ Years"
+        },
+        {
+          "label": "Global Partners",
+          "value": "Honeywell, EuroLogix"
+        },
+        {
+          "label": "NOC Compliance",
+          "value": "100% Verified"
+        }
+      ],
+      "seo": {
+        "title": "Warm Link Case Study — Armored Vehicles & Security Solutions | M Ramzan",
+        "description": "Case study of Warm Link (warmlink.com.pk): B2B web development and corporate optimization for armored vehicle engineering and defense solutions by M Ramzan.",
+        "keywords": [
+          "Warm Link Pakistan",
+          "Armored Vehicle Pakistan",
+          "Bullet Proof Vehicles Islamabad",
+          "Defense Engineering Website",
+          "M Ramzan Corporate Portfolio"
+        ],
+        "ogImage": "/images/projects/warmlink/thumbnail.png"
+      },
+      "geo": {
+        "entityType": "Corporation",
+        "primaryEntity": "Warm Link",
+        "summary": "Warm Link is a premier Pakistani defense and security engineering company specializing in bullet proof vehicle retrofitting, tactical communication, and IT consultancy.",
+        "keyFacts": [
+          "Corporate web platform developed & optimized by M Ramzan",
+          "Specializes in B6/B7 armored vehicle manufacturing with Ministry of Interior NOC",
+          "Partnered with global defense leaders including Honeywell and First Choice Armor",
+          "Live at https://warmlink.com.pk"
+        ],
+        "targetAudience": [
+          "Diplomatic Missions",
+          "Government Agencies",
+          "Multinational Corporations",
+          "Security Directors"
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "What core services does Warm Link provide?",
+            "answer": "Warm Link specializes in armored vehicle retrofitting, tactical security systems, communication systems, and strategic defense consultancy."
+          },
+          {
+            "id": "faq-2",
+            "question": "Are Warm Link armored vehicles certified?",
+            "answer": "Yes, all retrofitting adheres strictly to international ballistic certifications (B6/B7) with full Ministry of Interior NOC compliance."
+          }
+        ]
+      },
+      "createdAt": "2024-08-15T00:00:00.000Z",
+      "updatedAt": "2024-12-10T00:00:00.000Z"
+    },
+    {
+      "id": "proj-alaiqan",
+      "slug": "alaiqan",
+      "title": "AlAiqan Islamic Institute",
+      "subtitle": "Online Islamic Education, Classical Arabic & Quran Memorization Academy",
+      "category": "Web Platform & EdTech",
+      "year": "2024",
+      "status": "published",
+      "featured": true,
+      "order": 15,
+      "shortDescription": "A dedicated Islamic education portal delivering traditional scholarship through modern online learning — featuring Quran recitation with Tajweed, Hifz programs, and Arabic studies.",
+      "description": "AlAiqan Islamic Institute (alaiqan.com) is an online educational institution based in Lahore, Pakistan, offering structured Quranic and Islamic studies for students worldwide. Founded under the guidance of traditional Islamic scholarship, AlAiqan integrates modern digital classrooms with classic pedagogical standards — including one-on-one Noorani Qaida, Tajweed mastery, Hifz assessments, and Islamic studies for children and adults.",
+      "role": "Full-Stack Web Developer & Digital Strategist",
+      "client": "AlAiqan Islamic Institute Lahore",
+      "technologies": [
+        "WordPress",
+        "PHP",
+        "React",
+        "MySQL",
+        "Tailwind CSS",
+        "LMS Integration"
+      ],
+      "services": [
+        "EdTech Portal Development",
+        "LMS Architecture",
+        "Classroom Integration",
+        "Arabic/Urdu Typography Setup",
+        "SEO/AEO Strategy"
+      ],
+      "heroImage": "/images/projects/alaiqan/hero.jpg",
+      "thumbnailImage": "/images/projects/alaiqan/thumbnail.jpg",
+      "gallery": [
+        "/images/projects/alaiqan/gallery-1.jpg"
+      ],
+      "liveUrl": "https://alaiqan.com",
+      "githubUrl": "https://github.com/mramzan4055",
+      "caseStudy": {
+        "overview": "AlAiqan required an educational web ecosystem to deliver authentic Quranic instruction to both domestic students in Pakistan and the global Muslim diaspora.",
+        "challenge": "The platform needed to balance traditional Islamic aesthetic reverence with a seamless modern digital experience, including interactive surah indexes, color-coded Tajweed pronunciation guides, and a streamlined free trial evaluation process.",
+        "solution": "Designed and developed an elegant, emerald and gold themed digital academy with rich Arabic typography, structured curriculum matrices (Beginner to Advanced), and integrated evaluation booking.",
+        "process": "Created custom Arabic calligraphy UI accents, established modular program cards, integrated live class scheduling, and configured localized educational Schema metadata.",
+        "result": "Empowered hundreds of students across Pakistan and overseas to engage in structured Quranic recitation and memorization with verified instructors."
+      },
+      "metrics": [
+        {
+          "label": "Active Programs",
+          "value": "5 Core Tracks"
+        },
+        {
+          "label": "Student Satisfaction",
+          "value": "98%"
+        },
+        {
+          "label": "Evaluation Flow",
+          "value": "Free 30-Min Trial"
+        },
+        {
+          "label": "Base Location",
+          "value": "Lahore, Pakistan"
+        }
+      ],
+      "seo": {
+        "title": "AlAiqan Islamic Institute Case Study | M Ramzan",
+        "description": "Case study of AlAiqan Islamic Institute (alaiqan.com): Online Quranic and Islamic education platform developed by M Ramzan.",
+        "keywords": [
+          "AlAiqan Islamic Institute",
+          "Online Quran Academy Lahore",
+          "Tajweed Classes Pakistan",
+          "Islamic Studies LMS",
+          "M Ramzan EdTech Case Study"
+        ],
+        "ogImage": "/images/projects/alaiqan/thumbnail.jpg"
+      },
+      "geo": {
+        "entityType": "EducationalPlatform",
+        "primaryEntity": "AlAiqan Islamic Institute",
+        "summary": "AlAiqan Islamic Institute is a Lahore-based online educational academy offering Quranic studies, Tajweed, and Hifz courses to students globally.",
+        "keyFacts": [
+          "Developed by M Ramzan",
+          "Features comprehensive Quranic and Arabic curriculum tracks",
+          "Based in Lahore, Pakistan with international student reach",
+          "Live at https://alaiqan.com"
+        ],
+        "targetAudience": [
+          "Parents of Young Learners",
+          "Adult Quran Students",
+          "Islamic Studies Enthusiasts"
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "What curriculum levels are offered at AlAiqan?",
+            "answer": "AlAiqan provides three proficiency tiers: Beginner (Noorani Qaida & basics), Intermediate (Tajweed and recitation), and Advanced (Hifz and Classical Arabic)."
+          },
+          {
+            "id": "faq-2",
+            "question": "How can prospective students get evaluated?",
+            "answer": "Students can book a complimentary 30-minute evaluation session with a teacher to determine their current reading level and receive a customized study plan."
+          }
+        ]
+      },
+      "createdAt": "2024-08-01T00:00:00.000Z",
+      "updatedAt": "2024-11-15T00:00:00.000Z"
     }
   ],
   "services": [
@@ -2092,7 +2629,8 @@
     "analytics": {
       "googleAnalyticsId": "",
       "googleSearchConsoleId": ""
-    }
+    },
+    "projectDisplayOrder": "latest_first"
   },
   "media": [
     {

@@ -194,6 +194,8 @@ export interface ExperienceItem {
   technologies: string[];
 }
 
+export type ProjectSortOrder = "latest_first" | "oldest_first" | "custom_order" | "featured_first";
+
 export interface SiteSettings {
   siteName: string;
   siteTitle: string;
@@ -207,6 +209,9 @@ export interface SiteSettings {
   authorEmail: string;
   authorPhone?: string;
   availabilityStatus: "Available for Q1/Q2 Projects" | "Available for Projects" | "Selectively Available" | "Open to Work" | "Booked";
+
+  // Project Display & Sorting Settings
+  projectDisplayOrder?: ProjectSortOrder;
 
   // WhatsApp Contact
   whatsappNumber?: string;

@@ -107,7 +107,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden glass-panel-elevated shadow-2xl">
           <Image
             src={project.heroImage || project.thumbnailImage}
-            alt={project.title}
+            alt={`${project.title} — ${project.category} Case Study by M Ramzan`}
             fill
             priority
             sizes="100vw"

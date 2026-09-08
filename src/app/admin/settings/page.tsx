@@ -14,8 +14,11 @@ import {
   BarChart,
   Loader2,
   Shield,
+  ArrowUpDown,
+  Layers,
+  Sparkles,
 } from "lucide-react";
-import { SiteSettings } from "@/types";
+import { SiteSettings, ProjectSortOrder } from "@/types";
 
 export default function AdminSettingsPage() {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
@@ -274,7 +277,107 @@ export default function AdminSettingsPage() {
             </div>
           </div>
 
-          {/* Section 3: Analytics Integration */}
+          {/* Section 3: Portfolio & Project Display Settings */}
+          <div className="glass-panel p-8 sm:p-10 rounded-3xl flex flex-col gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-lg font-display font-bold text-white flex items-center gap-2">
+                  <ArrowUpDown className="w-4 h-4 text-[#dfb15b]" />
+                  <span>Portfolio & Projects Display Order</span>
+                </h2>
+                <p className="text-xs text-platinum-400 font-mono mt-1">
+                  Control which projects show first on your public homepage, work portfolio, and sitemap.
+                </p>
+              </div>
+
+              <span className="px-3 py-1 rounded-full bg-[#dfb15b]/10 border border-[#dfb15b]/30 text-[#dfb15b] text-xs font-mono font-semibold self-start sm:self-auto">
+                Active: {(settings.projectDisplayOrder || "latest_first").replace("_", " ").toUpperCase()}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  id: "latest_first" as ProjectSortOrder,
+                  title: "Latest Projects First",
+                  badge: "Recommended",
+                  desc: "Shows the newest 2025/2024 projects and latest case studies at the very top of your portfolio.",
+                },
+                {
+                  id: "featured_first" as ProjectSortOrder,
+                  title: "Featured Projects First",
+                  badge: "Priority",
+                  desc: "Pins all starred/featured projects at the top, then sorts the rest by newest date.",
+                },
+                {
+                  id: "custom_order" as ProjectSortOrder,
+                  title: "Custom Manual Order",
+                  badge: "Manual",
+                  desc: "Follows the manual order numbers (#1, #2, #3...) assigned in the Projects manager.",
+                },
+                {
+                  id: "oldest_first" as ProjectSortOrder,
+                  title: "Oldest Projects First",
+                  badge: "Chronological",
+                  desc: "Displays projects starting from your earliest portfolio works (2023 → 2024 → 2025).",
+                },
+              ].map((option) => {
+                const isSelected = (settings.projectDisplayOrder || "latest_first") === option.id;
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() =>
+                      setSettings({
+                        ...settings,
+                        projectDisplayOrder: option.id,
+                      })
+                    }
+                    className={`p-5 rounded-2xl text-left border transition-all flex flex-col gap-2 ${
+                      isSelected
+                        ? "bg-[#dfb15b]/10 border-[#dfb15b] shadow-gold-sm"
+                        : "bg-white/[0.02] border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.04]"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${
+                            isSelected
+                              ? "border-[#dfb15b] bg-[#dfb15b]"
+                              : "border-platinum-500 bg-transparent"
+                          }`}
+                        >
+                          {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-black" />}
+                        </div>
+                        <span className="text-sm font-semibold text-white font-mono">
+                          {option.title}
+                        </span>
+                      </div>
+
+                      {option.badge && (
+                        <span
+                          className={`text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider ${
+                            isSelected
+                              ? "bg-[#dfb15b] text-black font-bold"
+                              : "bg-white/[0.06] text-platinum-400"
+                          }`}
+                        >
+                          {option.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-xs text-platinum-400 font-mono leading-relaxed pl-5">
+                      {option.desc}
+                    </p>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 4: Analytics Integration */}
           <div className="glass-panel p-8 sm:p-10 rounded-3xl flex flex-col gap-6">
             <h2 className="text-lg font-display font-bold text-white flex items-center gap-2">
               <BarChart className="w-4 h-4 text-[#dfb15b]" />

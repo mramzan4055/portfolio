@@ -14,14 +14,19 @@ import {
   Clock,
   Eye,
   ArrowUpDown,
+  CheckCircle2,
+  Loader2,
 } from "lucide-react";
-import { Project, ProjectStatus } from "@/types";
+import { Project, ProjectStatus, ProjectSortOrder } from "@/types";
 
 export default function AdminProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [sortOrder, setSortOrder] = useState<ProjectSortOrder>("latest_first");
+  const [savingOrder, setSavingOrder] = useState(false);
+  const [orderMessage, setOrderMessage] = useState<string | null>(null);
 
   const fetchProjects = async () => {
     try {
@@ -40,7 +45,50 @@ export default function AdminProjectsPage() {
 
   useEffect(() => {
     fetchProjects();
+    fetch("/api/settings")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.settings?.projectDisplayOrder) {
+          setSortOrder(data.settings.projectDisplayOrder);
+        }
+      })
+      .catch(() => {});
   }, []);
+
+  const handleSortOrderChange = async (newOrder: ProjectSortOrder) => {
+    setSortOrder(newOrder);
+    setSavingOrder(true);
+    try {
+      const settingsRes = await fetch("/api/settings");
+      const settingsData = await settingsRes.json();
+      if (settingsData.success) {
+        const updatedSettings = {
+          ...settingsData.settings,
+          projectDisplayOrder: newOrder,
+        };
+        await fetch("/api/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedSettings),
+        });
+        const label =
+          newOrder === "latest_first"
+            ? "Latest Projects First"
+            : newOrder === "featured_first"
+            ? "Featured Projects First"
+            : newOrder === "oldest_first"
+            ? "Oldest Projects First"
+            : "Custom Order";
+        setOrderMessage(`Portfolio display order updated: ${label}`);
+        setTimeout(() => setOrderMessage(null), 4000);
+        fetchProjects();
+      }
+    } catch (err) {
+      console.error("Failed to update display order:", err);
+    } finally {
+      setSavingOrder(false);
+    }
+  };
 
   const handleDelete = async (id: string, title: string) => {
     if (!confirm(`Are you sure you wish to delete "${title}"? This cannot be undone.`)) return;
@@ -102,7 +150,34 @@ export default function AdminProjectsPage() {
     }
   };
 
-  const filteredProjects = projects.filter((project) => {
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (sortOrder === "latest_first") {
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      if (dateB !== dateA) return dateB - dateA;
+      return (b.order ?? 0) - (a.order ?? 0);
+    } else if (sortOrder === "oldest_first") {
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearA !== yearB) return yearA - yearB;
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      return dateA - dateB;
+    } else if (sortOrder === "featured_first") {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+      return (b.order ?? 0) - (a.order ?? 0);
+    } else {
+      return (a.order ?? 0) - (b.order ?? 0);
+    }
+  });
+
+  const filteredProjects = sortedProjects.filter((project) => {
     const matchesStatus = statusFilter === "all" || project.status === statusFilter;
     const matchesSearch =
       searchQuery === "" ||
@@ -135,27 +210,64 @@ export default function AdminProjectsPage() {
         </Link>
       </div>
 
-      {/* Control Bar: Filters & Search */}
-      <div className="glass-panel p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Status Filter */}
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          {["all", "published", "draft"].map((status) => (
-            <button
-              key={status}
-              onClick={() => setStatusFilter(status)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-colors ${
-                statusFilter === status
-                  ? "bg-[#dfb15b] text-black font-bold"
-                  : "bg-white/[0.04] text-platinum-400 hover:text-white"
-              }`}
-            >
-              {status}
-            </button>
-          ))}
+      {orderMessage && (
+        <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center gap-2 animate-fade-in">
+          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+          <span>{orderMessage}</span>
+        </div>
+      )}
+
+      {/* Control Bar: Filters, Sort Option & Search */}
+      <div className="glass-panel p-4 rounded-2xl flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-4">
+          {/* Status Filter */}
+          <div className="flex items-center gap-2">
+            {["all", "published", "draft"].map((status) => (
+              <button
+                key={status}
+                onClick={() => setStatusFilter(status)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-colors ${
+                  statusFilter === status
+                    ? "bg-[#dfb15b] text-black font-bold"
+                    : "bg-white/[0.04] text-platinum-400 hover:text-white"
+                }`}
+              >
+                {status}
+              </button>
+            ))}
+          </div>
+
+          {/* Display Order Selector */}
+          <div className="flex items-center gap-2 pl-2 border-l border-white/[0.08]">
+            <span className="text-xs font-mono uppercase text-platinum-400 flex items-center gap-1.5 whitespace-nowrap">
+              <ArrowUpDown className="w-3.5 h-3.5 text-[#dfb15b]" />
+              <span>Show First:</span>
+            </span>
+            <div className="relative">
+              <select
+                value={sortOrder}
+                onChange={(e) => handleSortOrderChange(e.target.value as ProjectSortOrder)}
+                disabled={savingOrder}
+                className="px-3 py-1.5 pr-8 rounded-lg bg-[#0e0e14] border border-[#dfb15b]/40 text-xs font-mono text-[#dfb15b] font-semibold focus:outline-none focus:border-[#dfb15b] appearance-none cursor-pointer"
+              >
+                <option value="latest_first">⚡ Latest Projects First</option>
+                <option value="featured_first">📌 Featured Projects First</option>
+                <option value="custom_order">🔢 Custom Order Index</option>
+                <option value="oldest_first">⏳ Oldest First</option>
+              </select>
+              <div className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-[#dfb15b]">
+                {savingOrder ? (
+                  <Loader2 className="w-3 h-3 animate-spin" />
+                ) : (
+                  <ArrowUpDown className="w-3 h-3" />
+                )}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Search */}
-        <div className="relative w-full sm:w-72">
+        <div className="relative w-full lg:w-72">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-platinum-500" />
           <input
             type="text"

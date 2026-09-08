@@ -124,6 +124,7 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
 
           <Link
             href="/admin"
+            rel="nofollow"
             title="Secure CMS Access"
             className="p-2 rounded-full glass-panel hover:border-[#dfb15b]/40 text-platinum-400 hover:text-white transition-colors"
           >
@@ -135,6 +136,7 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             href="/admin"
+            rel="nofollow"
             title="CMS"
             className="p-2 rounded-lg glass-panel text-platinum-300 hover:text-white"
           >
@@ -192,6 +194,7 @@ export function Header({ authorName, availabilityStatus }: HeaderProps) {
                 </Link>
                 <Link
                   href="/admin"
+                  rel="nofollow"
                   className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl glass-panel text-platinum-300 text-xs font-mono"
                 >
                   <Shield className="w-3.5 h-3.5" />

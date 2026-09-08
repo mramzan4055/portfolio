@@ -43,6 +43,17 @@ export default async function WorkPage() {
         ]}
         settings={settings}
       />
+      {/* ItemList Schema for portfolio collection */}
+      <JsonLd
+        type="itemList"
+        data={projects.map((p) => ({
+          name: p.title,
+          url: `/projects/${p.slug}`,
+          description: p.shortDescription,
+          image: p.heroImage || p.thumbnailImage,
+        }))}
+        settings={settings}
+      />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-12">
         {/* Header */}

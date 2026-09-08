@@ -14,6 +14,7 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     display: "standalone",
     background_color: "#08080a",
     theme_color: "#08080a",
+    categories: ["business", "portfolio", "technology"],
     icons: [
       {
         src: "/icon",
@@ -24,6 +25,18 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
         src: "/apple-icon",
         sizes: "180x180",
         type: "image/png",
+      },
+      {
+        src: "/icon",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/icon",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
     ],
   };

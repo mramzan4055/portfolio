@@ -1,6 +1,13 @@
 import React from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Home } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | M Ramzan",
+  description: "The requested page could not be found on mramzan.dev.",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

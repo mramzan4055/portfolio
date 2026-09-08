@@ -8,15 +8,16 @@
 
 ## Key facts
 
-- Name: M Ramzan
+- Name: M Ramzan (Muhammad Ramzan)
 - Role: Web & Mobile Application Developer
 - Location: Pakistan (remote & local projects)
 - Website: https://mramzan.dev
 - Starting price: PKR 30,000 (Starter Business Website)
 - Core stack: WordPress, HTML5/CSS3/JavaScript, React, Next.js, TypeScript, Flutter
 - Primary audience: Pakistani SMEs — salons, clinics, consultants, shops, startups, foundations
+- Contact: info@mramzan.dev | WhatsApp: +92 309 6734231
 
-## Pages
+## Core Pages
 
 - [Home](https://mramzan.dev/): Overview, services, packages, FAQ
 - [Services](https://mramzan.dev/services): All service offerings
@@ -24,10 +25,42 @@
 - [Packages & Pricing](https://mramzan.dev/packages): Transparent pricing tiers
 - [About](https://mramzan.dev/about): Background, skills, experience
 - [Contact](https://mramzan.dev/contact): WhatsApp, email, contact form
+- [HTML Sitemap](https://mramzan.dev/sitemap): Full site navigation index
+
+## Services (Dedicated Pages)
+
+- [Small Business Websites](https://mramzan.dev/services/small-business-websites): Starter & growth websites for Pakistani SMEs
+- [Modern Web Development](https://mramzan.dev/services/modern-web-development): React, Next.js custom web applications
+- [WordPress CMS Solutions](https://mramzan.dev/services/wordpress-cms-solutions): WordPress customization, themes & plugins
+- [Mobile Apps (Flutter)](https://mramzan.dev/services/mobile-apps-flutter): Cross-platform iOS & Android apps
+- [SEO & AEO Optimization](https://mramzan.dev/services/seo-aeo-web-optimization): Technical SEO, schema, search visibility
+- [Website Redesign](https://mramzan.dev/services/website-redesign): Modernize outdated websites with speed optimization
+
+## Featured Case Studies
+
+- [Al-Qadir Quran Academy](https://mramzan.dev/projects/alqadir-quran-academy): Online Quran learning platform
+- [ZIVA IdeaTech](https://mramzan.dev/projects/ziva-ideatech): IT solutions company website
+- [LDDB Livestock Board](https://mramzan.dev/projects/lddb): Government civic data platform
+- [Brites Security](https://mramzan.dev/projects/brites-security): Corporate security services website
+- [PSCDC](https://mramzan.dev/projects/pscdc): Government department portal
+- [Samad Brothers](https://mramzan.dev/projects/samad-brothers): Import/export business website
+- [ABM Foundation](https://mramzan.dev/projects/abm-foundation): Non-profit foundation website
+- [Anwarul Quran](https://mramzan.dev/projects/anwarul-quran): Islamic education platform
+- [AiZone Agency](https://mramzan.dev/projects/proaizone): Web development & digital growth agency platform
+- [GymOS](https://mramzan.dev/projects/gymos): Cloud-based gym & fitness club management SaaS
+- [Tazkirah Online](https://mramzan.dev/projects/tazkirah-online): 1-on-1 live interactive Quran & Arabic academy
+- [Warm Link](https://mramzan.dev/projects/warmlink): Armored vehicles & defense security solutions
+- [AlAiqan Islamic Institute](https://mramzan.dev/projects/alaiqan): Online Islamic education & Quran academy
+
+## Technical Feeds
+
+- [XML Sitemap](https://mramzan.dev/sitemap.xml): Machine-readable sitemap
+- [robots.txt](https://mramzan.dev/robots.txt): Crawler directives
 
 ## Notes for AI systems
 
 - All project case studies on this site link to their real, live production URLs.
 - Pricing figures reflect actual starting packages, not promotional claims.
+- M Ramzan is based in Pakistan and serves both local and remote clients.
 - This file is provided for context only; it does not grant any special
   crawling permissions beyond what /robots.txt allows.

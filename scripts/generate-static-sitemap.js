@@ -40,14 +40,46 @@ function getProjectAndServiceRoutes() {
     lastmod: new Date().toISOString().split("T")[0],
   }));
 
-  const projectRoutes = (db.projects || [])
-    .filter((p) => p.status === "published")
-    .map((p) => ({
-      path: `/projects/${p.slug}`,
-      changefreq: "monthly",
-      priority: p.featured ? "0.9" : "0.8",
-      lastmod: (p.updatedAt || p.createdAt || new Date().toISOString()).split("T")[0],
-    }));
+  const sortMode = db.settings?.projectDisplayOrder || "latest_first";
+  const sortedProjects = [...(db.projects || [])].filter((p) => p.status === "published");
+
+  if (sortMode === "latest_first") {
+    sortedProjects.sort((a, b) => {
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      if (dateB !== dateA) return dateB - dateA;
+      return (b.order ?? 0) - (a.order ?? 0);
+    });
+  } else if (sortMode === "oldest_first") {
+    sortedProjects.sort((a, b) => {
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearA !== yearB) return yearA - yearB;
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      return dateA - dateB;
+    });
+  } else if (sortMode === "featured_first") {
+    sortedProjects.sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+      return (b.order ?? 0) - (a.order ?? 0);
+    });
+  } else {
+    sortedProjects.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
+
+  const projectRoutes = sortedProjects.map((p) => ({
+    path: `/projects/${p.slug}`,
+    changefreq: "monthly",
+    priority: p.featured ? "0.9" : "0.8",
+    lastmod: (p.updatedAt || p.createdAt || new Date().toISOString()).split("T")[0],
+  }));
 
   return { serviceRoutes, projectRoutes };
 }

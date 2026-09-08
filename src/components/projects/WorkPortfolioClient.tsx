@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search, LayoutGrid, List, ArrowUpRight, Sparkles } from "lucide-react";
+import { Search, LayoutGrid, List, ArrowUpRight, Sparkles, ArrowUpDown } from "lucide-react";
 import { Project } from "@/types";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ export function WorkPortfolioClient({ projects }: WorkPortfolioClientProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [sortBy, setSortBy] = useState<"default" | "newest" | "oldest">("default");
 
   // Extract unique categories
   const categories = useMemo(() => {
@@ -27,7 +28,7 @@ export function WorkPortfolioClient({ projects }: WorkPortfolioClientProps) {
 
   // Filter projects
   const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
+    let result = projects.filter((project) => {
       const matchesCategory =
         selectedCategory === "All" || project.category === selectedCategory;
       const matchesSearch =
@@ -40,7 +41,29 @@ export function WorkPortfolioClient({ projects }: WorkPortfolioClientProps) {
 
       return matchesCategory && matchesSearch;
     });
-  }, [projects, selectedCategory, searchQuery]);
+
+    if (sortBy === "newest") {
+      result = [...result].sort((a, b) => {
+        const yearA = parseInt(a.year || "0", 10);
+        const yearB = parseInt(b.year || "0", 10);
+        if (yearB !== yearA) return yearB - yearA;
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return dateB - dateA;
+      });
+    } else if (sortBy === "oldest") {
+      result = [...result].sort((a, b) => {
+        const yearA = parseInt(a.year || "0", 10);
+        const yearB = parseInt(b.year || "0", 10);
+        if (yearA !== yearB) return yearA - yearB;
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return dateA - dateB;
+      });
+    }
+
+    return result;
+  }, [projects, selectedCategory, searchQuery, sortBy]);
 
   return (
     <div className="flex flex-col gap-12">
@@ -64,17 +87,31 @@ export function WorkPortfolioClient({ projects }: WorkPortfolioClientProps) {
           ))}
         </div>
 
-        {/* Search Bar & View Mode Toggle */}
-        <div className="flex items-center gap-3">
-          <div className="relative flex-1 sm:w-64">
+        {/* Search Bar, Sort & View Mode Toggle */}
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-3">
+          <div className="relative flex-1 sm:w-60">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-platinum-500" />
             <input
               type="text"
-              placeholder="Search by tech or title..."
+              placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-white placeholder-platinum-500 focus:outline-none focus:border-[#dfb15b]/50"
             />
+          </div>
+
+          <div className="relative">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="py-2 pl-3.5 pr-8 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-platinum-300 hover:text-white focus:text-white focus:outline-none focus:border-[#dfb15b]/50 appearance-none cursor-pointer"
+              aria-label="Sort projects"
+            >
+              <option value="default" className="bg-[#0e0e14] text-white">Latest First</option>
+              <option value="newest" className="bg-[#0e0e14] text-white">Newest Year</option>
+              <option value="oldest" className="bg-[#0e0e14] text-white">Oldest First</option>
+            </select>
+            <ArrowUpDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-platinum-400 pointer-events-none" />
           </div>
 
           <div className="hidden sm:flex items-center p-1 rounded-full bg-white/[0.04] border border-white/[0.08]">

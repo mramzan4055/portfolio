@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Project, Page, MediaItem, SiteSettings, ServiceItem, SkillCategory, ExperienceItem, ProjectStatus } from "@/types";
+import { Project, Page, MediaItem, SiteSettings, ServiceItem, SkillCategory, ExperienceItem, ProjectStatus, ProjectSortOrder } from "@/types";
 import { initialProjects, initialServices, initialSkills, initialExperience, initialPages, initialSiteSettings } from "@/data/seed";
 import { query as mysqlQuery, execute as mysqlExecute } from "@/lib/db/mysql";
 
@@ -115,6 +115,7 @@ export async function getProjects(options?: {
   category?: string;
   featured?: boolean;
   limit?: number;
+  sortBy?: ProjectSortOrder;
 }): Promise<Project[]> {
   const db = getLocalData();
   let result = [...(db.projects || [])];
@@ -129,7 +130,51 @@ export async function getProjects(options?: {
     result = result.filter((p) => p.featured === options.featured);
   }
 
-  result.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  // Determine sort order: explicitly passed sortBy > CMS SiteSettings > default "latest_first"
+  const sortMode: ProjectSortOrder =
+    options?.sortBy || db.settings?.projectDisplayOrder || "latest_first";
+
+  if (sortMode === "latest_first") {
+    result.sort((a, b) => {
+      // 1. Compare Year descending (e.g. 2025 > 2024 > 2023)
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+
+      // 2. Compare createdAt date descending
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      if (dateB !== dateA) return dateB - dateA;
+
+      // 3. Fallback: order descending
+      return (b.order ?? 0) - (a.order ?? 0);
+    });
+  } else if (sortMode === "oldest_first") {
+    result.sort((a, b) => {
+      // 1. Compare Year ascending
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearA !== yearB) return yearA - yearB;
+
+      // 2. Compare createdAt date ascending
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+      if (dateA !== dateB) return dateA - dateB;
+
+      return (a.order ?? 0) - (b.order ?? 0);
+    });
+  } else if (sortMode === "featured_first") {
+    result.sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      const yearA = parseInt(a.year || "0", 10);
+      const yearB = parseInt(b.year || "0", 10);
+      if (yearB !== yearA) return yearB - yearA;
+      return (b.order ?? 0) - (a.order ?? 0);
+    });
+  } else {
+    // "custom_order": strictly by manual order number
+    result.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  }
 
   if (options?.limit) {
     result = result.slice(0, options.limit);

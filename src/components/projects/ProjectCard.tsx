@@ -26,7 +26,7 @@ export function ProjectCard({ project, index = 0, priority = false }: ProjectCar
       <Link href={`/projects/${project.slug}`} prefetch={true} className="relative aspect-[16/10] w-full overflow-hidden bg-onyx-900 block">
         <Image
           src={project.heroImage || project.thumbnailImage || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"}
-          alt={project.title}
+          alt={`${project.title} — ${project.category} by M Ramzan`}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

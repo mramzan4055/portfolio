@@ -85,7 +85,7 @@ export function generateSiteMetadata(
     openGraph: {
       type: pageMeta?.type || "website",
       locale: "en_US",
-      alternateLocale: ["en_GB"],
+      alternateLocale: ["en_GB", "en_PK"],
       url: canonical,
       title,
       description,
@@ -121,8 +121,8 @@ export function generateSiteMetadata(
     },
     verification,
     other: {
-      "geo.region": "PK",
-      "geo.placename": "Pakistan",
+      "geo.region": "PK-PB",
+      "geo.placename": "Punjab, Pakistan",
       "geo.position": "31.5204;74.3587",
       "ICBM": "31.5204, 74.3587",
       "theme-color": "#08080a",

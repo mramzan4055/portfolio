@@ -2,7 +2,7 @@ import React from "react";
 import { SiteSettings, Project, ServiceItem } from "@/types";
 
 interface JsonLdProps {
-  type: "person" | "website" | "professionalService" | "service" | "project" | "breadcrumbs" | "faq" | "profilePage";
+  type: "person" | "website" | "professionalService" | "service" | "project" | "breadcrumbs" | "faq" | "profilePage" | "itemList";
   data?: any;
   settings?: SiteSettings;
 }
@@ -241,12 +241,13 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
     };
   } else if (type === "project" && data) {
     const project = data as Project;
-    schema = {
-      "@context": "https://schema.org",
-      "@type":
+    const projectType =
         project.geo?.entityType === "EducationalPlatform"
           ? "EducationalOccupationalProgram"
-          : project.geo?.entityType || "SoftwareApplication",
+          : project.geo?.entityType || "CreativeWork";
+    schema = {
+      "@context": "https://schema.org",
+      "@type": projectType,
       name: project.title,
       headline: project.subtitle,
       description: project.description || project.shortDescription,
@@ -260,8 +261,7 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
         name: authorName,
         url: siteUrl,
       },
-      applicationCategory: project.category,
-      operatingSystem: "Web",
+      genre: project.category,
       keywords: (project.technologies || []).join(", "),
     };
   } else if (type === "breadcrumbs" && data) {
@@ -286,6 +286,19 @@ export function JsonLd({ type, data, settings }: JsonLdProps) {
           "@type": "Answer",
           text: item.answer,
         },
+      })),
+    };
+  } else if (type === "itemList" && data && data.length > 0) {
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: data.map((item: { name: string; url: string; description?: string; image?: string }, index: number) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: item.url.startsWith("http") ? item.url : `${siteUrl}${item.url}`,
+        ...(item.description && { description: item.description }),
+        ...(item.image && { image: item.image.startsWith("http") ? item.image : `${siteUrl}${item.image}` }),
       })),
     };
   }
