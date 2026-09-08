@@ -11,6 +11,19 @@ PassengerStartupFile server.js
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
 </IfModule>
 
+# Ensure XML and XSL files are served with proper MIME types
+AddType application/xml .xml
+AddType text/xsl .xsl
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.xml$">
+    Header set Content-Type "application/xml; charset=utf-8"
+  </FilesMatch>
+  <FilesMatch "\.xsl$">
+    Header set Content-Type "text/xsl; charset=utf-8"
+  </FilesMatch>
+</IfModule>
+
 # Caching for Static Assets
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -23,4 +36,6 @@ PassengerStartupFile server.js
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType text/xsl "access plus 1 day"
 </IfModule>

@@ -18,6 +18,20 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/sitemap.xml",
+        headers: [
+          { key: "Content-Type", value: "application/xml; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
+      {
+        source: "/sitemap.xsl",
+        headers: [
+          { key: "Content-Type", value: "text/xsl; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=86400, s-maxage=86400" },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
