@@ -1235,113 +1235,113 @@ export const initialProjects: Project[] = [
     "updatedAt": "2025-03-01T00:00:00.000Z"
   },
   {
-    "id": "proj-abh-film-studio",
-    "slug": "abh-film-studio",
-    "title": "ABH Film Studio",
-    "subtitle": "Cinematic Production House & Studio Facility Platform",
-    "category": "Creative Studio & Film Production",
-    "year": "2025",
-    "status": "published",
-    "featured": true,
-    "order": 20,
-    "shortDescription": "A cinematic creative studio web platform for ABH Film Studio — Islamabad's premier film and video production house delivering end-to-end cinematography, editing, and equipment rental.",
-    "description": "The platform showcases ABH Film Studio's state-of-the-art Islamabad production floor, cinema camera equipment, post-production suites, client portfolio reel, BTS documentation, and studio rental workflows.",
-    "role": "Web Developer & Creative Director",
-    "client": "ABH Film Studio",
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vanilla CSS",
-      "Framer Motion",
-      "WebP/AVIF",
-      "Dark Mode UI",
-      "Vercel"
-    ],
-    "services": [
-      "Creative Web Development",
-      "Cinematic Portfolio Showcase",
-      "Studio Rental Workflow",
-      "BTS Media Gallery",
-      "Technical SEO"
-    ],
-    "heroImage": "/images/projects/abh-film-studio/hero.png",
-    "thumbnailImage": "/images/projects/abh-film-studio/thumbnail.png",
-    "gallery": [
-      "/images/projects/abh-film-studio/gallery-1.png",
-      "/images/projects/abh-film-studio/gallery-2.png",
-      "/images/projects/abh-film-studio/gallery-3.png"
-    ],
-    "liveUrl": "https://demo.abhfilmstudio.com",
-    "githubUrl": "https://github.com/mramzan4055",
-    "caseStudy": {
-      "overview": "ABH Film Studio needed a cutting-edge creative website reflecting their status as Islamabad's top film and video production house, enabling advertising agencies and directors to explore studio capabilities and book rental packages.",
-      "challenge": "Conveying film-grade visual excellence and equipment sophistication (cinema cameras, soundproof floor, color grading suites) without sacrificing mobile performance and page speed.",
-      "solution": "Engineered a dark-mode Next.js platform featuring smooth scroll interactions, full-screen video banners, detailed gear rental catalogs, and behind-the-scenes production galleries.",
-      "process": "Architected an immersive dark UI aesthetic, built equipment specification cards, integrated an inquiry calendar for studio space rental, and optimized video and image assets for instant loading.",
-      "result": "Positioned ABH Film Studio as Islamabad's premier creative production house, boosting commercial production inquiries by over 175%."
-    },
-    "metrics": [
-      {
-        "label": "Studio Location",
-        "value": "Islamabad, PK"
-      },
-      {
-        "label": "Core Capabilities",
-        "value": "6 Services"
-      },
-      {
-        "label": "Design Aesthetic",
-        "value": "Dark-Mode Cinema"
-      },
-      {
-        "label": "Core Web Vitals",
-        "value": "100/100"
-      }
-    ],
-    "seo": {
-      "title": "ABH Film Studio — Islamabad Production House | M Ramzan",
-      "description": "Case study of ABH Film Studio: Cinematic video production house and studio rental platform in Islamabad built with Next.js, TypeScript, and dark-mode aesthetics.",
-      "keywords": [
-        "ABH Film Studio",
-        "Islamabad Film Production",
-        "Video Production Pakistan",
-        "Camera Rental Islamabad",
-        "M Ramzan Portfolio"
-      ],
-      "ogImage": "/images/projects/abh-film-studio/thumbnail.png"
-    },
-    "geo": {
-      "entityType": "Organization",
-      "primaryEntity": "ABH Film Studio",
-      "summary": "ABH Film Studio is an Islamabad-based film and video production studio platform developed by M Ramzan with Next.js.",
-      "keyFacts": [
-        "Developed by M Ramzan",
-        "Features Islamabad's premier film and podcast production facilities",
-        "Includes equipment rental inventory and studio booking workflows",
-        "Built with Next.js and dark-mode cinematic styling"
-      ],
-      "targetAudience": [
-        "Advertising Agencies",
-        "Filmmakers & Directors",
-        "Corporate Brands"
-      ],
-      "faq": [
-        {
-          "id": "faq-1",
-          "question": "What services does ABH Film Studio offer?",
-          "answer": "ABH Film Studio offers commercial video production, podcast recording, post-production editing & color grading, and professional cinema camera equipment rental."
-        },
-        {
-          "id": "faq-2",
-          "question": "Where is the studio located?",
-          "answer": "The studio facility is located in Islamabad, Pakistan, equipped with sound-treated production floors and dedicated editing suites."
-        }
-      ]
-    },
-    "createdAt": "2025-02-20T00:00:00.000Z",
-    "updatedAt": "2025-03-01T00:00:00.000Z"
+  "id": "proj-abh-film-studio",
+  "slug": "abh-film-studio",
+  "title": "ABH Film Studio",
+  "subtitle": "Cinematic Storytelling & Full-Service Islamabad Production House — 'Made to be Felt'",
+  "category": "Creative Studio & Film Production",
+  "year": "2025",
+  "status": "published",
+  "featured": true,
+  "order": 20,
+  "shortDescription": "A cinematic interactive web platform for ABH Film Studio — Islamabad's premier full-service production house delivering brand films, commercial photography, podcast studios, and equipment rentals for National Foods, Zong, Tim Hortons, and Haris Rauf Collection.",
+  "description": "ABH Film Studio is an Islamabad-based premier creative powerhouse specializing in narrative commercial cinematography, fashion and food styling photography, podcast production, and high-end equipment rental. The platform showcases an interactive gallery of 45+ projects built to cinematic standards.",
+  "role": "Web Developer & Creative Director",
+  "client": "ABH Film Studio",
+  "technologies": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vanilla CSS",
+    "Framer Motion",
+    "WebP/AVIF",
+    "Dark Mode UI",
+    "Vercel"
+  ],
+  "services": [
+    "Creative Web Development",
+    "Cinematic Portfolio Showcase",
+    "Studio Rental Workflow",
+    "BTS Media Gallery",
+    "Technical SEO"
+  ],
+  "heroImage": "/images/projects/abh-film-studio/hero.png",
+  "thumbnailImage": "/images/projects/abh-film-studio/thumbnail.png",
+  "gallery": [
+    "/images/projects/abh-film-studio/gallery-1.png",
+    "/images/projects/abh-film-studio/gallery-2.png",
+    "/images/projects/abh-film-studio/gallery-3.png"
+  ],
+  "liveUrl": "https://demo.abhfilmstudio.com",
+  "githubUrl": "https://github.com/mramzan4055",
+  "caseStudy": {
+    "overview": "ABH Film Studio required a world-class digital showcase reflecting their motto 'Made to be felt' — presenting extensive commercial productions, brand films, and studio facilities to advertising agencies and corporate clients including National Foods, Zong FAM Fest, Tim Hortons, and Haris Rauf Collection.",
+    "challenge": "Balancing rich cinematic media, interactive project carousels, and multi-format client campaigns (video, fashion photography, commercial food styling) with rapid load speeds and mobile responsiveness.",
+    "solution": "Engineered a dark-mode interactive portfolio with WebP/AVIF asset pipelines, full-bleed cinematic heroes, filterable portfolio collections, and integrated studio rental and production inquiry flows.",
+    "process": "Architected an immersive dark UI aesthetic, built equipment specification cards, integrated an inquiry calendar for studio space rental, and optimized video and image assets for instant loading.",
+    "result": "Positioned ABH Film Studio as Islamabad's top creative production house, accelerating brand partnerships and studio booking inquiries by 175%."
   },
+  "metrics": [
+    {
+      "label": "Client Brands",
+      "value": "National Foods, Zong, Tim Hortons"
+    },
+    {
+      "label": "Studio Location",
+      "value": "Islamabad, PK"
+    },
+    {
+      "label": "Core Capabilities",
+      "value": "Film, Stills, Podcast, Rental"
+    },
+    {
+      "label": "Core Web Vitals",
+      "value": "100/100"
+    }
+  ],
+  "seo": {
+    "title": "ABH Film Studio — Islamabad Production House | M Ramzan",
+    "description": "Case study of ABH Film Studio: Cinematic video production house and studio rental platform in Islamabad built with Next.js, TypeScript, and dark-mode aesthetics.",
+    "keywords": [
+      "ABH Film Studio",
+      "Islamabad Film Production",
+      "Video Production Pakistan",
+      "Camera Rental Islamabad",
+      "M Ramzan Portfolio"
+    ],
+    "ogImage": "/images/projects/abh-film-studio/thumbnail.png"
+  },
+  "geo": {
+    "entityType": "Organization",
+    "primaryEntity": "ABH Film Studio",
+    "summary": "ABH Film Studio is an Islamabad-based film and video production studio platform developed by M Ramzan with Next.js.",
+    "keyFacts": [
+      "Developed by M Ramzan",
+      "Features Islamabad's premier film and podcast production facilities",
+      "Includes equipment rental inventory and studio booking workflows",
+      "Built with Next.js and dark-mode cinematic styling"
+    ],
+    "targetAudience": [
+      "Advertising Agencies",
+      "Filmmakers & Directors",
+      "Corporate Brands"
+    ],
+    "faq": [
+      {
+        "id": "faq-1",
+        "question": "What services does ABH Film Studio offer?",
+        "answer": "ABH Film Studio offers commercial video production, podcast recording, post-production editing & color grading, and professional cinema camera equipment rental."
+      },
+      {
+        "id": "faq-2",
+        "question": "Where is the studio located?",
+        "answer": "The studio facility is located in Islamabad, Pakistan, equipped with sound-treated production floors and dedicated editing suites."
+      }
+    ]
+  },
+  "createdAt": "2025-02-20T00:00:00.000Z",
+  "updatedAt": "2026-10-15T16:34:12.663Z"
+},
 ];
 
 export const initialServices: ServiceItem[] = [

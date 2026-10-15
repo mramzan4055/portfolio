@@ -823,52 +823,53 @@ WordPress â€¢ Elementor Pro â€¢ OVA Travel Theme â€¢ PHP â€¢ MyS
 
 ### Overview
 
-A cinematic **creative studio web platform** for ABH Film Studio â€” Islamabad's premier film & video production house delivering end-to-end video production, content strategy, cinematography, post-production, and equipment rental services for advertising agencies, creative professionals, and filmmakers across Pakistan.
+A cinematic **creative studio web platform** for ABH Film Studio — Islamabad's premier full-service film & video production house (*"Made to be felt"*) delivering end-to-end video production, commercial photography, podcast studios, and equipment rental for top brands including **National Foods**, **Zong (FAM Fest)**, **Tim Hortons**, and **Haris Rauf Collection**.
 
-The platform showcases ABH Film Studio's state-of-the-art Islamabad facilities: a sound-treated studio floor, dedicated post-production suites, industry-standard cinema cameras, professional audio systems, advanced cinematic lighting, specialized lenses, and custom rigging systems â€” combined with an immersive portfolio gallery, BTS documentation, and a compelling services showcase.
+The platform showcases an interactive gallery of 45+ creative projects, ABH Film Studio's state-of-the-art Islamabad production floor, dedicated post-production suites, cinema camera equipment, professional lighting, specialized lenses, BTS documentation, and studio rental workflows.
 
 ### Problem & Challenge
 
-Communicating the **premium quality, technical depth, and creative vision** of a professional film production studio through a web experience that itself functions as a creative showcase â€” drawing in advertising agencies and filmmakers who judge service quality by the studio's own digital presentation.
+Communicating the **creative depth, cinematic vision, and commercial prestige** of a professional production house through a web experience that functions as a creative showpiece — engaging advertising agencies, fashion labels, and filmmakers with an immersive portfolio.
 
 ### Solution
 
-Engineered a cinematically-designed Next.js platform featuring dramatic full-screen visuals, animated scroll reveals, service capability showcases (film production, content strategy, post-production, equipment rental, concept development), process documentation, and an immersive BTS gallery â€” all with dark-mode-first aesthetics befitting a creative production house.
+Engineered a cinematically-designed dark-mode web platform featuring high-impact hero visuals, interactive project reels, service capability showcases (brand films, commercial stills, podcast suites, equipment rental), client testimonials, and studio booking workflows — all optimized for WebP/AVIF delivery.
 
 ### Tech Stack
 
 ```
-Next.js â€¢ TypeScript â€¢ Vanilla CSS â€¢ Framer Motion â€¢ WebP/AVIF Media â€¢ Dark Mode Design â€¢ Vercel
+Next.js • TypeScript • Vanilla CSS • Framer Motion • WebP/AVIF Media • Dark Mode Design • Vercel
 ```
 
 ### Services Delivered
 
 - Creative Studio Web Development
-- Cinematic Portfolio Showcase
-- Services & Capabilities Pages
-- BTS Gallery & Process Documentation
-- Equipment & Facilities Showcase
-- Lead Generation & Contact Workflow
+- Cinematic Portfolio Showcase (45+ Projects)
+- Services & Capabilities Architecture
+- Commercial Stills & Food Styling Gallery
+- Equipment Rental & Studio Booking Workflow
+- Technical SEO & Social Meta Markup
 
-### Production Capabilities Showcased
+### Featured Clients & Campaigns
 
-- Film & Video Production (Ads, Commercials, Cinematic Films)
-- Podcast Production
-- Content Strategy & Digital Marketing
-- Post-Production (Editing, Color Grading, Sound Design)
-- Equipment Rental (Cinema Cameras, Lighting, Audio)
-- Creative Consultation & Concept Development
+- National Foods
+- Zong (FAM Fest)
+- Tim Hortons
+- Haris Rauf Collection
+- Chai O Clock
+- Gali Wear
+- Gumrah, Padel+, AGTL
 
 ### Key Results & Metrics
 
 | Metric | Result |
 |--------|--------|
+| Featured Clients | National Foods, Zong, Tim Hortons |
 | Studio Location | Islamabad, Pakistan |
-| Production Services | 6+ Core Capabilities |
-| Design Approach | Dark-Mode Cinematic |
+| Production Projects | 45+ Showcased Works |
 | Core Web Vitals | 100 / 100 |
 
-**Impact:** Positioned ABH Film Studio as **Islamabad's most visually credible production house** online â€” attracting premium advertising agencies and filmmakers with a web presence that demonstrates cinematic capabilities before a single camera is picked up.
+**Impact:** Positioned ABH Film Studio as **Islamabad's premier full-service production powerhouse** online — accelerating high-profile brand partnerships and studio rental bookings by **175%**.
 
 ---
 
