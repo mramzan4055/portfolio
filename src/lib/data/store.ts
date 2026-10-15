@@ -30,20 +30,25 @@ function parseJson(val: any, fallback: any = null) {
 // HIGH-SPEED IN-MEMORY LOCAL-FIRST STORE
 // ------------------------------------------------------------------
 let memoryCache: DBData | null = null;
+let lastDbMtime: number = 0;
 
 function getLocalData(): DBData {
-  if (memoryCache) {
-    return memoryCache;
-  }
-
   try {
     if (fs.existsSync(DB_FILE_PATH)) {
-      const fileData = fs.readFileSync(DB_FILE_PATH, "utf-8");
-      memoryCache = JSON.parse(fileData);
+      const stats = fs.statSync(DB_FILE_PATH);
+      if (!memoryCache || stats.mtimeMs > lastDbMtime) {
+        const fileData = fs.readFileSync(DB_FILE_PATH, "utf-8");
+        memoryCache = JSON.parse(fileData);
+        lastDbMtime = stats.mtimeMs;
+      }
       return memoryCache!;
     }
   } catch (error) {
     console.error("Error reading local db file, falling back to seed:", error);
+  }
+
+  if (memoryCache) {
+    return memoryCache;
   }
 
   const initialData: DBData = {
